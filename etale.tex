@@ -168,7 +168,7 @@ André Weil a propus următoarea generalizare:
 \begin{enumerate}
 \item există $2d$ numere naturale $b_0,...,b_{2d}$ și $\{a_{j,s}\}_{j\in\overline{0,2d}\atop s\in\overline{1,b_j}}$ numere complexe astfel încât pentru orice $m$ am:
 $$N_m(X)=\sum\limits_{j=0}^{2d} (-1)^j (\sum\limits_{s=1}^{b_j} \alpha_{j.s}^m)$$
-Mai mult, $b_0=b_{2d}=1, \alpha_{0,1}=1, \alpha_{2d,1}=q^d$.
+Mai mult, $b_0=b_{2d}=1, \alpha_{0,1}=1, \alpha_{2d,1}=q^d$. Numărul $\sum\limits_j (-1)^j b_j$ va fi notat cu $\chi$.
 \item pentru orice $j$, $b_j=b_{2d-j}$, iar $(\frac{q^d}{\alpha_{2d-j,1}},...,\frac{q^d}{\alpha_{2d-j,b_j}})$ e o permutare a enumerării $(\alpha_{j,1},...,\alpha_{j,b_j})$.
 \item pentru orice $j,s$, $\alpha_{j,s}$ e număr algebric de modul $q^{\frac{j}{2}}$.
 \end{enumerate}
@@ -218,9 +218,9 @@ $$P_d(t)=\pm (-1)^{b_d} (q^dt)^{b_d} (q^d)^{\frac{b_d}{2}} P_d(\frac{1}{q^dt})$$
 \begin{align*}
 Z_X(t)&=\prod_{j=0}^{2d} P_j(t)^{(-1)^{j+1}}\\
 &=\pm \prod_{j=0}^{2d} P_j(\frac{1}{q^dt})^{(-1)^{j+1}} (q^d)^{-\frac{\sum\limits_j (-1)^{j+1} b_j}{2}} t^{-\sum\limits_j (-1)^{j+1} b_j}\\
-&=\pm q^{\frac{d\chi(X)}{2}} t^{\chi(X)} Z_X(\frac{1}{q^dt})
+&=\pm q^{\frac{d\chi}{2}} t^{\chi} Z_X(\frac{1}{q^dt})
 \end{align*}
-numită {\bf ecuația funcțională} a lui $Z_X$ (unde am notat $\chi(X)=\sum\limits_j (-1)^j b_j$).
+numită {\bf ecuația funcțională} a lui $Z_X$.
 
 O altă reformulare ne este dată de următoarea substituție:
 $$\zeta_X(s)=Z_X(q^{-s})$$
