@@ -1,0 +1,275 @@
+\documentclass[13pt]{book}
+\usepackage[romanian]{babel}
+\usepackage{euler}
+\usepackage{xltxtra}
+\usepackage{color}
+\usepackage{indentfirst}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage[margin=1.1in]{geometry}
+\usepackage[linktoc=none]{hyperref}
+\usepackage{url}
+\usepackage[nottoc]{tocbibind}
+\usepackage[raggedright]{titlesec}
+\usepackage{young}
+\setmainfont{URW Palladio L}
+\setcounter{secnumdepth}{-1}
+\setcounter{chapter}{0}
+\lstset{
+language=Haskell,
+basicstyle=\ttfamily\fontsize{2.33mm}{4mm}\selectfont,
+numbers=left,
+numberstyle=\ttfamily\fontsize{2.6mm}{3mm}\selectfont,
+stepnumber=3,
+numbersep=10pt,
+frame=single
+}
+
+\begin{document}
+
+\newtheorem{teo}{\bf Teorema}[section]
+\newtheorem{cor}[teo]{\bf Corolarul}
+\newtheorem{lema}[teo]{\bf Lema}
+\newtheorem{prob}[teo]{\bf Problema}
+\newtheorem{conj}[teo]{\bf Conjectura}
+\newtheorem{propr}[teo]{\bf Proprietatea}
+\newtheorem{prop}[teo]{\bf Propoziția}
+\newtheorem{alg}[teo]{\bf Algoritmul}
+\theoremstyle{remark}
+\newtheorem{obs}[teo]{\bf Observația}
+\newtheorem{obss}[teo]{\bf Observațiile}
+\newtheorem{ex}[teo]{\bf Exemplul}
+\newtheorem{exs}[teo]{\bf Exemplele}
+\theoremstyle{definition}
+\newtheorem{defi}[teo]{\bf Definiția}
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\fontsize{3.9mm}{5mm}\selectfont
+\pagestyle{empty}
+\begin{center}
+
+\LARGE UNIVERSITATEA DIN BUCUREȘTI\\[0.5cm]
+\LARGE Facultatea de Matematică și Informatică\\[3cm]
+
+\Large Disertație masterală\\[3.5cm] 
+ 
+\rule{8cm}{0.5mm}\\[0.8cm]
+{ \huge \bfseries Étale stuff}\\[0.2cm]
+\rule{8cm}{0.5mm}\\[2.5cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Autor:}\\
+Andrei Sipoș
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{flushright} \large
+\emph{Profesor coordonator:} \\
+Lect. dr. Victor Vuletescu
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+{\large București, 2014}
+
+\end{center}
+\newpage
+\phantom{X}
+\newpage
+
+\pagestyle{headings}
+\tableofcontents
+\newpage
+
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
+\chapter{Introducere}
+
+Acest text își propune să:
+
+\begin{itemize}
+\item enunțe cadrul de desfășurare al coomologiei étale
+\item prezinte versiuni étale ale unor rezultate fundamentale în topologie, precum dualitatea Poincaré sau formulele de tip Lefschetz
+\item aplice aceste rezultate la studiul funcțiilor zeta asociate varietăților peste corpuri finite
+\end{itemize}
+
+\setcounter{secnumdepth}{2}
+
+\chapter{Situl étale}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+Pîs pîs pîs
+
+\section{Morfisme étale}
+
+\begin{defi}
+Un morfism de inele $A \rightarrow B$ se numește {\bf plat} dacă functorul $B \otimes_A \cdot :  A\textnormal{-Mod} \rightarrow B\textnormal{-Mod}$ este exact.
+\end{defi}
+
+\begin{defi}
+Un morfism de varietăți (sau scheme) $\phi: Y \rightarrow X$ este {\bf plat} dacă morfismele locale $\mathcal{O}_{X,\phi(y)} \rightarrow \mathcal{O}_{Y,y}$ sunt plate pentru orice $y$ din $Y$.
+\end{defi}
+
+\begin{defi}
+Un morfism local de inele locale $f: A \rightarrow B$ se numește {\bf neramificat} dacă $A/\mathfrak{m}_A \hookrightarrow B/f(\mathfrak{m}_A)B$ este o extindere finită și separabilă.
+\end{defi}
+
+%definiția morfismului de tip finit între varietăți
+
+\begin{defi}
+Un morfism de varietăți (sau scheme) $\phi: Y \rightarrow X$ este {\bf neramificat} dacă este de tip finit și morfismele locale $\mathcal{O}_{X,\phi(y)} \rightarrow \mathcal{O}_{Y,y}$ sunt neramificate pentru orice $y$ din $Y$.
+\end{defi}
+
+\begin{defi}
+Un morfism (regulat) între două varietăți este {\bf étale} dacă este plat și neramificat.
+\end{defi}
+
+Morfismele étale au următoarele proprietăți:
+
+\begin{prop}
+\begin{enumerate}
+\item Orice imersie deschisă este étală.
+\item Compunerea a două morfisme étale este étală.
+\item Un morfism care este schimbare de bază a unui morfism étale este étale.
+\item Dacă $\phi \circ \psi$ și $\phi$ sunt étale, atunci și $\psi$ este étale.
+\end{enumerate}
+\end{prop}
+
+De acum încolo vom lucra cu o varietate $X$ peste un corp algebric închis $k$.
+
+O vecinătate étală a unui punct $x$ din $X$ este o aplicație étală $\phi: U \rightarrow X$ împreună cu un punct $u \in U$ cu $\phi(u)=x$. Un morfism de vecinătăți étale $(V,v) \rightarrow (U,u)$ este o aplicație regulată de la $V$ la $U$ care duce pe $v$ în $u$ (dacă există, este unică, din anumite proprietăți ale morfismelor étale). Am obținut astfel o categorie index și putem defini {\bf inelul local în $x$ pentru topologia étală} ca fiind:
+$$\mathcal{O}_{X, \bar{x}} = \varinjlim_{(U,u)} \Gamma(U,\mathcal{O}_U)$$
+
+Dat fiind că orice vecinătate Zariski, fiind imersie deschisă, este étală, din proprietatea limitei inductive avem un morfism natural
+$$\mathcal{O}_{X, x} \rightarrow \mathcal{O}_{X, \bar{x}}$$
+
+\section{}
+
+\chapter{De la étale la $l$-adic}
+
+\chapter{Numărarea punctelor}
+
+Problema pe care urmează să o formulăm a pornit de la cea a numărării punctelor de pe o curbă eliptică. Ne este cunoscută din studiul acelor curbe inegalitatea Hasse-Weil, care spune că pentru orice curbă eliptică $X$ definită peste un corp finit $\mathbb{F}_q$, dacă notăm $N_m(X)=\#X(\mathbb{F}_{q^m})$, are loc relația:
+$$|N_m(X) - (q^m+1)| \leq 2\sqrt{q^m}$$
+
+Mai precis, există două numere algebrice $\alpha_1,\alpha_2$ de modul $\sqrt{q}$ astfel încât pentru orice $m$:
+$$N_m(X) = 1 - \alpha_1^m - \alpha_2^m + q^m$$
+
+André Weil a propus următoarea generalizare:
+\begin{teo}
+(Conjecturile Weil) Fie $X$ o varietate proiectivă netedă definită peste $\mathbb{F}_q$ de dimensiune $d$. Atunci:
+\begin{enumerate}
+\item există $2d$ numere naturale $b_0,...,b_{2d}$ și $\{a_{j,s}\}_{j\in\overline{0,2d}\atop s\in\overline{1,b_j}}$ numere complexe astfel încât pentru orice $m$ am:
+$$N_m(X)=\sum\limits_{j=0}^{2d} (-1)^j (\sum\limits_{s=1}^{b_j} \alpha_{j.s}^m)$$
+Mai mult, $b_0=b_{2d}=1, \alpha_{0,1}=1, \alpha_{2d,1}=q^d$.
+\item pentru orice $j$, $b_j=b_{2d-j}$, iar $(\frac{q^d}{\alpha_{2d-j,1}},...,\frac{q^d}{\alpha_{2d-j,b_j}})$ e o permutare a enumerării $(\alpha_{j,1},...,\alpha_{j,b_j})$.
+\item pentru orice $j,s$, $\alpha_{j,s}$ e număr algebric de modul $q^{\frac{j}{2}}$.
+\end{enumerate}
+\end{teo}
+
+\begin{obs}
+Se observă că dacă X este curbă eliptică se reconstituie relația de mai devreme, cu $b_1=2=dim\ H^1(\mathbb{C}/\Lambda, \mathbb{Q})$ (pentru $\Lambda$ o latice în planul complex).
+\end{obs}
+
+Un mod mai pragmatic de a exprima conjecturile Weil este reprezentat de instrumentul funcțiilor generatoare.
+
+Ne bazăm pe identitatea formală:
+$$log(\frac{1}{1-x})=\sum\limits_{m=1}^{\infty} \frac{x^m}{m}$$
+sau
+$$\frac{1}{1-x}=exp(\sum\limits_{m=1}^{\infty} \frac{x^m}{m})$$
+ce se poate verifica via expansiune în serie Taylor în jurul lui zero.
+
+Definind $Z_X(t) = exp(\sum\limits_{m=1}^{\infty} N_m \frac{t^m}{m})$, obținem din punctul 1 al conjecturilor:
+\begin{align*}
+Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} \sum\limits_{j=0}^{2d} (-1)^j \sum\limits_{s=1}^{b_j} \alpha_{j,s}^m \frac{t^m}{m})\\
+&=\prod\limits_{j=0}^{2d} (\prod_{s=1}^{b_j} exp(\sum\limits_{m=1}^{\infty} \frac{(a_{j,s} t)^m}{m}))^{(-1)^j}\\
+&=\prod\limits_{j=0}^{2d} (\frac{1}{\prod\limits_{s=1}^{b_j}(1-\alpha_{j,s}t)})^{(-1)^j}\\
+&=\prod\limits_{j=0}^{2d} P_j(t)^{(-1)^{j+1}}
+\end{align*}
+unde am notat $P_j(t)=\prod\limits_{s=1}^{b_j}(1-\alpha_{j,s}t)$ (și am $P_0(t)=1-t$, $P_{2d}(t)=1-q^dt$).
+
+Vom deriva acum din punctul 2 o relație pe care o va satisface $Z_X(t)$. Aplicăm relația de permutare între enumerări și obținem:
+\begin{align*}
+P_{2d-j}(t)&=\prod_s(1-\alpha_{2d-j,s}t)=\prod_s(1-\frac{q^d}{a_{j,s}}t)\\
+&=(\prod_s \alpha_{j,s})^{-1} \prod_s(\alpha_{j,s}-q^dt)\\
+&=(\prod_s \alpha_{j,s})^{-1} (-1)^{b_j} (q^dt)^{b_j} \prod_s (1-\frac{\alpha_{j,s}}{q^dt})\\
+&=(\prod_s \alpha_{j,s})^{-1} (-1)^{b_j} (q^dt)^{b_j}P_j(\frac{1}{q^dt})
+\end{align*}
+
+Folosim acum atât simetria $b_j$-urilor cât și permutarea enumerărilor:
+\begin{align*}
+P_j(t)P_{2d-j}(t)&=(q^dt)^{2b_j} (q^d)^{-b_j} P_j(\frac{1}{q^dt}) P_{2d-j}(\frac{1}{q^dt})\\
+&=(q^d)^{\frac{b_j+b_{2d-j}}{2}} t^{b_j+b_{2d-j}}P_j(\frac{1}{q^dt}) P_{2d-j}(\frac{1}{q^dt})\\
+\end{align*}
+
+Însă $(\prod\limits_s \alpha_{d,s})^2=(q^d)^{b_d}$, deci $\prod\limits_s \alpha_{d,s}=\pm (q^d)^{\frac{b_d}{2}}$.
+
+Deci pentru indicele $d$ am relația:
+$$P_d(t)=\pm (-1)^{b_d} (q^dt)^{b_d} (q^d)^{\frac{b_d}{2}} P_d(\frac{1}{q^dt})$$
+
+Și obțin astfel formula pentru funcția $Z_X$:
+\begin{align*}
+Z_X(t)&=\prod_{j=0}^{2d} P_j(t)^{(-1)^{j+1}}\\
+&=\pm \prod_{j=0}^{2d} P_j(\frac{1}{q^dt})^{(-1)^{j+1}} (q^d)^{-\frac{\sum\limits_j (-1)^{j+1} b_j}{2}} t^{-\sum\limits_j (-1)^{j+1} b_j}\\
+&=\pm q^{\frac{d\chi(X)}{2}} t^{\chi(X)} Z_X(\frac{1}{q^dt})
+\end{align*}
+numită {\bf ecuația funcțională} a lui $Z_X$ (unde am notat $\chi(X)=\sum\limits_j (-1)^j b_j$).
+
+O altă reformulare ne este dată de următoarea substituție:
+$$\zeta_X(s)=Z_X(q^{-s})$$
+
+Notând pentru un punct închis $x \in X$ cu $\kappa(x)$ corpul rezidual al său, cu $deg(x)$ gradul extinderii $\kappa(x) : \mathbb{F}_q$ și cu
+\begin{align*}
+N_m(x) = \left\{
+     \begin{array}{lr}
+       deg(x) & \text{dacă } deg(x)\ |\ m\\
+       0 & \text{altfel}
+     \end{array}
+   \right.
+\end{align*}
+avem din cele cunoscute de la teoria schemelor:
+$$N_m=\sum\limits_x N_m(x)$$
+
+Obținem rescrierile:
+\begin{align*}
+Z_X(t)&=exp(\sum_{m\geq 1} N_m \frac{t^m}{m}) = exp(\sum_{m\geq 1} \sum\limits_x N_m(x) \frac{t^m}{m})\\
+&=exp(\sum_x \sum_{m \geq 1 \atop deg(x) | m} N_m(x) \frac{t^m}{m})\\
+&=exp(\sum_x \sum_{n \geq 1} deg(x) \frac{t^{n\cdot deg(x)}}{n \cdot deg(x)})\\
+&=exp(\sum_x \sum_{n\geq 1} \frac{(t^{deg(x)})^n}{n})=exp(\sum_x log \frac{1}{1-t^{deg(x)}})\\
+&=exp\ log \prod_x \frac{1}{1-t^{deg(x)}} = \prod_x \frac{1}{1-t^{deg(x)}}
+\end{align*}
+și deci
+$$\zeta_X(s)=\prod_x \frac{1}{1-(q^{deg(x)})^{-s}} = \prod_x \frac{1}{1-(\#\kappa(x))^{-s}}$$
+Ultima formulă are sens pentru o schemă oarecare, nu neapărat peste un corp finit. De pildă, înlocuind $X$ cu $Spec(\mathbb{Z})$, apare:
+$$\zeta_{Spec(\mathbb{Z})}(s)=\prod_{\mathfrak{p} \in Max(\mathbb{Z})} \frac{1}{1-(\#(\frac{\mathbb{Z}}{\mathfrak{p}}))^{-s}} = \prod_{p\text{ prim}} \frac{1}{1-p^{-s}}$$
+binecunoscuta funcție zeta a lui Riemann (punctele închise din $Spec(\mathbb{Z})$ sunt precis idealele maximale ale lui $\mathbb{Z}$).
+
+Atenție, însă: funcția $Z_X$ nu are sens decât pentru scheme definite pentru un corp finit!
+
+Este clar că $s\in\mathbb{C}$ este zerou, respectiv pol, pentru $\zeta_X$ dacă și numai dacă $q^{-s}$ va avea aceeași calitate pentru $Z_X$, proprietate ce va avea loc și invers (AICI TREBUIE REFORMULAT!!).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{etale}
+\end{document}
