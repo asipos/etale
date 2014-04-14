@@ -261,9 +261,23 @@ Toate aceste manipulări de formule ne învață să apreciem modul cum coomolog
 
 Să vedem cum. Mai întâi, vom obține o altă descriere a lui $X(\mathbb{F}_{q^m})$ cu ajutorul aplicației Frobenius.
 
-Orice $\mathbb{F}_q$-algebră $A$ admite endomorfismul Frobenius $a \mapsto a^q$, ce se dualizează la o aplicație $\text{Spec } A \rightarrow \text{Spec } A$. Această familie de aplicații se prelungește unic la o întreagă transformare naturală $\{Frob_X : X \rightarrow X\}_{X \in \mathbb{F}_q-Sch}$. Din naturalitate, rezultă că acționează pe varietăți afine sau proiective în modul firesc, prin ridicarea la puterea $q$ a coordonatelor. În particular $Frob_X$ are gradul $q^{dim X}$, după cum se verifică ușor pe spațiile afine.
+Orice $\mathbb{F}_q$-algebră $A$ admite endomorfismul Frobenius $a \mapsto a^q$, ce se dualizează la o aplicație $\text{Spec } A \rightarrow \text{Spec } A$. Această familie de aplicații se prelungește unic la o întreagă transformare naturală $\{F_X : X \rightarrow X\}_{X \in \mathbb{F}_q-Sch}$. Din naturalitate, rezultă că acționează pe varietăți afine sau proiective în modul firesc, prin ridicarea la puterea $q$ a coordonatelor. În particular $F_X$ are gradul $q^{dim X}$, după cum se verifică ușor pe spațiile afine.
 
-Rezultă deci  $X(\mathbb{F}_{q^m})=Fix(Frob_X^m)$.
+Rezultă deci  $X(\mathbb{F}_{q^m})=Fix(F_X^m)$.
+
+\begin{lema}
+$\Gamma_{F^m} \cdot \Delta_X = \sum\limits_{P \in Fix(F_X^m)} P$ (în sensul că toate apar cu multiplicitate $1$).
+\end{lema}
+
+\begin{proof}
+E suficient să arătăm pentru $m=1$ ($F^m$ este Frobeniusul lui $\mathbb{F}_{q^m}$).
+
+Fie $P\in Fix(F_X)$. Înlocuiesc $X$ cu o vecinătate afină a lui $P$, să zicem $U=\text{Spec }A$, cu $A=\mathbb{F}_q[t_1,...,t_n]=\frac{\mathbb{F}_q[T_1,...,T_n]}{\mathfrak{a}}$.
+
+Atunci pentru orice $i$ am $t_i \circ F = t_i^q$ și $(dt_i)_P \circ (dF)_P = (dt_i^q)_P = qt_i^{q-1}(dt_i)_P = 0$.
+
+Ca urmare diferențiala lui $F$ în $P$ este zero, ca urmare graficul lui Frobenius nu este tangent la diagonală în $(P,P)$, iar numărul de intersecție (multiplicitatea) este $1$.
+\end{proof}
 
 
 
