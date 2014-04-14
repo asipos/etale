@@ -31,7 +31,7 @@ frame=single
 
 \begin{document}
 
-\newtheorem{teo}{\bf Teorema}[section]
+\newtheorem{teo}{\bf Teorema}[chapter]
 \newtheorem{cor}[teo]{\bf Corolarul}
 \newtheorem{lema}[teo]{\bf Lema}
 \newtheorem{prob}[teo]{\bf Problema}
@@ -166,41 +166,39 @@ André Weil a propus următoarea generalizare:
 \begin{teo}
 (Conjecturile Weil) Fie $X$ o varietate proiectivă netedă definită peste $\mathbb{F}_q$ de dimensiune $d$. Atunci:
 \begin{enumerate}
-\item există $2d$ numere naturale $b_0,...,b_{2d}$ și $\{a_{j,s}\}_{j\in\overline{0,2d}\atop s\in\overline{1,b_j}}$ numere complexe astfel încât pentru orice $m$ am:
-$$N_m(X)=\sum\limits_{j=0}^{2d} (-1)^j (\sum\limits_{s=1}^{b_j} \alpha_{j.s}^m)$$
+\item există $2d$ numere naturale $b_0,...,b_{2d}$ și o familie de numere complexe $\{a_{j,u}\}_{j\in\overline{0,2d}\atop s\in\overline{1,b_j}}$ astfel încât pentru orice $m$ am:
+$$N_m(X)=\sum\limits_{j=0}^{2d} (-1)^j (\sum\limits_{u=1}^{b_j} \alpha_{j,u}^m)$$
 Mai mult, $b_0=b_{2d}=1, \alpha_{0,1}=1, \alpha_{2d,1}=q^d$. Numărul $\sum\limits_j (-1)^j b_j$ va fi notat cu $\chi$.
-\item pentru orice $j$, $b_j=b_{2d-j}$, iar $(\frac{q^d}{\alpha_{2d-j,1}},...,\frac{q^d}{\alpha_{2d-j,b_j}})$ e o permutare a enumerării $(\alpha_{j,1},...,\alpha_{j,b_j})$.
-\item pentru orice $j,s$, $\alpha_{j,s}$ e număr algebric de modul $q^{\frac{j}{2}}$.
+\item pentru orice $j$, $b_j$ este egal cu $b_{2d-j}$, iar $(\frac{q^d}{\alpha_{2d-j,1}},...,\frac{q^d}{\alpha_{2d-j,b_j}})$ e o permutare a enumerării $(\alpha_{j,1},...,\alpha_{j,b_j})$.
+\item pentru orice $j,u$, avem că $\alpha_{j,u}$ e număr algebric de modul $q^{\frac{j}{2}}$.
 \end{enumerate}
 \end{teo}
 
-\begin{obs}
 Se observă că dacă X este curbă eliptică se reconstituie relația de mai devreme, cu $b_1=2=dim\ H^1(\mathbb{C}/\Lambda, \mathbb{Q})$ (pentru $\Lambda$ o latice în planul complex).
-\end{obs}
 
 Un mod mai pragmatic de a exprima conjecturile Weil este reprezentat de instrumentul funcțiilor generatoare.
 
 Ne bazăm pe identitatea formală:
 $$log(\frac{1}{1-x})=\sum\limits_{m=1}^{\infty} \frac{x^m}{m}$$
-sau
+scrisă eventual
 $$\frac{1}{1-x}=exp(\sum\limits_{m=1}^{\infty} \frac{x^m}{m})$$
 ce se poate verifica via expansiune în serie Taylor în jurul lui zero.
 
 Definind $Z_X(t) = exp(\sum\limits_{m=1}^{\infty} N_m \frac{t^m}{m})$, obținem din punctul 1 al conjecturilor:
 \begin{align*}
-Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} \sum\limits_{j=0}^{2d} (-1)^j \sum\limits_{s=1}^{b_j} \alpha_{j,s}^m \frac{t^m}{m})\\
-&=\prod\limits_{j=0}^{2d} (\prod_{s=1}^{b_j} exp(\sum\limits_{m=1}^{\infty} \frac{(a_{j,s} t)^m}{m}))^{(-1)^j}\\
-&=\prod\limits_{j=0}^{2d} (\frac{1}{\prod\limits_{s=1}^{b_j}(1-\alpha_{j,s}t)})^{(-1)^j}\\
+Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} \sum\limits_{j=0}^{2d} (-1)^j \sum\limits_{u=1}^{b_j} \alpha_{j,u}^m \frac{t^m}{m})\\
+&=\prod\limits_{j=0}^{2d} (\prod_{u=1}^{b_j} exp(\sum\limits_{m=1}^{\infty} \frac{(a_{j,u} t)^m}{m}))^{(-1)^j}\\
+&=\prod\limits_{j=0}^{2d} (\frac{1}{\prod\limits_{u=1}^{b_j}(1-\alpha_{j,u}t)})^{(-1)^j}\\
 &=\prod\limits_{j=0}^{2d} P_j(t)^{(-1)^{j+1}}
 \end{align*}
-unde am notat $P_j(t)=\prod\limits_{s=1}^{b_j}(1-\alpha_{j,s}t)$ (și am $P_0(t)=1-t$, $P_{2d}(t)=1-q^dt$).
+unde am notat $P_j(t)=\prod\limits_{u=1}^{b_j}(1-\alpha_{j,u}t)$ (și am $P_0(t)=1-t$, $P_{2d}(t)=1-q^dt$).
 
 Vom deriva acum din punctul 2 o relație pe care o va satisface $Z_X(t)$. Aplicăm relația de permutare între enumerări și obținem:
 \begin{align*}
-P_{2d-j}(t)&=\prod_s(1-\alpha_{2d-j,s}t)=\prod_s(1-\frac{q^d}{a_{j,s}}t)\\
-&=(\prod_s \alpha_{j,s})^{-1} \prod_s(\alpha_{j,s}-q^dt)\\
-&=(\prod_s \alpha_{j,s})^{-1} (-1)^{b_j} (q^dt)^{b_j} \prod_s (1-\frac{\alpha_{j,s}}{q^dt})\\
-&=(\prod_s \alpha_{j,s})^{-1} (-1)^{b_j} (q^dt)^{b_j}P_j(\frac{1}{q^dt})
+P_{2d-j}(t)&=\prod_u(1-\alpha_{2d-j,u}t)=\prod_u(1-\frac{q^d}{a_{j,u}}t)\\
+&=(\prod_u \alpha_{j,u})^{-1} \prod_u(\alpha_{j,u}-q^dt)\\
+&=(\prod_u \alpha_{j,u})^{-1} (-1)^{b_j} (q^dt)^{b_j} \prod_u (1-\frac{\alpha_{j,u}}{q^dt})\\
+&=(\prod_u \alpha_{j,u})^{-1} (-1)^{b_j} (q^dt)^{b_j}P_j(\frac{1}{q^dt})
 \end{align*}
 
 Folosim acum atât simetria $b_j$-urilor cât și permutarea enumerărilor:
@@ -209,9 +207,7 @@ P_j(t)P_{2d-j}(t)&=(q^dt)^{2b_j} (q^d)^{-b_j} P_j(\frac{1}{q^dt}) P_{2d-j}(\frac
 &=(q^d)^{\frac{b_j+b_{2d-j}}{2}} t^{b_j+b_{2d-j}}P_j(\frac{1}{q^dt}) P_{2d-j}(\frac{1}{q^dt})\\
 \end{align*}
 
-Însă $(\prod\limits_s \alpha_{d,s})^2=(q^d)^{b_d}$, deci $\prod\limits_s \alpha_{d,s}=\pm (q^d)^{\frac{b_d}{2}}$.
-
-Deci pentru indicele $d$ am relația:
+Însă $(\prod\limits_s \alpha_{d,u})^2=(q^d)^{b_d}$, deci $\prod\limits_s \alpha_{d,u}=\pm (q^d)^{\frac{b_d}{2}}$, și pot scoate relația (pentru indicele $d$):
 $$P_d(t)=\pm (-1)^{b_d} (q^dt)^{b_d} (q^d)^{\frac{b_d}{2}} P_d(\frac{1}{q^dt})$$
 
 Și obțin astfel formula pentru funcția $Z_X$:
@@ -247,13 +243,27 @@ Z_X(t)&=exp(\sum_{m\geq 1} N_m \frac{t^m}{m}) = exp(\sum_{m\geq 1} \sum\limits_x
 \end{align*}
 și deci
 $$\zeta_X(s)=\prod_x \frac{1}{1-(q^{deg(x)})^{-s}} = \prod_x \frac{1}{1-(\#\kappa(x))^{-s}}$$
-Ultima formulă are sens pentru o schemă oarecare, nu neapărat peste un corp finit. De pildă, înlocuind $X$ cu $Spec(\mathbb{Z})$, apare:
-$$\zeta_{Spec(\mathbb{Z})}(s)=\prod_{\mathfrak{p} \in Max(\mathbb{Z})} \frac{1}{1-(\#(\frac{\mathbb{Z}}{\mathfrak{p}}))^{-s}} = \prod_{p\text{ prim}} \frac{1}{1-p^{-s}}$$
-binecunoscuta funcție zeta a lui Riemann (punctele închise din $Spec(\mathbb{Z})$ sunt precis idealele maximale ale lui $\mathbb{Z}$).
+Ultima formulă are sens pentru o schemă oarecare, nu neapărat peste un corp finit. De pildă, înlocuind $X$ cu $\text{Spec }\mathbb{Z}$, apare:
+$$\zeta_{\text{Spec }\mathbb{Z}}(s)=\prod_{\mathfrak{p} \in \text{Max }\mathbb{Z}} \frac{1}{1-(\#(\frac{\mathbb{Z}}{\mathfrak{p}}))^{-s}} = \prod_{p\text{ prim}} \frac{1}{1-p^{-s}}$$
+binecunoscuta funcție zeta a lui Riemann (punctele închise din $\text{Spec }\mathbb{Z}$ sunt precis idealele maximale ale lui $\mathbb{Z}$), ceea ce ne justifică notația.
 
 Atenție, însă: funcția $Z_X$ nu are sens decât pentru scheme definite pentru un corp finit!
 
-Este clar că $s\in\mathbb{C}$ este zerou, respectiv pol, pentru $\zeta_X$ dacă și numai dacă $q^{-s}$ va avea aceeași calitate pentru $Z_X$, proprietate ce va avea loc și invers (AICI TREBUIE REFORMULAT!!).
+Este clar că $s\in\mathbb{C}$ este zerou, respectiv pol, pentru $\zeta_X$ dacă și numai dacă $q^{-s}$ va avea aceeași calitate pentru $Z_X$ (și orice $t \in \mathbb{C}^*$ se poate scrie ca $q^{-s}$, e drept, într-o infinitate de moduri). Iau un astfel de $s$. Din exprimarea rațională a lui $Z_X$ rezultă că $q^{-s}=\frac{1}{\alpha_{j,u}}$ pentru anumite $j$ și $u$, iar ultima afirmație din conjecturi implică $|q^{-s}|=q^{-\frac{j}{2}}$. Scriu $s=a+bi$, cu $a,b\in\mathbb{R}$, și am $q^{-s}=e^{-s\ ln q} = e^{-a\ ln q- bi\ ln q}$. Deci $q^{-\frac{j}{2}}=|e^{-a\ ln q- bi\ ln q}|=q^{-a}$ și $\frac{j}{2}=a=\mathbb{R}e\ s$.
+
+Invers, acum, dacă fac presupunerea că orice $s$ zerou sau pol al lui $\zeta_X$ are proprietatea că $\mathbb{R}e\ s=\frac{j}{2}$ (cu $j\in\overline{0,2d}$), pot face următorul raționament. Iau $t \in \mathbb{C}^*$ zerou sau pol pentru $Z_X$ și fie $s$ cu $t=q^{-s}$. Atunci $s$ este zerou/pol pentru $\zeta_X$ și $\mathbb{R}e\ s=\frac{j}{2}$. Ca înainte, avem $|t|=|q^{-s}|=q^{-\mathbb{R}e\ s}=q^{-\frac{j}{2}}$. Deci zerourile și polii lui $Z_X$ au modulul $q^{-\frac{j}{2}}$.
+
+Rezultă că acea condiție 3 este echivalentă cu faptul că funcția zeta a varietății are zerourile și polii pe liniile $\mathbb{R}e\ s=\frac{j}{2}$, ceea ce justifică numele dat condiției de {\bf ipoteză Riemann}.
+
+Mai mult decât atât, această separare după modul a zerourilor și polilor lui $Z_X$ ne permitm să extragem $P_j$-urile din $Z_X$ și să obținem în mod reciproc din ecuația funcțională condiția 2 din conjecturile Weil.
+
+Toate aceste manipulări de formule ne învață să apreciem modul cum coomologia étală conduce în mod natural măcar la expresia rațională și la ecuația funcțională a funcției $Z_X$.
+
+Să vedem cum. Mai întâi, vom obține o altă descriere a lui $X(\mathbb{F}_{q^m})$ cu ajutorul aplicației Frobenius.
+
+Orice $\mathbb{F}_q$-algebră $A$ admite endomorfismul Frobenius $a \mapsto a^q$, ce se dualizează la o aplicație $\text{Spec } A \rightarrow \text{Spec } A$. Această familie de aplicații se prelungește unic la o întreagă transformare naturală $\{Frob_X : X \rightarrow X\}_{X \in \mathbb{F}_q-Sch}$. Din naturalitate, rezultă că acționează pe varietăți afine sau proiective în modul firesc, prin ridicarea la puterea $q$ a coordonatelor. În particular $Frob_X$ are gradul $q^{dim X}$, după cum se verifică ușor pe spațiile afine.
+
+Rezultă deci  $X(\mathbb{F}_{q^m})=Fix(Frob_X^m)$.
 
 
 
