@@ -184,7 +184,7 @@ scrisă eventual
 $$\frac{1}{1-x}=exp(\sum\limits_{m=1}^{\infty} \frac{x^m}{m})$$
 ce se poate verifica via expansiune în serie Taylor în jurul lui zero.
 
-Definind $Z_X(t) = exp(\sum\limits_{m=1}^{\infty} N_m \frac{t^m}{m})$, obținem din punctul 1 al conjecturilor:
+Definind $Z_X(t) = exp(\sum\limits_{m=1}^{\infty} N_m \frac{t^m}{m})$ (fixând pe $X$), obținem din punctul 1 al conjecturilor:
 \begin{align*}
 Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} \sum\limits_{j=0}^{2d} (-1)^j \sum\limits_{u=1}^{b_j} \alpha_{j,u}^m \frac{t^m}{m})\\
 &=\prod\limits_{j=0}^{2d} (\prod_{u=1}^{b_j} exp(\sum\limits_{m=1}^{\infty} \frac{(a_{j,u} t)^m}{m}))^{(-1)^j}\\
@@ -270,15 +270,30 @@ $\Gamma_{F^m} \cdot \Delta_X = \sum\limits_{P \in Fix(F_X^m)} P$ (în sensul că
 \end{lema}
 
 \begin{proof}
-E suficient să arătăm pentru $m=1$ ($F^m$ este Frobeniusul lui $\mathbb{F}_{q^m}$).
+E suficient să arătăm pentru $m=1$ ($F^m$ este Frobeniusul lui $\mathbb{F}_{q^m}$). Notez $F=F_X$.
 
-Fie $P\in Fix(F_X)$. Înlocuiesc $X$ cu o vecinătate afină a lui $P$, să zicem $U=\text{Spec }A$, cu $A=\mathbb{F}_q[t_1,...,t_n]=\frac{\mathbb{F}_q[T_1,...,T_n]}{\mathfrak{a}}$.
+Fie $P\in Fix(F)$. Înlocuiesc $X$ cu o vecinătate afină a lui $P$, să zicem $U=\text{Spec }A$, cu $A=\mathbb{F}_q[t_1,...,t_n]=\frac{\mathbb{F}_q[T_1,...,T_n]}{\mathfrak{a}}$.
 
 Atunci pentru orice $i$ am $t_i \circ F = t_i^q$ și $(dt_i)_P \circ (dF)_P = (dt_i^q)_P = qt_i^{q-1}(dt_i)_P = 0$.
 
 Ca urmare diferențiala lui $F$ în $P$ este zero, ca urmare graficul lui Frobenius nu este tangent la diagonală în $(P,P)$, iar numărul de intersecție (multiplicitatea) este $1$. 
 \end{proof}
 
+Aplicând formula de punct fix a lui Lefschetz, rezultă (pentru $(\ell,q)=1$):
+$$N_m = \sum\limits_r (-1)^r Tr(F^m | H^r(X,\mathbb{Q}_\ell))$$
+
+Putem folosi formula pentru a prelucra funcția $Z$ a lui $X$:
+\begin{align*}
+Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} N_m \frac{t^m}{m})\\
+&=exp(\sum\limits_{m=1}^{\infty} (\sum\limits_{r=0}^{2d} (-1)^r Tr(F^m | H^r(X,\mathbb{Q}_\ell)) \frac{t^m}{m})\\
+&=\prod\limits_{r=0}^{2d}exp(\sum\limits_{m=1}^{\infty}Tr(F^m | H^r(X,\mathbb{Q}_\ell)  \frac{t^m}{m}) ^ { (-1)^r }
+\end{align*}
+
+Scriem acum fiecare $F | H^r(X,\mathbb{Q}_\ell)$ ca matrice pătratică superior triunghiulară (eventual peste o extindere a lui $\mathbb{F}_q$) cu numărul de linii egal cu $b_r=dim\ H^r(X,\mathbb{Q}_\ell)$. Se observă atunci că dacă elementele de pe diagonală (valorile proprii) sunt $\alpha_{r,1},...,\alpha_{r,b_r}$, atunci $Tr(F^m | H^r(X,\mathbb{Q}_\ell)$ va fi egal cu $\sum\limits_{i=1}^{b_r} \alpha_{r,i}^m$ și deci pot aplica exact același raționament ca mai devreme pentru a exprima rațional pe $Z_X$.
+
+Vom avea $Z_X \in \mathbb{Q}_\ell(t) \cap \mathbb{Q}[[t]] \subseteq \mathbb{Q}(t)$, însă aceasta nu ne garantează că fiecare $P_j$ este în $\mathbb{Q}[t]$ (că este „independent de $\ell$”) - aceasta se poate face doar presupunând ipoteza lui Riemann, care ne permite, după cum am spus și mai devreme, să separăm $P_j$-urile după modulul rădăcinilor.
+
+Altă consecință a raționamentului precedent a fost că am identificat $\alpha_{j,u}$-urile ca fiind valorile proprii ale operatorilor induși de Frobenius pe spațiile de coomologie.
 
 
 
