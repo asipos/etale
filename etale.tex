@@ -280,22 +280,39 @@ Ca urmare diferențiala lui $F$ în $P$ este zero, ca urmare graficul lui Froben
 \end{proof}
 
 Aplicând formula de punct fix a lui Lefschetz, rezultă (pentru $(\ell,q)=1$):
-$$N_m = \sum\limits_r (-1)^r Tr(F^m | H^r(X,\mathbb{Q}_\ell))$$
+$$N_m = \sum\limits_r (-1)^r Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)})$$
 
 Putem folosi formula pentru a prelucra funcția $Z$ a lui $X$:
 \begin{align*}
 Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} N_m \frac{t^m}{m})\\
-&=exp(\sum\limits_{m=1}^{\infty} (\sum\limits_{r=0}^{2d} (-1)^r Tr(F^m | H^r(X,\mathbb{Q}_\ell)) \frac{t^m}{m})\\
-&=\prod\limits_{r=0}^{2d}exp(\sum\limits_{m=1}^{\infty}Tr(F^m | H^r(X,\mathbb{Q}_\ell)  \frac{t^m}{m}) ^ { (-1)^r }
+&=exp(\sum\limits_{m=1}^{\infty} (\sum\limits_{r=0}^{2d} (-1)^r Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)}) \frac{t^m}{m})\\
+&=\prod\limits_{r=0}^{2d}exp(\sum\limits_{m=1}^{\infty}Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)})  \frac{t^m}{m}) ^ { (-1)^r }
 \end{align*}
 
-Scriem acum fiecare $F | H^r(X,\mathbb{Q}_\ell)$ ca matrice pătratică superior triunghiulară (eventual peste o extindere a lui $\mathbb{F}_q$) cu numărul de linii egal cu $b_r=dim\ H^r(X,\mathbb{Q}_\ell)$. Se observă atunci că dacă elementele de pe diagonală (valorile proprii) sunt $\alpha_{r,1},...,\alpha_{r,b_r}$, atunci $Tr(F^m | H^r(X,\mathbb{Q}_\ell)$ va fi egal cu $\sum\limits_{i=1}^{b_r} \alpha_{r,i}^m$ și deci pot aplica exact același raționament ca mai devreme pentru a exprima rațional pe $Z_X$.
+Scriem acum fiecare $F_{| H^r(X,\mathbb{Q}_\ell)}$ ca matrice pătratică superior triunghiulară (eventual peste o extindere a lui $\mathbb{F}_q$) cu numărul de linii egal cu $b_r=dim\ H^r(X,\mathbb{Q}_\ell)$. Se observă atunci că dacă elementele de pe diagonală (valorile proprii) sunt $\alpha_{r,1},...,\alpha_{r,b_r}$, atunci $Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)})$ va fi egal cu $\sum\limits_{i=1}^{b_r} \alpha_{r,i}^m$ și deci pot aplica exact același raționament ca mai devreme pentru a exprima rațional pe $Z_X$.
 
 Vom avea $Z_X \in \mathbb{Q}_\ell(t) \cap \mathbb{Q}[[t]] \subseteq \mathbb{Q}(t)$, însă aceasta nu ne garantează că fiecare $P_j$ este în $\mathbb{Q}[t]$ (că este „independent de $\ell$”) - aceasta se poate face doar presupunând ipoteza lui Riemann, care ne permite, după cum am spus și mai devreme, să separăm $P_j$-urile după modulul rădăcinilor.
 
 Altă consecință a raționamentului precedent a fost că am identificat $\alpha_{j,u}$-urile ca fiind valorile proprii ale operatorilor induși de Frobenius pe spațiile de coomologie.
 
-Aceasta ne arată în particular că $b_0=b_{2d}=1$. (FCKGW DE CE??? trebuie văzut cum merge Frobeniusul).
+Aceasta ne arată în particular că $b_0=b_{2d}=1$. (FCKGW DE CE??? trebuie văzut cum merge Frobeniusul)
+
+Trecem acum la demonstrarea simetriei între valorile proprii pe spațiile de ordin $r$ și $2d-r$, relație care după cum am observat ne implică o ecuație funcțională.
+
+Avem biliniara nedegenerată dată de dualitatea Poincaré:
+$$\langle,\rangle=\eta_X \circ \cup : H^{2d-r}(X,\mathbb{Q}_\ell) \times H^{r}(X,\mathbb{Q}_\ell) \rightarrow H^{2d}(X,\mathbb{Q}_\ell) \simeq \mathbb{Q}_\ell(-d)$$
+ce din start ne indică $b_r=b_{2d-r}$.
+
+Știm că $F^*_r=F_{| H^r(X,\mathbb{Q}_\ell)}$ are adjunct relativ la $\langle,\rangle$:
+$$\langle F_{*2d-r}(x),x'\rangle=\langle x,F^*_r(x')\rangle, \forall\ x \in H^{2d-r}(X,\mathbb{Q}_\ell), x' \in H^{r}(X,\mathbb{Q}_\ell)$$
+
+Din considerente de algebră liniară rezultă că valorile proprii ale lui $F^*_r$ coincid cu ale lui $F_{*2d-r}$. Însă $F_{*r} \circ F^*_r = q^d (=deg\ F)$.
+
+De aici rezultă că dacă $(\alpha_1,...,\alpha_v)$ sunt valorile proprii ale lui $F^*_r$, $(\frac{q^d}{\alpha_1},...,\frac{q^d}{\alpha_v})$ sunt cele ale lui $F_{*r}$, deci (din cele anterioare) și ale lui $F^*_{2d-r}$, i.e. exact ce ni se cerea. Iar faptul că $\alpha_{0,1}=1$ și $\alpha_{2d,1}=q^d$ rezultă din modul cum acționează operatorii Frobenius pe $H^0$, respectiv pe $H^{2d}$.
+
+În acest moment, tot ce ne rămâne este să demonstrăm ipoteza lui Riemann.
+
+
 
 
 
