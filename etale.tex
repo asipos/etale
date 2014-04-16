@@ -15,7 +15,6 @@
 \usepackage{url}
 \usepackage[nottoc]{tocbibind}
 \usepackage[raggedright]{titlesec}
-\usepackage{young}
 \setmainfont{URW Palladio L}
 \setcounter{secnumdepth}{-1}
 \setcounter{chapter}{0}
@@ -105,10 +104,6 @@ Acest text își propune să:
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-Pîs pîs pîs
-
-\section{Morfisme étale}
-
 \begin{defi}
 Un morfism de inele $A \rightarrow B$ se numește {\bf plat} dacă functorul $B \otimes_A \cdot :  A\textnormal{-Mod} \rightarrow B\textnormal{-Mod}$ este exact.
 \end{defi}
@@ -150,21 +145,19 @@ $$\mathcal{O}_{X, \bar{x}} = \varinjlim_{(U,u)} \Gamma(U,\mathcal{O}_U)$$
 Dat fiind că orice vecinătate Zariski, fiind imersie deschisă, este étală, din proprietatea limitei inductive avem un morfism natural
 $$\mathcal{O}_{X, x} \rightarrow \mathcal{O}_{X, \bar{x}}$$
 
-\section{}
-
 \chapter{De la étale la $\ell$-adic}
 
 \chapter{Numărarea punctelor}
 
-Problema pe care urmează să o formulăm a pornit de la cea a numărării punctelor de pe o curbă eliptică. Ne este cunoscută din studiul acelor curbe inegalitatea Hasse-Weil, care spune că pentru orice curbă eliptică $X$ definită peste un corp finit $\mathbb{F}_q$, dacă notăm $N_m(X)=\#X(\mathbb{F}_{q^m})$, are loc relația:
+Problema pe care urmează să o formulăm a pornit de la cea a aflării numărului de puncte de pe o curbă eliptică, în momentul când extindem corpul de bază. Ne este cunoscută din studiul acelor curbe inegalitatea Hasse-Weil, care spune că pentru orice curbă eliptică $X$ definită peste un corp finit $\mathbb{F}_q$, dacă notăm $N_m(X)=\#X(\mathbb{F}_{q^m})$, are loc relația:
 $$|N_m(X) - (q^m+1)| \leq 2\sqrt{q^m}$$
 
 Mai precis, există două numere algebrice $\alpha_1,\alpha_2$ de modul $\sqrt{q}$ astfel încât pentru orice $m$:
 $$N_m(X) = 1 - \alpha_1^m - \alpha_2^m + q^m$$
 
 André Weil a propus următoarea generalizare:
-\begin{teo}
-(Conjecturile Weil) Fie $X$ o varietate proiectivă netedă definită peste $\mathbb{F}_q$ de dimensiune $d$. Atunci:
+\begin{conj}
+(Weil) Fie $X$ o varietate proiectivă netedă definită peste $\mathbb{F}_q$ de dimensiune $d$. Atunci:
 \begin{enumerate}
 \item există $2d$ numere naturale $b_0,...,b_{2d}$ și o familie de numere complexe $\{a_{j,u}\}_{j\in\overline{0,2d}\atop s\in\overline{1,b_j}}$ astfel încât pentru orice $m$ am:
 $$N_m(X)=\sum\limits_{j=0}^{2d} (-1)^j (\sum\limits_{u=1}^{b_j} \alpha_{j,u}^m)$$
@@ -172,7 +165,7 @@ Mai mult, $b_0=b_{2d}=1, \alpha_{0,1}=1, \alpha_{2d,1}=q^d$. Numărul $\sum\limi
 \item pentru orice $j$, $b_j$ este egal cu $b_{2d-j}$, iar $(\frac{q^d}{\alpha_{2d-j,1}},...,\frac{q^d}{\alpha_{2d-j,b_j}})$ e o permutare a enumerării $(\alpha_{j,1},...,\alpha_{j,b_j})$.
 \item pentru orice $j,u$, avem că $\alpha_{j,u}$ e număr algebric de modul $q^{\frac{j}{2}}$.
 \end{enumerate}
-\end{teo}
+\end{conj}
 
 Se observă că dacă X este curbă eliptică se reconstituie relația de mai devreme, cu $b_1=2=dim\ H^1(\mathbb{C}/\Lambda, \mathbb{Q})$ (pentru $\Lambda$ o latice în planul complex).
 
@@ -184,7 +177,7 @@ scrisă eventual
 $$\frac{1}{1-x}=exp(\sum\limits_{m=1}^{\infty} \frac{x^m}{m})$$
 ce se poate verifica via expansiune în serie Taylor în jurul lui zero.
 
-Definind $Z_X(t) = exp(\sum\limits_{m=1}^{\infty} N_m \frac{t^m}{m})$ (fixând pe $X$), obținem din punctul 1 al conjecturilor:
+Definind $Z_X(t) = exp(\sum\limits_{m=1}^{\infty} N_m(X) \frac{t^m}{m})$, obținem din punctul 1 al conjecturilor:
 \begin{align*}
 Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} \sum\limits_{j=0}^{2d} (-1)^j \sum\limits_{u=1}^{b_j} \alpha_{j,u}^m \frac{t^m}{m})\\
 &=\prod\limits_{j=0}^{2d} (\prod_{u=1}^{b_j} exp(\sum\limits_{m=1}^{\infty} \frac{(a_{j,u} t)^m}{m}))^{(-1)^j}\\
@@ -231,11 +224,11 @@ N_m(x) = \left\{
    \right.
 \end{align*}
 avem din cele cunoscute de la teoria schemelor:
-$$N_m=\sum\limits_x N_m(x)$$
+$$N_m(X)=\sum\limits_x N_m(x)$$
 
 Obținem rescrierile:
 \begin{align*}
-Z_X(t)&=exp(\sum_{m\geq 1} N_m \frac{t^m}{m}) = exp(\sum_{m\geq 1} \sum\limits_x N_m(x) \frac{t^m}{m})\\
+Z_X(t)&=exp(\sum_{m\geq 1} N_m(X) \frac{t^m}{m}) = exp(\sum_{m\geq 1} \sum\limits_x N_m(x) \frac{t^m}{m})\\
 &=exp(\sum_x \sum_{m \geq 1 \atop deg(x) | m} N_m(x) \frac{t^m}{m})\\
 &=exp(\sum_x \sum_{n \geq 1} deg(x) \frac{t^{n\cdot deg(x)}}{n \cdot deg(x)})\\
 &=exp(\sum_x \sum_{n\geq 1} \frac{(t^{deg(x)})^n}{n})=exp(\sum_x log \frac{1}{1-t^{deg(x)}})\\
@@ -280,18 +273,18 @@ Ca urmare diferențiala lui $F$ în $P$ este zero, ca urmare graficul lui Froben
 \end{proof}
 
 Aplicând formula de punct fix a lui Lefschetz, rezultă (pentru $(\ell,q)=1$):
-$$N_m = \sum\limits_r (-1)^r Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)})$$
+$$N_m(X) = \sum\limits_r (-1)^r Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)})$$
 
 Putem folosi formula pentru a prelucra funcția $Z$ a lui $X$:
 \begin{align*}
-Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} N_m \frac{t^m}{m})\\
+Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} N_m(X) \frac{t^m}{m})\\
 &=exp(\sum\limits_{m=1}^{\infty} (\sum\limits_{r=0}^{2d} (-1)^r Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)}) \frac{t^m}{m})\\
 &=\prod\limits_{r=0}^{2d}exp(\sum\limits_{m=1}^{\infty}Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)})  \frac{t^m}{m}) ^ { (-1)^r }
 \end{align*}
 
 Scriem acum fiecare $F_{| H^r(X,\mathbb{Q}_\ell)}$ ca matrice pătratică superior triunghiulară (eventual peste o extindere a lui $\mathbb{F}_q$) cu numărul de linii egal cu $b_r=dim\ H^r(X,\mathbb{Q}_\ell)$. Se observă atunci că dacă elementele de pe diagonală (valorile proprii) sunt $\alpha_{r,1},...,\alpha_{r,b_r}$, atunci $Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)})$ va fi egal cu $\sum\limits_{i=1}^{b_r} \alpha_{r,i}^m$ și deci pot aplica exact același raționament ca mai devreme pentru a exprima rațional pe $Z_X$.
 
-Vom avea $Z_X \in \mathbb{Q}_\ell(t) \cap \mathbb{Q}[[t]] \subseteq \mathbb{Q}(t)$, însă aceasta nu ne garantează că fiecare $P_j$ este în $\mathbb{Q}[t]$ (că este „independent de $\ell$”) - aceasta se poate face doar presupunând ipoteza lui Riemann, care ne permite, după cum am spus și mai devreme, să separăm $P_j$-urile după modulul rădăcinilor.
+Vom avea $Z_X \in \mathbb{Q}_\ell(t) \cap \mathbb{Q}[[t]] \subseteq \mathbb{Q}(t)$, însă aceasta nu ne garantează că fiecare $P_j$ este în $\mathbb{Q}[t]$ (altfel spus, că este „independent de $\ell$”) - aceasta se poate face doar presupunând ipoteza lui Riemann, care ne permite, după cum am spus și mai devreme, să separăm $P_j$-urile după modulul rădăcinilor.
 
 Altă consecință a raționamentului precedent a fost că am identificat $\alpha_{j,u}$-urile ca fiind valorile proprii ale operatorilor induși de Frobenius pe spațiile de coomologie.
 
@@ -313,6 +306,22 @@ De aici rezultă că dacă $(\alpha_1,...,\alpha_v)$ sunt valorile proprii ale l
 În acest moment, tot ce ne rămâne este să demonstrăm ipoteza lui Riemann.
 
 \chapter{«La conjecture de Weil»}
+
+Mai precis, ce avem de demonstrat este:
+
+\begin{teo}
+(Deligne, 1974) Fie $X$ o varietate proiectivă $d$-dimensională absolut nesingulară și absolut ireductibilă definită peste $\mathbb{F}_q$; $\alpha$ o valoare proprie a lui $F^*_r$; $\tau$ o scufundare a lui $\mathbb{Q}_\ell$ în $\mathbb{C}$.
+
+Atunci $\tau(\alpha)$ (vom subînțelege mai jos $\tau$) este algebric și de modul $q^{\frac{r}{2}}$.
+\end{teo}
+
+În primul rând, se observă că este suficient să demonstrăm pentru varietatea obținută după o schimbare de bază spre o extindere finită a corpului de definiție - să zicem, de grad $m$. Asta deoarece operatorul Frobenius pe varietatea nouă va fi puterea $m$ a celui de pe varietatea veche. Dacă $\alpha$ este valoare proprie pentru Frobenius-ul vechi, $\alpha^m$ este pentru cel nou. Din ipoteza noastră, $\alpha^m$ are modulul $(q^{m})^{\frac{r}{2}}$. Ca urmare, $\alpha$ va avea modulul $q^{\frac{r}{2}}$. Aceasta ne va permite să facem un număr finit de extinderi finite de-a lungul demonstrației, fără a pierde din generalitatea enunțului.
+
+În al doilea rând, se vede că pot demonstra doar pentru spațiile cu rangul cel mult $d$. Aceasta deoarece de la rangul $d+1$ încolo, valorile proprii au simetria implicată de dualitatea Poincaré pe care am văzut-o mai devreme.
+
+În al treilea rând, vom arăta că este suficent să arătăm teorema doar pentru $r=d$. Iată de ce: din teorema lui Bertini, există $Z \subset X$ o secțiune hiperplană netedă (eventual extinzând corpul).  Aplicând teorema slabă Lefschetz, aplicația canonică $H^r(X,\mathbb{Q}_\ell) \rightarrow H^r(Z,\mathbb{Q}_\ell)$ este injectivă pentru $r \leq d - 1$ și pot aplica un raționament prin inducție (pasul de bază fiind varietățile zero-dimensionale, pentru care clar este adevărat, din modul cum acționează Frobenius pe $H^0$).
+
+
 
 
 
