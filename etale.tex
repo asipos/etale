@@ -312,14 +312,32 @@ Mai precis, ce avem de demonstrat este:
 \begin{teo}
 (Deligne, 1974) Fie $X$ o varietate proiectivă $d$-dimensională absolut nesingulară și absolut ireductibilă definită peste $\mathbb{F}_q$; $\alpha$ o valoare proprie a lui $F^*_r$; $\tau$ o scufundare a lui $\mathbb{Q}_\ell$ în $\mathbb{C}$.
 
-Atunci $\tau(\alpha)$ (vom subînțelege mai jos $\tau$) este algebric și de modul $q^{\frac{r}{2}}$.
+Atunci $\tau(\alpha)$ (mai departe simbolul $\tau$ va fi subînțeles) este algebric și de modul $q^{\frac{r}{2}}$.
 \end{teo}
 
 În primul rând, se observă că este suficient să demonstrăm pentru varietatea obținută după o schimbare de bază spre o extindere finită a corpului de definiție - să zicem, de grad $m$. Asta deoarece operatorul Frobenius pe varietatea nouă va fi puterea $m$ a celui de pe varietatea veche. Dacă $\alpha$ este valoare proprie pentru Frobenius-ul vechi, $\alpha^m$ este pentru cel nou. Din ipoteza noastră, $\alpha^m$ are modulul $(q^{m})^{\frac{r}{2}}$. Ca urmare, $\alpha$ va avea modulul $q^{\frac{r}{2}}$. Aceasta ne va permite să facem un număr finit de extinderi finite de-a lungul demonstrației, fără a pierde din generalitatea enunțului.
 
 În al doilea rând, se vede că pot demonstra doar pentru spațiile cu rangul cel mult $d$. Aceasta deoarece de la rangul $d+1$ încolo, valorile proprii au simetria implicată de dualitatea Poincaré pe care am văzut-o mai devreme.
 
-În al treilea rând, vom arăta că este suficent să arătăm teorema doar pentru $r=d$. Iată de ce: din teorema lui Bertini, există $Z \subset X$ o secțiune hiperplană netedă (eventual extinzând corpul).  Aplicând teorema slabă Lefschetz, aplicația canonică $H^r(X,\mathbb{Q}_\ell) \rightarrow H^r(Z,\mathbb{Q}_\ell)$ este injectivă pentru $r \leq d - 1$ și pot aplica un raționament prin inducție (pasul de bază fiind varietățile zero-dimensionale, pentru care clar este adevărat, din modul cum acționează Frobenius pe $H^0$).
+În al treilea rând, vom arăta că este suficent să arătăm teorema doar pentru $r=d$. Iată de ce: din teorema lui Bertini, există $Z \subset X$ o secțiune hiperplană netedă (eventual extinzând corpul).  Aplicând teorema Lefschetz slabă, aplicația canonică (ce este compatibilă cu Frobenius) $H^r(X,\mathbb{Q}_\ell) \rightarrow H^r(Z,\mathbb{Q}_\ell)$ este injectivă pentru $r \leq d - 1$ și pot aplica un raționament prin inducție (pasul de bază fiind varietățile zero-dimensionale, pentru care clar este adevărat, din modul cum acționează Frobenius pe $H^0$).
+
+În al patrulea rând, putem să arătăm chiar și numai pentru varietățile de dimensiune pară, iar pentru acelea, doar că valorile proprii $\alpha$ corespunzătoare spațiului de coomologie din mijloc satisfac inegalitatea
+$$q^{\frac{d}{2}-\frac{1}{2}}\leq|\alpha|\leq q^{\frac{d}{2}+\frac{1}{2}}$$
+Presupunând că am arătat așa ceva, vreau să demonstrez teorema pentru o varietate oarecare $X$ și $\alpha$ valoare proprie a lui $F^*_d$. Fie $k$ număr natural. Iau $Y$ ca fiind produsul lui $X$ cu el însuși de $2k$ ori. Conform Künneth, $H^d(X,\mathbb{Q}_\ell)^{\otimes 2k}$ se scufundă în $H^{2kd}(Y,\mathbb{Q}_\ell)$, iar $\alpha^{2k}$ va fi valoare proprie a lui Frobenius aplicat pe spațiul de pe urmă. Ca urmare, va avea loc:
+$$q^{\frac{2kd}{2}-\frac{1}{2}}\leq|\alpha|^{2k}\leq q^{\frac{2kd}{2}+\frac{1}{2}}$$
+Scoțând radical de ordin $2k$, obțin:
+$$q^{\frac{d}{2}-\frac{1}{4k}}\leq|\alpha|\leq q^{\frac{d}{2}+\frac{1}{4k}}$$
+Cum relația are loc pentru $k$ arbitrar, trecându-l la infinit, obțin $|\alpha|=q^{\frac{d}{2}}$.
+
+De acum înainte, prin urmare, $d$ va fi par.
+
+În acest moment, după ce am încheiat reducerile geometrice de mai devreme, putem trece la miezul problemei și să introducem tehnica numită {\it pencil Lefschetz}.
+
+Luăm o scufundare a lui $X$ într-un $\mathbb{P}^N$ și luăm $L$ un subspațiu liniar proiectiv de codimensiune $2$ ce intersectează transversal pe $X$. Mulțimea hiperplanelor din $\mathbb{P}^N$ ce conțin pe $L$ are ca spațiu de moduli pe $\mathbb{P}^1$ și deci poate fi organizată ca o familie $\{H_d\}_{d\in\mathbb{P}^1}$. Iau apoi mulțimea:
+$$\widetilde{X}=\{(x,d)\in X \times \mathbb{P}^1 \mid x \in H_d\}$$
+ce are structură de varietate algebrică, anume {\it eclatarea lui $X$ în $L\cap X$} (este netedă, din faptul că $L$ intersectează transversal pe $X$). Ea este înzestrată cu două aplicații canonice:
+$$X \leftarrow \widetilde{X} \xrightarrow{f} \mathbb{P}^1$$
+iar din teoria eclatării, aplicația $H^d(X,\mathbb{Q}_\ell) \rightarrow H^d(\widetilde{X},\mathbb{Q}_\ell)$ este injectivă. Putem trece deci de la $X$ la $\widetilde{X}$ fără probleme.
 
 
 
