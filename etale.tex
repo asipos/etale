@@ -10,6 +10,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{listings}
+\usepackage{enumerate}
 \usepackage[margin=1.1in]{geometry}
 \usepackage[linktoc=none]{hyperref}
 \usepackage{url}
@@ -103,47 +104,6 @@ Acest text își propune să:
 \chapter{Situl étale}
 \pagenumbering{arabic}
 \setcounter{page}{1}
-
-\begin{defi}
-Un morfism de inele $A \rightarrow B$ se numește {\bf plat} dacă functorul $B \otimes_A \cdot :  A\textnormal{-Mod} \rightarrow B\textnormal{-Mod}$ este exact.
-\end{defi}
-
-\begin{defi}
-Un morfism de varietăți (sau scheme) $\phi: Y \rightarrow X$ este {\bf plat} dacă morfismele locale $\mathcal{O}_{X,\phi(y)} \rightarrow \mathcal{O}_{Y,y}$ sunt plate pentru orice $y$ din $Y$.
-\end{defi}
-
-\begin{defi}
-Un morfism local de inele locale $f: A \rightarrow B$ se numește {\bf neramificat} dacă $A/\mathfrak{m}_A \hookrightarrow B/f(\mathfrak{m}_A)B$ este o extindere finită și separabilă.
-\end{defi}
-
-%definiția morfismului de tip finit între varietăți
-
-\begin{defi}
-Un morfism de varietăți (sau scheme) $\phi: Y \rightarrow X$ este {\bf neramificat} dacă este de tip finit și morfismele locale $\mathcal{O}_{X,\phi(y)} \rightarrow \mathcal{O}_{Y,y}$ sunt neramificate pentru orice $y$ din $Y$.
-\end{defi}
-
-\begin{defi}
-Un morfism (regulat) între două varietăți este {\bf étale} dacă este plat și neramificat.
-\end{defi}
-
-Morfismele étale au următoarele proprietăți:
-
-\begin{prop}
-\begin{enumerate}
-\item Orice imersie deschisă este étală.
-\item Compunerea a două morfisme étale este étală.
-\item Un morfism care este schimbare de bază a unui morfism étale este étale.
-\item Dacă $\phi \circ \psi$ și $\phi$ sunt étale, atunci și $\psi$ este étale.
-\end{enumerate}
-\end{prop}
-
-De acum încolo vom lucra cu o varietate $X$ peste un corp algebric închis $k$.
-
-O vecinătate étală a unui punct $x$ din $X$ este o aplicație étală $\phi: U \rightarrow X$ împreună cu un punct $u \in U$ cu $\phi(u)=x$. Un morfism de vecinătăți étale $(V,v) \rightarrow (U,u)$ este o aplicație regulată de la $V$ la $U$ care duce pe $v$ în $u$ (dacă există, este unică, din anumite proprietăți ale morfismelor étale). Am obținut astfel o categorie index și putem defini {\bf inelul local în $x$ pentru topologia étală} ca fiind:
-$$\mathcal{O}_{X, \bar{x}} = \varinjlim_{(U,u)} \Gamma(U,\mathcal{O}_U)$$
-
-Dat fiind că orice vecinătate Zariski, fiind imersie deschisă, este étală, din proprietatea limitei inductive avem un morfism natural
-$$\mathcal{O}_{X, x} \rightarrow \mathcal{O}_{X, \bar{x}}$$
 
 \chapter{De la étale la $\ell$-adic}
 
@@ -240,7 +200,7 @@ Ultima formulă are sens pentru o schemă oarecare, nu neapărat peste un corp f
 $$\zeta_{\text{Spec }\mathbb{Z}}(s)=\prod_{\mathfrak{p} \in \text{Max }\mathbb{Z}} \frac{1}{1-(\#(\frac{\mathbb{Z}}{\mathfrak{p}}))^{-s}} = \prod_{p\text{ prim}} \frac{1}{1-p^{-s}}$$
 binecunoscuta funcție zeta a lui Riemann (punctele închise din $\text{Spec }\mathbb{Z}$ sunt precis idealele maximale ale lui $\mathbb{Z}$), ceea ce ne justifică notația.
 
-Atenție, însă: funcția $Z_X$ nu are sens decât pentru scheme definite pentru un corp finit!
+Atenție, însă: funcția $Z_X$ nu are sens decât pentru scheme definite peste un corp finit!
 
 Este clar că $s\in\mathbb{C}$ este zerou, respectiv pol, pentru $\zeta_X$ dacă și numai dacă $q^{-s}$ va avea aceeași calitate pentru $Z_X$ (și orice $t \in \mathbb{C}^*$ se poate scrie ca $q^{-s}$, e drept, într-o infinitate de moduri). Iau un astfel de $s$. Din exprimarea rațională a lui $Z_X$ rezultă că $q^{-s}=\frac{1}{\alpha_{j,u}}$ pentru anumite $j$ și $u$, iar ultima afirmație din conjecturi implică $|q^{-s}|=q^{-\frac{j}{2}}$. Scriu $s=a+bi$, cu $a,b\in\mathbb{R}$, și am $q^{-s}=e^{-s\ ln q} = e^{-a\ ln q- bi\ ln q}$. Deci $q^{-\frac{j}{2}}=|e^{-a\ ln q- bi\ ln q}|=q^{-a}$ și $\frac{j}{2}=a=\mathbb{R}e\ s$.
 
@@ -333,11 +293,58 @@ De acum înainte, prin urmare, $d$ va fi par.
 
 În acest moment, după ce am încheiat reducerile geometrice de mai devreme, putem trece la miezul problemei și să introducem tehnica numită {\it pencil Lefschetz}.
 
-Luăm o scufundare a lui $X$ într-un $\mathbb{P}^N$ și luăm $L$ un subspațiu liniar proiectiv de codimensiune $2$ ce intersectează transversal pe $X$. Mulțimea hiperplanelor din $\mathbb{P}^N$ ce conțin pe $L$ are ca spațiu de moduli pe $\mathbb{P}^1$ și deci poate fi organizată ca o familie $\{H_d\}_{d\in\mathbb{P}^1}$. Iau apoi mulțimea:
+Alegem o scufundare a lui $X$ într-un $\mathbb{P}^N$ și luăm $L$ un subspațiu liniar proiectiv de codimensiune $2$ ce intersectează transversal pe $X$. Mulțimea hiperplanelor din $\mathbb{P}^N$ ce conțin pe $L$ are ca spațiu de moduli pe $\mathbb{P}^1$ și deci poate fi organizată ca o familie $\{H_d\}_{d\in\mathbb{P}^1}$. Iau apoi mulțimea:
 $$\widetilde{X}=\{(x,d)\in X \times \mathbb{P}^1 \mid x \in H_d\}$$
-ce are structură de varietate algebrică, anume {\it eclatarea lui $X$ în $L\cap X$} (este netedă, din faptul că $L$ intersectează transversal pe $X$). Ea este înzestrată cu două aplicații canonice:
+ce are structură de varietate algebrică, anume este {\it eclatarea lui $X$ în $L\cap X$} (este netedă, din faptul că $L$ intersectează transversal pe $X$). Ea este înzestrată cu două aplicații canonice:
 $$X \leftarrow \widetilde{X} \xrightarrow{f} \mathbb{P}^1$$
 iar din teoria eclatării, aplicația $H^d(X,\mathbb{Q}_\ell) \rightarrow H^d(\widetilde{X},\mathbb{Q}_\ell)$ este injectivă. Putem trece deci de la $X$ la $\widetilde{X}$ fără probleme.
+
+Ceea ce caracterizează $\widetilde{X}$ este că este înzestrat cu aplicația $f : \widetilde{X} \rightarrow \mathbb{P}^1$. Ea se numește {\bf pencil Lefschetz} dacă numai un număr finit de fibre $f^{-1}(d)$, pentru $d$ din $\mathbb{P}^1$ (fibre pe care le vom nota cu $\widetilde{X}_d$) sunt singulare, iar acelea care sunt au drept singularități numai câte un punct dublu ordinare. Presupun că fac o extindere a corpului astfel încât toate aceste singularități să fie definite de ecuații peste corpul nou.
+
+Toată această construcție depinde de alegerea scufundării și a $L$-ului. Însă există un rezultat ce ne spune că există măcar o scufundare și un $L$ corespunzător astfel încât $f$-ul rezultant să fie pencil Lefschetz (dacă lucram în caracteristică $0$ exista un $L$ în fiece scufundare).
+
+Notăm cu $U$ mulțimea $d$-urilor din $\mathbb{P}^1$ pentru care fibra e netedă, cu $S$ complementara lui $U$ și cu $j$ aplicația de incluziune a lui $U$ în $\mathbb{P}^1$.
+
+Ne vom folosit în continuare de șirul spectral Leray, ale cărui aplicații sunt compatibile cu operatorii Frobenius:
+$$E_2^{p,q}=H^p(\mathbb{P}^1,R^q f_* \mathbb{Q}_\ell) \Rightarrow H^{p+q}(\widetilde{X},\mathbb{Q}_\ell)$$
+Deci $H^d(\widetilde{X},\mathbb{Q}_\ell)$ admite o filtrare cu spațiile cât $\{E_\infty^{p.q}\}_{p+q=d}$, care la rândul lor sunt subcâturi ale $E_2^{p,q}$-uri, ca urmare e suficient să arăt pentru spațiile din stânga. Dintr-o teoremă de anulare, acestea sunt nenule doar pentru $p$ între $0$ și $2$.
+
+Notez $d-1$ cu $n$ (număr impar). Astfel ne-am redus la a considera următoarele spații:
+$$H^0(\mathbb{P}^1,R^{n+1} f_* \mathbb{Q}_\ell);\ H^2(\mathbb{P}^1,R^{n-1} f_* \mathbb{Q}_\ell);\ H^1(\mathbb{P}^1,R^n f_* \mathbb{Q}_\ell)$$
+Ne va fi de folos următorul rezultat:
+
+\begin{teo}
+(a ciclilor evanescenți) Fie $u$ din $U$. Există $E$ subspațiu vectorial al lui $H^n(\widetilde{X}_u,\mathbb{Q}_\ell)$ (spațiul ciclilor evanescenți) astfel încât:
+\begin{enumerate}[I.]
+\item Când $E=0$:
+\begin{enumerate}[1.]
+\item Fasciculul $R^i f_* \mathbb{Q}_\ell$ este constant pentru $i\neq n+1$.
+\item Există un șir exact de fascicule pe $\mathbb{P}^1$:
+$$0 \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s \rightarrow R^{n+1}f_*\mathbb{Q}_\ell \rightarrow \underline{H^{n+1}(\widetilde{X}_u,\mathbb{Q}_\ell)} \rightarrow 0$$
+\end{enumerate}
+
+\item Când $E\neq 0$ (ceea ce se întâmplă mai frecvent):
+\begin{enumerate}[1.]
+\item Fasciculul $R^i f_* \mathbb{Q}_\ell$ este constant pentru $i\neq n$.
+\item $R^n f_* \mathbb{Q}_\ell = j_* j^* R^n f_* \mathbb{Q}_\ell$.
+\item $E$ este subspațiu stabil la acțiunea lui $\pi_1(U,u)$ iar acțiunea pe spațiul cât este trivială.
+\item Notând cu $E^\perp$ subspațiul $H^n(\widetilde{X}_u,\mathbb{Q}_\ell)^{\pi_1(U,u)}$, avem că acțiunea pe $\frac{E}{E \cap E^\perp}$ este absolut ireductibilă.
+\item Notăm fasciculele constructibile pe U asociate lui $E$ și $E^\perp$ cu $\mathcal{E}$, respectiv $\mathcal{E}^\perp$ (ambele sunt subfascicule ale lui $j^* R^n f_* \mathbb{Q}_\ell$, ce corespunde lui $H^n(\widetilde{X}_u,\mathbb{Q}_\ell)$).
+\begin{enumerate}[a)]
+\item dacă $E \subseteq E^\perp$, există șirul exact de fascicule pe $\mathbb{P}^1$:
+$$0 \rightarrow j_* \mathcal{E}^\perp \rightarrow R^n f_* \mathbb{Q}_l \rightarrow j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s \rightarrow 0$$
+\item dacă $E \nsubseteq E^\perp$, există următoarele două șiruri exacte scurte de fascicule pe $\mathbb{P}^1$:
+$$0\rightarrow j_*\mathcal{E} \rightarrow R^n f_* \mathbb{Q}_l \rightarrow j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}}) \rightarrow 0$$
+$$0 \rightarrow j_*(\mathcal{E} \cap \mathcal{E}^\perp)  \rightarrow j_*\mathcal{E}  \rightarrow j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})  \rightarrow 0$$
+\end{enumerate}
+\item Produsul cup pe coomologia lui $\widetilde{X}_u$ induce o biliniară simplectică
+$$\psi : \frac{E}{E \cap E^\perp} \times \frac{E}{E \cap E^\perp} \rightarrow \mathbb{Q}_\ell(-n)$$
+care este echivariantă relativ la acțiunea lui $\pi_1(U,u)$, iar aplicația canonică rezultantă:
+$$\pi_1(U,u) \rightarrow Sp(\frac{E}{E \cap E^\perp},\psi)$$
+are imaginea deschisă și densă.
+\end{enumerate}
+\end{enumerate}
+\end{teo}
 
 
 
