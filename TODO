@@ -1,7 +1,7 @@
 - pus cu cum actioneaza Frobeniusul la sf cap 3
 - vazut cu -d si Poincare si cand il punem in stg si cand in dr sa fie totu coerent
 - eventual de scos lema aia din cap 3 ca sa nu break the flow
-- bibliografia
+- bibliografia - milne, lovering, dugger
 - de pus cohom dimension, finiteness assumption la lefschetz
 - teorema weak lefschetz
 - peste tot spatiile de cohom sunt etale - de precizat
@@ -9,3 +9,7 @@
 - kunneth cu siruri spectrale
 - multa poveste cu monodromie cu riemann hilbert si cu vanishing cycles
 - de ce se noteaza cu perpendicular si legatura dintre actiune si pairing
+- de normalizat notatia cu j,s in cap 3
+- de ce pot presupune d-2
+- teorema de schimbare proprie a bazei
+- twistare in milne, vuli si lovering (vezi si gysin care e 4.5 in lovering)

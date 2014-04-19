@@ -1,4 +1,4 @@
-\documentclass[13pt]{book}
+\documentclass[13pt,openany]{book}
 \usepackage[romanian]{babel}
 \usepackage{euler}
 \usepackage{xltxtra}
@@ -84,8 +84,10 @@ Lect. dr. Victor Vuletescu
 \phantom{X}
 \newpage
 
-\pagestyle{headings}
 \tableofcontents
+
+\newpage
+\phantom{X}
 \newpage
 
 \setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
@@ -99,6 +101,11 @@ Acest text își propune să:
 \item aplice aceste rezultate la studiul funcțiilor zeta asociate varietăților peste corpuri finite
 \end{itemize}
 
+\newpage
+\phantom{X}
+\newpage
+
+\pagestyle{headings}
 \setcounter{secnumdepth}{2}
 
 \chapter{Situl étale}
@@ -109,15 +116,15 @@ Acest text își propune să:
 
 \chapter{Numărarea punctelor}
 
-Problema pe care urmează să o formulăm a pornit de la cea a aflării numărului de puncte de pe o curbă eliptică, în momentul când extindem corpul de bază. Ne este cunoscută din studiul acelor curbe inegalitatea Hasse-Weil, care spune că pentru orice curbă eliptică $X$ definită peste un corp finit $\mathbb{F}_q$, dacă notăm $N_m(X)=\#X(\mathbb{F}_{q^m})$, are loc relația:
-$$|N_m(X) - (q^m+1)| \leq 2\sqrt{q^m}$$
+Problema pe care urmează să o formulăm a pornit de la cea a studiului modului cum variază numărul de puncte de pe o curbă eliptică, în momentul când extindem corpul de bază. Ne este cunoscută din studiul acelor curbe inegalitatea Hasse-Weil, care spune că pentru orice curbă eliptică $X$ definită peste un corp finit $\mathbb{F}_q$, dacă notăm $N_m(X)=\#X(\mathbb{F}_{q^m})$, are loc relația:
+$$\mid N_m(X) - (q^m+1)\mid\  \leq 2\sqrt{q^m}$$
 
 Mai precis, există două numere algebrice $\alpha_1,\alpha_2$ de modul $\sqrt{q}$ astfel încât pentru orice $m$:
 $$N_m(X) = 1 - \alpha_1^m - \alpha_2^m + q^m$$
 
 André Weil a propus următoarea generalizare:
-\begin{conj}
-(Weil) Fie $X$ o varietate proiectivă netedă definită peste $\mathbb{F}_q$ de dimensiune $d$. Atunci:
+\begin{teo}
+(Conjecturile Weil) Fie $X$ o varietate proiectivă netedă definită peste $\mathbb{F}_q$ de dimensiune $d$. Atunci:
 \begin{enumerate}
 \item există $2d$ numere naturale $b_0,...,b_{2d}$ și o familie de numere complexe $\{a_{j,u}\}_{j\in\overline{0,2d}\atop s\in\overline{1,b_j}}$ astfel încât pentru orice $m$ am:
 $$N_m(X)=\sum\limits_{j=0}^{2d} (-1)^j (\sum\limits_{u=1}^{b_j} \alpha_{j,u}^m)$$
@@ -125,7 +132,7 @@ Mai mult, $b_0=b_{2d}=1, \alpha_{0,1}=1, \alpha_{2d,1}=q^d$. Numărul $\sum\limi
 \item pentru orice $j$, $b_j$ este egal cu $b_{2d-j}$, iar $(\frac{q^d}{\alpha_{2d-j,1}},...,\frac{q^d}{\alpha_{2d-j,b_j}})$ e o permutare a enumerării $(\alpha_{j,1},...,\alpha_{j,b_j})$.
 \item pentru orice $j,u$, avem că $\alpha_{j,u}$ e număr algebric de modul $q^{\frac{j}{2}}$.
 \end{enumerate}
-\end{conj}
+\end{teo}
 
 Se observă că dacă X este curbă eliptică se reconstituie relația de mai devreme, cu $b_1=2=dim\ H^1(\mathbb{C}/\Lambda, \mathbb{Q})$ (pentru $\Lambda$ o latice în planul complex).
 
@@ -178,7 +185,7 @@ Notând pentru un punct închis $x \in X$ cu $\kappa(x)$ corpul rezidual al său
 \begin{align*}
 N_m(x) = \left\{
      \begin{array}{lr}
-       deg(x) & \text{dacă } deg(x)\ |\ m\\
+       deg(x) & \text{dacă } deg(x)\ \mid \ m\\
        0 & \text{altfel}
      \end{array}
    \right.
@@ -189,7 +196,7 @@ $$N_m(X)=\sum\limits_x N_m(x)$$
 Obținem rescrierile:
 \begin{align*}
 Z_X(t)&=exp(\sum_{m\geq 1} N_m(X) \frac{t^m}{m}) = exp(\sum_{m\geq 1} \sum\limits_x N_m(x) \frac{t^m}{m})\\
-&=exp(\sum_x \sum_{m \geq 1 \atop deg(x) | m} N_m(x) \frac{t^m}{m})\\
+&=exp(\sum_x \sum_{m \geq 1 \atop deg(x) \mid  m} N_m(x) \frac{t^m}{m})\\
 &=exp(\sum_x \sum_{n \geq 1} deg(x) \frac{t^{n\cdot deg(x)}}{n \cdot deg(x)})\\
 &=exp(\sum_x \sum_{n\geq 1} \frac{(t^{deg(x)})^n}{n})=exp(\sum_x log \frac{1}{1-t^{deg(x)}})\\
 &=exp\ log \prod_x \frac{1}{1-t^{deg(x)}} = \prod_x \frac{1}{1-t^{deg(x)}}
@@ -202,9 +209,9 @@ binecunoscuta funcție zeta a lui Riemann (punctele închise din $\text{Spec }\m
 
 Atenție, însă: funcția $Z_X$ nu are sens decât pentru scheme definite peste un corp finit!
 
-Este clar că $s\in\mathbb{C}$ este zerou, respectiv pol, pentru $\zeta_X$ dacă și numai dacă $q^{-s}$ va avea aceeași calitate pentru $Z_X$ (și orice $t \in \mathbb{C}^*$ se poate scrie ca $q^{-s}$, e drept, într-o infinitate de moduri). Iau un astfel de $s$. Din exprimarea rațională a lui $Z_X$ rezultă că $q^{-s}=\frac{1}{\alpha_{j,u}}$ pentru anumite $j$ și $u$, iar ultima afirmație din conjecturi implică $|q^{-s}|=q^{-\frac{j}{2}}$. Scriu $s=a+bi$, cu $a,b\in\mathbb{R}$, și am $q^{-s}=e^{-s\ ln q} = e^{-a\ ln q- bi\ ln q}$. Deci $q^{-\frac{j}{2}}=|e^{-a\ ln q- bi\ ln q}|=q^{-a}$ și $\frac{j}{2}=a=\mathbb{R}e\ s$.
+Este clar că $s\in\mathbb{C}$ este zerou, respectiv pol, pentru $\zeta_X$ dacă și numai dacă $q^{-s}$ va avea aceeași calitate pentru $Z_X$ (și orice $t \in \mathbb{C}^*$ se poate scrie ca $q^{-s}$, e drept, într-o infinitate de moduri). Iau un astfel de $s$. Din exprimarea rațională a lui $Z_X$ rezultă că $q^{-s}=\frac{1}{\alpha_{j,u}}$ pentru anumite $j$ și $u$, iar ultima afirmație din conjecturi implică $\mid q^{-s}\mid =q^{-\frac{j}{2}}$. Scriu $s=a+bi$, cu $a,b\in\mathbb{R}$, și am $q^{-s}=e^{-s\ ln q} = e^{-a\ ln q- bi\ ln q}$. Deci $q^{-\frac{j}{2}}=\mid e^{-a\ ln q- bi\ ln q}\mid =q^{-a}$ și $\frac{j}{2}=a=\mathbb{R}e\ s$.
 
-Invers, acum, dacă fac presupunerea că orice $s$ zerou sau pol al lui $\zeta_X$ are proprietatea că $\mathbb{R}e\ s=\frac{j}{2}$ (cu $j\in\overline{0,2d}$), pot face următorul raționament. Iau $t \in \mathbb{C}^*$ zerou sau pol pentru $Z_X$ și fie $s$ cu $t=q^{-s}$. Atunci $s$ este zerou/pol pentru $\zeta_X$ și $\mathbb{R}e\ s=\frac{j}{2}$. Ca înainte, avem $|t|=|q^{-s}|=q^{-\mathbb{R}e\ s}=q^{-\frac{j}{2}}$. Deci zerourile și polii lui $Z_X$ au modulul $q^{-\frac{j}{2}}$.
+Invers, acum, dacă fac presupunerea că orice $s$ zerou sau pol al lui $\zeta_X$ are proprietatea că $\mathbb{R}e\ s=\frac{j}{2}$ (cu $j\in\overline{0,2d}$), pot face următorul raționament. Iau $t \in \mathbb{C}^*$ zerou sau pol pentru $Z_X$ și fie $s$ cu $t=q^{-s}$. Atunci $s$ este zerou/pol pentru $\zeta_X$ și $\mathbb{R}e\ s=\frac{j}{2}$. Ca înainte, avem $\mid t\mid =\mid q^{-s}\mid =q^{-\mathbb{R}e\ s}=q^{-\frac{j}{2}}$. Deci zerourile și polii lui $Z_X$ au modulul $q^{-\frac{j}{2}}$.
 
 Rezultă că acea condiție 3 este echivalentă cu faptul că funcția zeta a varietății are zerourile și polii pe liniile $\mathbb{R}e\ s=\frac{j}{2}$, ceea ce justifică numele dat condiției de {\bf ipoteză Riemann}.
 
@@ -233,16 +240,16 @@ Ca urmare diferențiala lui $F$ în $P$ este zero, ca urmare graficul lui Froben
 \end{proof}
 
 Aplicând formula de punct fix a lui Lefschetz, rezultă (pentru $(\ell,q)=1$):
-$$N_m(X) = \sum\limits_r (-1)^r Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)})$$
+$$N_m(X) = \sum\limits_r (-1)^r Tr(F^m_{\mid  H^r(X,\mathbb{Q}_\ell)})$$
 
 Putem folosi formula pentru a prelucra funcția $Z$ a lui $X$:
 \begin{align*}
 Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} N_m(X) \frac{t^m}{m})\\
-&=exp(\sum\limits_{m=1}^{\infty} (\sum\limits_{r=0}^{2d} (-1)^r Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)}) \frac{t^m}{m})\\
-&=\prod\limits_{r=0}^{2d}exp(\sum\limits_{m=1}^{\infty}Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)})  \frac{t^m}{m}) ^ { (-1)^r }
+&=exp(\sum\limits_{m=1}^{\infty} (\sum\limits_{r=0}^{2d} (-1)^r Tr(F^m_{\mid  H^r(X,\mathbb{Q}_\ell)}) \frac{t^m}{m})\\
+&=\prod\limits_{r=0}^{2d}exp(\sum\limits_{m=1}^{\infty}Tr(F^m_{\mid  H^r(X,\mathbb{Q}_\ell)})  \frac{t^m}{m}) ^ { (-1)^r }
 \end{align*}
 
-Scriem acum fiecare $F_{| H^r(X,\mathbb{Q}_\ell)}$ ca matrice pătratică superior triunghiulară (eventual peste o extindere a lui $\mathbb{F}_q$) cu numărul de linii egal cu $b_r=dim\ H^r(X,\mathbb{Q}_\ell)$. Se observă atunci că dacă elementele de pe diagonală (valorile proprii) sunt $\alpha_{r,1},...,\alpha_{r,b_r}$, atunci $Tr(F^m_{| H^r(X,\mathbb{Q}_\ell)})$ va fi egal cu $\sum\limits_{i=1}^{b_r} \alpha_{r,i}^m$ și deci pot aplica exact același raționament ca mai devreme pentru a exprima rațional pe $Z_X$.
+Scriem acum fiecare $F_{\mid  H^r(X,\mathbb{Q}_\ell)}$ ca matrice pătratică superior triunghiulară (eventual peste o extindere a lui $\mathbb{F}_q$) cu numărul de linii egal cu $b_r=dim\ H^r(X,\mathbb{Q}_\ell)$. Se observă atunci că dacă elementele de pe diagonală (valorile proprii) sunt $\alpha_{r,1},...,\alpha_{r,b_r}$, atunci $Tr(F^m_{\mid  H^r(X,\mathbb{Q}_\ell)})$ va fi egal cu $\sum\limits_{i=1}^{b_r} \alpha_{r,i}^m$ și deci pot aplica exact același raționament ca mai devreme pentru a exprima rațional pe $Z_X$.
 
 Vom avea $Z_X \in \mathbb{Q}_\ell(t) \cap \mathbb{Q}[[t]] \subseteq \mathbb{Q}(t)$, însă aceasta nu ne garantează că fiecare $P_j$ este în $\mathbb{Q}[t]$ (altfel spus, că este „independent de $\ell$”) - aceasta se poate face doar presupunând ipoteza lui Riemann, care ne permite, după cum am spus și mai devreme, să separăm $P_j$-urile după modulul rădăcinilor.
 
@@ -256,7 +263,7 @@ Avem biliniara nedegenerată dată de dualitatea Poincaré:
 $$\langle,\rangle=\eta_X\ \circ \smile\ : H^{2d-r}(X,\mathbb{Q}_\ell) \times H^{r}(X,\mathbb{Q}_\ell) \rightarrow H^{2d}(X,\mathbb{Q}_\ell) \simeq \mathbb{Q}_\ell(-d)$$
 ce din start ne indică $b_r=b_{2d-r}$.
 
-Știm că $F^*_r=F_{| H^r(X,\mathbb{Q}_\ell)}$ are adjunct relativ la $\langle,\rangle$:
+Știm că $F^*_r=F_{\mid  H^r(X,\mathbb{Q}_\ell)}$ are adjunct relativ la $\langle,\rangle$:
 $$\langle F_{*2d-r}(x),x'\rangle=\langle x,F^*_r(x')\rangle, \forall\ x \in H^{2d-r}(X,\mathbb{Q}_\ell), x' \in H^{r}(X,\mathbb{Q}_\ell)$$
 
 Din considerente de algebră liniară rezultă că valorile proprii ale lui $F^*_r$ coincid cu ale lui $F_{*2d-r}$. Însă $F_{*r} \circ F^*_r = q^d (=deg\ F)$.
@@ -282,12 +289,12 @@ Atunci $\tau(\alpha)$ (mai departe simbolul $\tau$ va fi subînțeles) este alge
 În al treilea rând, vom arăta că este suficent să arătăm teorema doar pentru $r=d$. Iată de ce: din teorema lui Bertini, există $Z \subset X$ o secțiune hiperplană netedă (eventual extinzând corpul).  Aplicând teorema Lefschetz slabă, aplicația canonică (ce este compatibilă cu Frobenius) $H^r(X,\mathbb{Q}_\ell) \rightarrow H^r(Z,\mathbb{Q}_\ell)$ este injectivă pentru $r \leq d - 1$ și pot aplica un raționament prin inducție (pasul de bază fiind varietățile zero-dimensionale, pentru care clar este adevărat, din modul cum acționează Frobenius pe $H^0$).
 
 În al patrulea rând, putem să arătăm chiar și numai pentru varietățile de dimensiune pară, iar pentru acelea, doar că valorile proprii $\alpha$ corespunzătoare spațiului de coomologie din mijloc satisfac inegalitatea
-$$q^{\frac{d}{2}-\frac{1}{2}}\leq|\alpha|\leq q^{\frac{d}{2}+\frac{1}{2}}$$
+$$q^{\frac{d}{2}-\frac{1}{2}}\leq\mid \alpha\mid \leq q^{\frac{d}{2}+\frac{1}{2}}$$
 Presupunând că am arătat așa ceva, vreau să demonstrez teorema pentru o varietate oarecare $X$ și $\alpha$ valoare proprie a lui $F^*_d$. Fie $k$ număr natural. Iau $Y$ ca fiind produsul lui $X$ cu el însuși de $2k$ ori. Conform Künneth, $H^d(X,\mathbb{Q}_\ell)^{\otimes 2k}$ se scufundă în $H^{2kd}(Y,\mathbb{Q}_\ell)$, iar $\alpha^{2k}$ va fi valoare proprie a lui Frobenius aplicat pe spațiul de pe urmă. Ca urmare, va avea loc:
-$$q^{\frac{2kd}{2}-\frac{1}{2}}\leq|\alpha|^{2k}\leq q^{\frac{2kd}{2}+\frac{1}{2}}$$
+$$q^{\frac{2kd}{2}-\frac{1}{2}}\leq\mid \alpha\mid ^{2k}\leq q^{\frac{2kd}{2}+\frac{1}{2}}$$
 Scoțând radical de ordin $2k$, obțin:
-$$q^{\frac{d}{2}-\frac{1}{4k}}\leq|\alpha|\leq q^{\frac{d}{2}+\frac{1}{4k}}$$
-Cum relația are loc pentru $k$ arbitrar, trecându-l la infinit, obțin $|\alpha|=q^{\frac{d}{2}}$.
+$$q^{\frac{d}{2}-\frac{1}{4k}}\leq\mid \alpha\mid \leq q^{\frac{d}{2}+\frac{1}{4k}}$$
+Cum relația are loc pentru $k$ arbitrar, trecându-l la infinit, obțin $\mid \alpha\mid =q^{\frac{d}{2}}$.
 
 De acum înainte, prin urmare, $d$ va fi par.
 
@@ -310,7 +317,7 @@ $$E_2^{p,q}=H^p(\mathbb{P}^1,R^q f_* \mathbb{Q}_\ell) \Rightarrow H^{p+q}(\widet
 Deci $H^d(\widetilde{X},\mathbb{Q}_\ell)$ admite o filtrare cu spațiile cât $\{E_\infty^{p.q}\}_{p+q=d}$, care la rândul lor sunt subcâturi ale $E_2^{p,q}$-uri, ca urmare e suficient să arăt pentru spațiile din stânga. Dintr-o teoremă de anulare, acestea sunt nenule doar pentru $p$ între $0$ și $2$.
 
 Notez $d-1$ cu $n$ (număr impar). Astfel ne-am redus la a considera următoarele spații:
-$$H^0(\mathbb{P}^1,R^{n+1} f_* \mathbb{Q}_\ell);\ H^2(\mathbb{P}^1,R^{n-1} f_* \mathbb{Q}_\ell);\ H^1(\mathbb{P}^1,R^n f_* \mathbb{Q}_\ell)$$
+$$H^2(\mathbb{P}^1,R^{n-1} f_* \mathbb{Q}_\ell);\ H^0(\mathbb{P}^1,R^{n+1} f_* \mathbb{Q}_\ell);\ H^1(\mathbb{P}^1,R^n f_* \mathbb{Q}_\ell)$$
 Ne va fi de folos următorul rezultat:
 
 \begin{teo}
@@ -319,7 +326,7 @@ Ne va fi de folos următorul rezultat:
 \item Când $E=0$:
 \begin{enumerate}[1.]
 \item Fasciculul $R^i f_* \mathbb{Q}_\ell$ este constant pentru $i\neq n+1$.
-\item Există un șir exact de fascicule pe $\mathbb{P}^1$:
+\item Există un șir exact scurt de fascicule pe $\mathbb{P}^1$:
 $$0 \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s \rightarrow R^{n+1}f_*\mathbb{Q}_\ell \rightarrow \underline{H^{n+1}(\widetilde{X}_u,\mathbb{Q}_\ell)} \rightarrow 0$$
 \end{enumerate}
 
@@ -345,6 +352,22 @@ are imaginea deschisă și densă.
 \end{enumerate}
 \end{enumerate}
 \end{teo}
+
+Mai departe, pot presupune că există $u_0$ punct al lui $U$ definit peste $\mathbb{F}_q$ astfel încât $\widetilde{X}_{u_0}$ admite o secțiune hiperplană netedă $Z_0$, la rândul ei definită peste $\mathbb{F}_q$ (făcând eventual extinderi), de dimensiune, firește, $d-2$ (fiind tot pară, voi putea aplica un raționament prin inducție mai jos).
+
+Demonstrăm mai întâi aserțiunea despre spațiile $H^2(\mathbb{P}^1,R^{n-1} f_* \mathbb{Q}_\ell)$ și $H^0(\mathbb{P}^1,R^{n+1} f_* \mathbb{Q}_\ell)$.
+
+Dat fiind că fasciculul $R^{n-1} f_* \mathbb{Q}_\ell$ este constant în ambele cazuri, el are fibra $H^{n-1}(\widetilde{X}_u,\mathbb{Q}_\ell)$, din teorema de schimbare proprie a bazei. Deci $H^2(\mathbb{P}^1,R^{n-1} f_* \mathbb{Q}_\ell) = H^2(\mathbb{P}^1,\underline{H^{n-1}(\widetilde{X}_u,\mathbb{Q}_\ell)}) = H^2(\mathbb{P}^1,\mathbb{Q}_\ell) \otimes H^{n-1}(\widetilde{X}_u,\mathbb{Q}_\ell) = \mathbb{Q}_\ell(-1)\otimes H^{n-1}(\widetilde{X}_u,\mathbb{Q}_\ell) = H^{n-1}(\widetilde{X}_u,\mathbb{Q}_\ell)(-1)$. Pentru ultimul modul putem aplica ipoteza de inducție, deoarece se scufundă (din teorema Lefschetz slabă) în $H^{n-1}(Z,\mathbb{Q}_\ell)(-1)$, pentru care aplic ipoteza de inducție.
+
+Pentru $H^0(\mathbb{P}^1,R^{n+1} f_* \mathbb{Q}_\ell)$, în cazul în care $E$ e nenul, argumentul funcționează asemănător cu cel precedent, cu deosebirea că aplicăm surjectivitatea morfismului Gysin, care schimbă și rangul coomologiei de la $n+1$ la $n-1$ pentru $Z$ pentru a putea funcționa inducția. Când $E$ este nul, nu fac decât să trec de la șirul exact scurt din teoremă la șirul exact lung în coomologie și să aplic acolo inducția.
+
+Ne-a rămas $H^1(\mathbb{P}^1,R^n f_* \mathbb{Q}_\ell)$. Când $E$ este nul, $R^{n} f_* \mathbb{Q}_\ell$ este constant și cum $H^1(\mathbb{P}^1,\mathbb{Q}_\ell)=0$, am și $H^1(\mathbb{P}^1,R^n f_* \mathbb{Q}_\ell)=0$ și deci nu am nimic de demonstrat.
+
+Când $E$ este nenul, trec prin $j_*$ incluziunea de fascicule de pe $U$ într-una pe $\mathbb{P}^1$:
+$$0 \subseteq j_*(\mathcal{E} \cap \mathcal{E}^\perp) \subseteq j_*\mathcal{E} \subseteq R^n f_* \mathbb{Q}_\ell$$
+(la ultimul am aplicat punctul 2 din cazul II al teoremei).
+
+Subcazul simplu este $E \subseteq E^\perp$.
 
 
 
