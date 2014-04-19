@@ -1,5 +1,9 @@
 Disertația mea masterală.
 
-1) Se compilează cu XeLaTeX deoarece conține caractere Unicode (diacritice românești și nu numai).
+Se compilează cu XeLaTeX deoarece conține caractere Unicode (diacritice românești și nu numai).
 
-2) FCKGW = notiță ce indică o viitoare modificare.
+*****************************************************
+
+My master's dissertation
+
+It should be compiled with XeLaTeX because it contains Unicode characters (such as Romanian diacritical marks).
