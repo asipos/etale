@@ -339,9 +339,9 @@ $$0 \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s \r
 \item Notăm fasciculele constructibile pe U asociate lui $E$ și $E^\perp$ cu $\mathcal{E}$, respectiv $\mathcal{E}^\perp$ (ambele sunt subfascicule ale lui $j^* R^n f_* \mathbb{Q}_\ell$, ce corespunde lui $H^n(\widetilde{X}_u,\mathbb{Q}_\ell)$).
 \begin{enumerate}[a)]
 \item dacă $E \subseteq E^\perp$, există șirul exact de fascicule pe $\mathbb{P}^1$:
-$$0 \rightarrow j_* \mathcal{E}^\perp \rightarrow R^n f_* \mathbb{Q}_l \rightarrow j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s \rightarrow 0$$
+$$0 \rightarrow j_* \mathcal{E}^\perp \rightarrow R^n f_* \mathbb{Q}_\ell \rightarrow j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s \rightarrow 0$$
 \item dacă $E \nsubseteq E^\perp$, există următoarele două șiruri exacte scurte de fascicule pe $\mathbb{P}^1$:
-$$0\rightarrow j_*\mathcal{E} \rightarrow R^n f_* \mathbb{Q}_l \rightarrow j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}}) \rightarrow 0$$
+$$0\rightarrow j_*\mathcal{E} \rightarrow R^n f_* \mathbb{Q}_\ell \rightarrow j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}}) \rightarrow 0$$
 $$0 \rightarrow j_*(\mathcal{E} \cap \mathcal{E}^\perp)  \rightarrow j_*\mathcal{E}  \rightarrow j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})  \rightarrow 0$$
 \end{enumerate}
 \item Produsul cup pe coomologia lui $\widetilde{X}_u$ induce o biliniară simplectică
@@ -367,7 +367,20 @@ Când $E$ este nenul, trec prin $j_*$ incluziunea de fascicule de pe $U$ într-u
 $$0 \subseteq j_*(\mathcal{E} \cap \mathcal{E}^\perp) \subseteq j_*\mathcal{E} \subseteq R^n f_* \mathbb{Q}_\ell$$
 (la ultimul am aplicat punctul 2 din cazul II al teoremei).
 
-Subcazul simplu este $E \subseteq E^\perp$.
+Subcazul simplu este $E \subseteq E^\perp$. Notând cu $\mathcal{F}$ conucleul morfismului $j_* \mathcal{E}^\perp \rightarrow R^n f_* \mathbb{Q}_\ell$, ce este izomorf cu nucleul morfismului $j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s$, putem sparge șirul exact din teoremă în două șiruri exacte scurte:
+$$0 \rightarrow j_* \mathcal{E}^\perp \rightarrow R^n f_* \mathbb{Q}_\ell \rightarrow \mathcal{F} \rightarrow 0$$
+$$0 \rightarrow \mathcal{F} \rightarrow j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s \rightarrow 0$$
+Cum $ j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}^\perp})$ e constant, are $H^1$ nul (suntem pe $\mathbb{P}^1$), și rezultă că în al doilea șir exact lung corespunzător, morfismul conectant de la $H^0$ la $H^1$ e surjectiv, și rezultă ce trebuie pentru $H^1(\mathbb{P}^1,\mathcal{F})$. La fel, $ j_* \mathcal{E}^\perp$ e constant și deci modulul nostru, $H^1(\mathbb{P}^1,R^n f_* \mathbb{Q}_\ell)$ se scufundă în $H^1(\mathbb{P}^1,\mathcal{F})$ (considerând primul șir exact lung corespunzător). De aici rezultă concluzia.
+
+Trecem la subcazul ce prezintă probleme, $E \nsubseteq E^\perp$. Din cele două șiruri exacte lungi corespunzătoare șirurilor exacte scurte din teoremă, obțin că este suficient să arăt aserțiunea pentru modulul $H^1(\mathbb{P}^1,j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}))$ (am folosit că $j_*(\mathcal{E} \cap \mathcal{E}^\perp)$ și $j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}})$ sunt constante).
+
+În primul rând, pot arăta doar $|\alpha|\leq q^{\frac{d+1}{2}}$ (utilizând dualitatea și forma simplectică).
+
+În al doilea rând, dat fiind că $supp\ coker(j_!(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}) \rightarrow j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})) = S$ (zero-dimensional și finit), am că $H^1(\mathbb{P}^1,coker)=0$, și ca urmare morfismul indus pe $H^1$ este surjectiv. Am redus la a studia problema pe $H^1(\mathbb{P}^1,j_!(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})) = H^1_c (U, \frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})$. Vom refolosi notația $\mathcal{F}$ pentru a denota fasciculul $\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}$ pe $U$, iar $\mathcal{F}_0$ va fi fasciculul corespunzător pe $U(\mathbb{F}_q)$. Notăm cu $V$ $\pi_1(U_0,u)$-reprezentarea corespunzătoare. Reamintim că avem biliniara simplectică $\pi_1(U,u)$-echivariantă:
+$$\psi : V \times V \rightarrow \mathbb{Q}_\ell(-n)$$
+iar aplicația canonică rezultantă $\pi_1(U,u) \rightarrow Sp(\frac{E}{E \cap E^\perp},\psi)$ are imaginea deschisă și densă.
+
+
 
 
 
