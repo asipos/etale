@@ -112,11 +112,11 @@ Acest text își propune să:
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\chapter{De la étale la $\ell$-adic}
+\chapter{De la étale la \texorpdfstring{$\ell$}{l}-adic}
 
 \chapter{Numărarea punctelor}
 
-Problema pe care urmează să o formulăm a pornit de la cea a studiului modului cum variază numărul de puncte de pe o curbă eliptică, în momentul când extindem corpul de bază. Ne este cunoscută din studiul acelor curbe inegalitatea Hasse-Weil, care spune că pentru orice curbă eliptică $X$ definită peste un corp finit $\mathbb{F}_q$, dacă notăm $N_m(X)=\#X(\mathbb{F}_{q^m})$, are loc relația:
+Problema pe care urmează să o formulăm a pornit de la cea a studiului modului cum variază numărul de puncte de pe o curbă eliptică, în momentul în care extindem corpul de bază. Ne este cunoscută din studiul acelor curbe inegalitatea Hasse-Weil, care spune că pentru orice curbă eliptică $X$ definită peste un corp finit $\mathbb{F}_q$, dacă notăm $N_m(X)=\#X(\mathbb{F}_{q^m})$, are loc relația:
 $$\mid N_m(X) - (q^m+1)\mid\  \leq 2\sqrt{q^m}$$
 
 Mai precis, există două numere algebrice $\alpha_1,\alpha_2$ de modul $\sqrt{q}$ astfel încât pentru orice $m$:
@@ -385,6 +385,28 @@ $$L(U_0,\mathcal{F}_0,t)=\prod\limits_{x \in U} det(1-t^{deg(x)}F^{deg(x)}, \mat
 care este egală dintr-o formulă de tip Lefschetz cu
 $$\prod\limits_{i=0}^2 det(1-tF_{\mid H^i_c(U,\mathcal{F})})^{(-1)^{i+1}}$$
 Însă dat fiind că adică $V$ este reprezentare absolut ireductibilă, $H^2_c$, fiind egal cu dualul spațiului de coinvarianți, este nul. Din faptul că $U$ este afină (dacă ar fi toată dreapta proiectivă, putem aplica tot raționamentul mai întâi scoțând $0$, iar apoi scoțând $\infty$), $H^0_c$ este tot nul. Deci $L$-funcția conține doar termenul corespunzător lui $H^1_c$, care se află în atenția noastră, și este în particular polinomială cu coeficienți raționali (de aici rezultă că valorile proprii sunt algebrice).
+
+Întâi arătăm că este suficient să demonstrăm că pentru orice $x$ și pentru orice $\alpha$ valoare proprie a operatorului Frobenius asociat fibrei $\mathcal{F}_x$ am $|\alpha|=q^{\frac{n}{2} deg(x)}$. Cum:
+$$L(U_0,\mathcal{F_0},t)=\prod\limits_{x\in U_0} det(1-F^{deg(x)}t^{deg(x)},\mathcal{F}_x)^{-1} = \prod\limits_{x\in U_0} \prod\limits_{i=1}^r (1-t^{deg(x)}\alpha_{x,i})^{-1}$$
+a cărei absolut convergență (din faptul că $|\alpha_{x,i}|=q^{\frac{n}{2} deg(x)}$) este echivalentă cu a seriei:
+$$\sum\limits_{x\in U_0} rq^{deg(x)\frac{n}{2}}t^{deg(x)} \leq \sum\limits_{s\geq 1} rq^s q^{s\frac{n}{2}} t^s$$
+ultima fiind convergentă pentru $|t|<q^{-\frac{n}{2}-1}$.
+Deci în acea zonă nu sunt poli, ca urmare $q^{-\frac{n}{2}-1}<\alpha^{-1}$, ceea ce trebuia demonstrat.
+
+Mai departe vom vedea că putem să arătăm doar {\it condiția de raționalitate pe fibre}, i.e. că pentru orice $x$ din $U$, $det(1-F^{deg(x)}t_{\mid\mathcal{F}_x})$ este polinom cu coeficienți raționali ({\bf lema principală a lui Deligne}).
+
+Pentru aceasta, vom afirma și demonstra în primul rând că pentru orice $k$ natural, $det(1-F^{deg(x)}t^{deg(x)}_{\mid\mathcal{F}^{\otimes 2k}_x})^{-1}$ este serie formală cu coeficienți numere raționale pozitive. Notând $T=t^{deg(x)}$, avem:
+\begin{align*}
+T\frac{d}{dT}log\ det(1-F^{deg(x)}t^{deg(x)}_{\mid\mathcal{F}^{\otimes 2k}_x})^{-1}&=\sum\limits_{r\geq 1} Tr(F^{r\ deg(x)}_{\mid\mathcal{F}^{\otimes 2k}_x})T^r\\
+&= \sum\limits_{r\geq 1} Tr(F^{r\ deg(x)}_{\mid\mathcal{F}_x})^{2k} T^r \in \mathbb{Q}_+[[t]]
+\end{align*}
+iar inversând operațiile aplicate la început se păstrează caracterul rațional pozitiv.
+
+A doua afirmație pe care o facem este că dacă $\alpha$ este pol pentru $L(U_0,\mathcal{F}^{\otimes 2k},t)$ și toți polii sunt situați pe raza de convergență, iar $\alpha_x$ este zerou pentru $det(1-F^{deg(x)}t^{deg(x)}_{\mid\mathcal{F}^{\otimes 2k}_x})$, primul are modulul mai mic ca al doilea.
+
+Ca să demonstrăm aceasta, notăm $det(1-F^{deg(x)}t^{deg(x)}_{\mid\mathcal{F}^{\otimes 2k}_x})^{-1}$ cu $f_x(t)$, și avem $L(U_0,\mathcal{F}^{\otimes 2k},t)=\prod_x f_x(t)$. Prin urmare, din pozitivitate rezultă că raza de convergență a lui $L$ e mai mică decât a oricărui $f_x$ și deci $\alpha\leq\alpha_x$.
+
+Putem trece acum la demonstrația lemei principale a lui Deligne.
 
 
 
