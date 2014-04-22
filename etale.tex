@@ -422,8 +422,27 @@ Rezultă că numitorul $L$-funcției este $(1-q^{kn+1}t)^N$, și deci toți poli
 $$q^{(-kn-1)deg(x)}\leq|a^{2k}|^{-1}$$
 Scoțând radical de ordin $2k$ și ducând pe $k$ la infinit rezultă concluzia.
 
-Rămâne să arătăm condiția de raționalitate pe fibre.
+Rămâne să arătăm condiția de raționalitate pe fibre. Ne folosim de următorul rezultat:
 
+\begin{lema}
+Fie $\mathcal{G}_0$ un fascicul pe $U_0$ astfel încât $\mathcal{G}$ e constant. Grupul Galois absolut al lui $\mathbb{F}_q$, $G_{\mathbb{F}_q}$, este cât al lui $\pi_1(U_0,u)$. Atunci aplicația canonică $\pi_1(U_0,u) \rightarrow GL(\mathcal{G}_u)$ factorizează prin $G_{\mathbb{F}_q}$ și deci există $\alpha_1,...,\alpha_k$ unități $\ell$-adice astfel încât pentru orice $x$, $det(1-tF_x, \mathcal{G}_u)=\prod_{i=1}^k (1-\alpha_i^{deg(x)}t)$.
+\end{lema}
+
+\begin{proof}
+Dat fiind că $\mathcal{G}$ e constant, $\pi_1(U,u)$ acționează trivial, și de aici rezultă factorizarea prin $G_{\mathbb{F}_q}$.
+\end{proof}
+
+Avem $\zeta_{\widetilde{X}_x}(t)=\prod_i det(1-tF^{deg(x)}_{\mid H^i(\widetilde{X}_x,\mathbb{Q}_\ell)})^{(-1)^{i+1}}=\prod_i det(1-tF^{deg(x)}_{\mid (R^i f_* \mathbb{Q}_\ell)_x})^{(-1)^{i+1}}$. Și cum toate fasciculele $R^i$ sunt constante în afară de $R^n$, iar acesta din urmă se poate filtra în $\frac{R^n f_* \mathbb{Q}_\ell}{\mathcal{E}}$, $\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}$ și $\mathcal{E} \cap \mathcal{E}^\perp$, unde primul și ultimul sunt constante. Deci putem scrie funcția ca:
+$$\zeta_{\widetilde{X}_x}(t)=\frac{(1-\alpha_1^{deg(x)}t)...(1-\alpha_r^{deg(x)}t)}{(1-\beta_1^{deg(x)}t)...(1-\beta_s^{deg(x)}t)}det((1-F_xt)_{\mid V})$$
+unde membrul stâng este clar rațional. Dacă arătăm că fracția din membrul drept este rațională, va reieși și raționalitatea ultimului termen, pe care dorim să o arătăm.
+
+Este, însă, suficient să arătăm că pentru orice $\tau$ scufundare $\ell$-adică există $x \in U_0$ de grad $k$ astfel încât:
+\begin{enumerate}
+\item nu există $i,j$ cu $(\frac{\alpha_i}{\beta_j})^k=1$
+\item nu există $i$ astfel încât $\frac{\alpha_i}{\tau(\alpha_i)}$ să fie rădăcină netrivială a unității (și la fel pentru $\beta$-uri)
+\item $\alpha$-urile și $\beta$-urile ridicate la puterea $k$ (precum și imaginile lor prin $\tau^{-1}$) nu sunt în $Spec(F_{x\mid V})$
+\end{enumerate}
+Asta se întâmplă deoarece 
 
 
 
