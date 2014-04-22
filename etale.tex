@@ -436,13 +436,37 @@ Avem $\zeta_{\widetilde{X}_x}(t)=\prod_i det(1-tF^{deg(x)}_{\mid H^i(\widetilde{
 $$\zeta_{\widetilde{X}_x}(t)=\frac{(1-\alpha_1^{deg(x)}t)...(1-\alpha_r^{deg(x)}t)}{(1-\beta_1^{deg(x)}t)...(1-\beta_s^{deg(x)}t)}det((1-F_xt)_{\mid V})$$
 unde membrul stâng este clar rațional. Dacă arătăm că fracția din membrul drept este rațională, va reieși și raționalitatea ultimului termen, pe care dorim să o arătăm.
 
-Este, însă, suficient să arătăm că pentru orice $\tau$ scufundare $\ell$-adică există $x \in U_0$ de grad $k$ astfel încât:
+Este, însă, suficient să arătăm că pentru orice $\tau \in Gal(\frac{\overline{Q_\ell}}{Q})$ există $x \in U_0$ de grad $k$ astfel încât:
 \begin{enumerate}
 \item nu există $i,j$ cu $(\frac{\alpha_i}{\beta_j})^k=1$
 \item nu există $i$ astfel încât $\frac{\alpha_i}{\tau(\alpha_i)}$ să fie rădăcină netrivială a unității (și la fel pentru $\beta$-uri)
 \item $\alpha$-urile și $\beta$-urile ridicate la puterea $k$ (precum și imaginile lor prin $\tau^{-1}$) nu sunt în $Spec(F_{x\mid V})$
 \end{enumerate}
-Asta se întâmplă deoarece 
+Astfel, orice asemenea $\tau$ lasă fracția pe loc, ca urmare ea are coeficienții raționali.
+
+Pentru a arăta însă presupunerea făcută, ne vom folosi de:
+
+\begin{prop}
+Pentru orice $\lambda$ unitate $\ell$-adică, mulțimea $Z=\{\sigma \in \pi_1(U_0,u) \mid \lambda^{v(\sigma)} \in Spec(\sigma_{\mid V})\}$ este închisă în $\pi_1(U_0,u)$ și de măsură Haar nulă.
+\end{prop}
+
+\begin{proof}
+Considerăm grupul de asemănări simplectice:
+$$GSp(V,\psi)=\{\alpha\in GL(V) \mid \text{ există } \mu \text{ astfel încât pentru orice } x,y \text{ avem } \psi(\alpha(x),\alpha(y))=\mu\psi(x,y)\}$$
+Din șirul exact de grupuri de mai devreme, orice acțiune a unui $\sigma$ din $\pi_1(U_0,u)$ este o asemănare cu $\mu(\sigma)=q^{v(\sigma)}$.
+
+Fie mulțimea:
+$$H=\{(\alpha,n)\in GSp(V,\psi) \times \hat{\mathbb{Z}} \mid \mu(\alpha)=q^n\}$$
+și aplicația naturală $\rho_1$ de la $\pi_1(U_0,u)$ la $H$.
+
+Pentru simplificarea demonstrației, vom presupune că $q$ este rest pătratic modulo $\ell$.
+
+Pot identifica $H$ cu $H'=Sp(V) \times \hat{\mathbb{Z}}$ prin aplicația $(\alpha,n)\mapsto(q^{\frac{n}{2}}\alpha,n)$ și este suficient să arăt concluzia pentru mulțimea $Z'=\{(\alpha,n)\mid\lambda'\in Spec(\alpha)\}$ (unde am notat $\lambda'=q^{\frac{n}{2}}\lambda$).
+
+Clar este o mulțime închisă, fiind dată de ecuații determinantale.
+\end{proof}
+
+S-a demonstrat deci ipoteza lui Riemann.
 
 
 
