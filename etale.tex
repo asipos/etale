@@ -464,7 +464,14 @@ Pentru simplificarea demonstrației, vom presupune că $q$ este rest pătratic m
 Pot identifica $H$ cu $H'=Sp(V) \times \hat{\mathbb{Z}}$ prin aplicația $(\alpha,n)\mapsto(q^{\frac{n}{2}}\alpha,n)$ și este suficient să arăt concluzia pentru mulțimea $Z'=\{(\alpha,n)\mid\lambda'\in Spec(\alpha)\}$ (unde am notat $\lambda'=q^{\frac{n}{2}}\lambda$).
 
 Clar este o mulțime închisă, fiind dată de ecuații determinantale.
+
+Fixând $n$, notez $P_n$ polinomul minimal al lui $\lambda'^n$ peste $\mathbb{Q}_\ell$. Mulțimea $Z'_n=\{\alpha\in Sp(V,\psi)\mid \lambda'^n \in Spec(\alpha)\}$ este algebrică, deci de măsură Haar nulă. În final, putem zice:
+$$\mu(Z')=\int\limits_{n \in \hat{\mathbb{Z}}} \mu(Z'_n) = 0$$
 \end{proof}
+
+În sfârșit putem arăta existența punctului. Din teorema de densitate Cebotarev, rezultă că este suficient să arătăm că mulțimea acelor $\sigma$ ce satisfac acele proprietăți 1-3 de mai sus (cu $k=v(\sigma)$, în cazul în care este întreg, și cu $F_{x\mid V}$ înlocuit de $\sigma$) conține un deschis de măsură Haar nenulă.
+
+Însă propoziția anterioară arată că mulțimea elementelor ce satisfac (3) este deschisă de măsură Haar totală, iar mulțimea elementelor eliminate de condițiile (1) și (2) este clar neglijabilă.
 
 S-a demonstrat deci ipoteza lui Riemann.
 
