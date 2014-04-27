@@ -114,6 +114,21 @@ Acest text își propune să:
 
 \chapter{De la étale la \texorpdfstring{$\ell$}{l}-adic}
 
+Din proprietățile de bază ale grupurilor de coomologie étală, avem că pentru orice grup abelian $G$ are loc relația:
+$$H^1(X,G)\simeq Hom_{TopGr}(\pi_1(X,x),G)$$
+unde Hom-set-ul din dreapta este considerat în categoria grupurilor topologice (iar $G$ este considerat cu topologia discretă). Dacă vom considera, de pildă, $G$ ca fiind un grup infinit, fără torsiune, spre exemplu $\mathbb{Z}$ (cum se obișnuiește în topologia algebrică), atunci grupul de coomologie va fi trivial. Iată de ce: dacă iau un element al acelui Hom-set, $f: \pi_1(X,x) \rightarrow \mathbb{Z}$ (i.e. un morfism de grupuri continuu), atunci $f^{-1}(0)$ este deschis în $\pi_1(X,x)$. Cum grupul de omotopie este compact, $f^{-1}(0)$ este de indice finit. Prin urmare, $f$ atinge un număr finit de valori, însă singurul subgrup finit al lui $\mathbb{Z}$ este cel trivial. Deci $f$ este morfismul nul, iar $H^1(X,\mathbb{Z})=0$, comportament pe care nu ni-l dorim.
+
+În argumentul de mai sus a intervenit în mod crucial faptul că grupul este considerat cu topologia discretă. Dacă am considera un grup topologic cu o structură canonică de grup profinit nediscret, cum ar fi $\mathbb{Z}_\ell$, atunci analogul membrului drept, $Hom_{TopGr}(\pi_1(X,x),\mathbb{Z}_\ell)$, nu va mai fi în mod trivial nul. Însă:
+\begin{align*}
+Hom_{TopGr}(\pi_1(X,x),\mathbb{Z}_\ell)&\simeq Hom_{TopGr}(\pi_1(X,x),\varprojlim_n \frac{\mathbb{Z}}{\ell^n\mathbb{Z}}) \\
+&\simeq \varprojlim_n Hom_{TopGr}(\pi_1(X,x), \frac{\mathbb{Z}}{\ell^n\mathbb{Z}}) \\
+&\simeq \varprojlim_n H^1(X, \frac{\mathbb{Z}}{\ell^n\mathbb{Z}}) \\
+\end{align*}
+Soluția este deci de a defini:
+$$H^r(X,\mathbb{Z}_\ell):=\varprojlim_n H^r(X, \frac{\mathbb{Z}}{\ell^n\mathbb{Z}})$$
+pentru orice $r$ natural, relație în care se va înțelege că ceea ce este scris în membrul stâng este o notație „pur formală” pentru ceea ce vom numi {\bf coomologie $\ell$-adică}.
+
+
 \chapter{Numărarea punctelor}
 
 Problema pe care urmează să o formulăm a pornit de la cea a studiului modului cum variază numărul de puncte de pe o curbă eliptică, în momentul în care extindem corpul de bază. Ne este cunoscută din studiul acelor curbe inegalitatea Hasse-Weil, care spune că pentru orice curbă eliptică $X$ definită peste un corp finit $\mathbb{F}_q$, dacă notăm $N_m(X)=\#X(\mathbb{F}_{q^m})$, are loc relația:
