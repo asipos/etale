@@ -162,7 +162,7 @@ $$0 \rightarrow \varprojlim_n \frac{H^r(X,\calm)}{\ell^n H^r(X,\calm)} \rightarr
 Însă
 \begin{align*}
 \varprojlim_n H^{r+1}(X,\calm)_{\ell^n} &= \varprojlim_n (H^{r+1}(X,\calm)_{\ell^n} \xleftarrow{\ell} H^{r+1}(X,\calm)_{\ell^{n+1}})\\
-&=\{(x_n)_n \mid \forall n, \ell^n x_n=0, \ell x_{n+1}=x_n\\
+&=\{(x_n)_n \mid \forall n, \ell^n x_n=0, \ell x_{n+1}=x_n\}\\
 &=0
 \end{align*}
 (fiindcă nu există elemente nenule infinit divizibile, $H^{r+1}(X,\calm)$ fiind limită proiectivă de grupuri finite de $\ell^n$-torsiune). Deci $H^r(X,\calm)\simeq \varprojlim_n \frac{H^r(X,\calm)}{\ell^n H^r(X,\calm)}$, ce este finit generat.
@@ -178,6 +178,19 @@ Un rezultat ce se moștenește în mod trivial la această coomologie $\ell$-adi
 $$H^*(X\times Y,\Qell) \simeq H^*(X,\Qell) \otimes_{\Qell} H^*(Y,\Qell)$$
 \end{teo}
 
+În continuare, vom indica fundamentele teoriei intersecției subvarietăților și legătura cu instrumentul coomologic.
+
+Dacă $X$ este o varietate nesingulară, numim un {\bf ciclu prim} o subvarietate închisă ireductibilă. Notăm cu $C^r(X)$ grupul abelian liber generat de ciclii primi de codimensiune $r$, iar cu $C^*(X)$ suma directă a acestor $C^r$-uri.
+
+Numim doi cicli primi {\bf rațional echivalenți} dacă există o deformare plată între cele două subvarietăți, cu spațiul de bază să fie dreapta proiectivă, și care să fie inclusă în produsul dreptei proiective cu varietatea ambiantă.
+
+Dacă factorizăm fiecare $C^r$ la relația de congruență indusă de echivalența rațională, vom obține grupuri notate cu $CH^r(X)$. Grupul $CH^*(X)$, suma directă a lor, are în mod natural o structură de inel graduat cu următoarele proprietăți:
+
+pâs, pâs, pâs, pâs, pâs... (intersecție transversală? puncte? uită punctul?) să punem graduare dublă!!!!
+
+Ideea fundamentală aici este existența unei transformări naturale în variabila $X$:
+$$cl_X : CH^*(X) \rightarrow H^*(X,\Qell)$$
+pentru orice $\ell$ diferit de caracteristica corpului peste care lucrăm (fiind forțați de șirul exact Kummer). Aceste morfisme sunt morfisme de inele graduate. În acest mod, putem reduce calculele de intersecții la calcule de produse {\it cup}.
 
 
 \chapter{Numărarea punctelor}
