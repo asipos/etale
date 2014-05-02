@@ -19,15 +19,6 @@
 \setmainfont{URW Palladio L}
 \setcounter{secnumdepth}{-1}
 \setcounter{chapter}{0}
-\lstset{
-language=Haskell,
-basicstyle=\ttfamily\fontsize{2.33mm}{4mm}\selectfont,
-numbers=left,
-numberstyle=\ttfamily\fontsize{2.6mm}{3mm}\selectfont,
-stepnumber=3,
-numbersep=10pt,
-frame=single
-}
 
 \begin{document}
 
@@ -46,6 +37,9 @@ frame=single
 \newtheorem{exs}[teo]{\bf Exemplele}
 \theoremstyle{definition}
 \newtheorem{defi}[teo]{\bf Definiția}
+
+\newcommand{\calm}{\mathcal{M}}
+\newcommand{\Qell}{\mathbb{Q}_\ell}
 
 \pagenumbering{roman}
 \setcounter{page}{1}
@@ -127,6 +121,63 @@ Hom_{TopGr}(\pi_1(X,x),\mathbb{Z}_\ell)&\simeq Hom_{TopGr}(\pi_1(X,x),\varprojli
 Soluția este deci de a defini:
 $$H^r(X,\mathbb{Z}_\ell):=\varprojlim_n H^r(X, \frac{\mathbb{Z}}{\ell^n\mathbb{Z}})$$
 pentru orice $r$ natural, relație în care se va înțelege că ceea ce este scris în membrul stâng este o notație „pur formală” pentru ceea ce vom numi {\bf coomologie $\ell$-adică}.
+
+Ea se poate defini pe ceea ce se numește un fascicul de $\mathbb{Z}_\ell$-module, adică o familie:
+$$\calm=(\{\calm_n\}_n,\{f_{n+1}:\calm_{n+1}\rightarrow\calm\}_n)$$
+astfel încât pentru orice $n$, $\calm_n$ este fascicul constructibil de $\frac{\mathbb{Z}}{\ell^n\mathbb{Z}}$-module, $Ker(f_{n+1})=\ell^{n+1}\calm_{n+1}$, $Im(f_{n+1})=\calm_n$.
+
+Un asemenea obiect se numește {\bf plat} dacă pentru orice $n$ și $s$ naturale, șirul:
+$$0 \rightarrow \frac{\calm_{n+s}}{\ell^s\calm_{n+s}} \xrightarrow{\cdot\ \ell^n} \calm_{n+s} \rightarrow \frac{\calm_{n+s}}{\ell^n\calm_{n+s}} \rightarrow 0$$
+este exact (unde fasiculul din stânga este izomorf cu $\calm_s$, iar cel din dreapta cu $\calm_n$).
+
+Acum putem defini:
+$$H^r(X,\calm):=\varprojlim_n H^r(X,\calm_n)$$
+$$H^r_c(X,\calm):=\varprojlim_n H^r_c(X,\calm_n)$$
+
+Aceste grupuri satisfac următoarea proprietate:
+
+\begin{teo}
+(Teorema de finitudine) Fie $X$ o varietate definită peste un corp separabil închis $k$. $\calm=\{\calm_n\}_n$ un fascicul plat de $\mathbb{Z}_\ell$-module. Presupunem că $X$ este completă sau $\ell \neq char(k)$. Atunci:
+\begin{enumerate}[(i)]
+\item modulele $H^r(X,\calm)$ sunt finit generate;
+\item pentru orice $n$ există un șir exact lung:
+$$\cdots \rightarrow H^r(X,\calm) \xrightarrow{\cdot \ell^n} H^r(X,\calm) \rightarrow H^r(X,\calm_n) \rightarrow H^{r+1}(X,\calm) \rightarrow \cdots$$
+\end{enumerate}
+\end{teo}
+
+\begin{proof}
+Avem pentru orice $n$ și $s$ șirul exact:
+$$0 \rightarrow \calm_s \xrightarrow{\cdot\ \ell^n} \calm_{n+s} \rightarrow \calm_n \rightarrow 0$$
+compatibil cu familia $\{f_i\}$, care induce șirul exact lung:
+$$\cdots H^r(X,\calm_s) \xrightarrow{\cdot \ell^n} H^r(X,\calm_{n+s}) \rightarrow H^r(X,\calm_n) \rightarrow H^{r+1}(X,\calm_s) \rightarrow \cdots$$
+(adică al doilea punct al teoremei).
+Din compatibilitate, putem trece la limită după $s$ și obținem șirul lung:
+$$\cdots H^r(X,\calm) \xrightarrow{\cdots \ell^n} H^r(X,\calm) \rightarrow H^r(X,\calm_n) \rightarrow H^{r+1}(X,\calm)$$
+ce induce șirurile exacte scurte de forma:
+$$0 \rightarrow \frac{H^r(X,\calm)}{\ell^n H^r(X,\calm)} \rightarrow H^r(X,\calm_n) \rightarrow H^{r+1}(X,\calm)_{\ell^n} \rightarrow 0$$
+
+Trecem la limită după $n$ și obținem:
+$$0 \rightarrow \varprojlim_n \frac{H^r(X,\calm)}{\ell^n H^r(X,\calm)} \rightarrow H^r(X,\calm) \rightarrow \varprojlim_n H^{r+1}(X,\calm)_{\ell^n} \rightarrow 0$$
+
+Însă
+\begin{align*}
+\varprojlim_n H^{r+1}(X,\calm)_{\ell^n} &= \varprojlim_n (H^{r+1}(X,\calm)_{\ell^n} \xleftarrow{\ell} H^{r+1}(X,\calm)_{\ell^{n+1}})\\
+&=\{(x_n)_n \mid \forall n, \ell^n x_n=0, \ell x_{n+1}=x_n\\
+&=0
+\end{align*}
+(fiindcă nu există elemente nenule infinit divizibile, $H^{r+1}(X,\calm)$ fiind limită proiectivă de grupuri finite de $\ell^n$-torsiune). Deci $H^r(X,\calm)\simeq \varprojlim_n \frac{H^r(X,\calm)}{\ell^n H^r(X,\calm)}$, ce este finit generat.
+\end{proof}
+
+Vom nota în continuare, la fel de formal,
+$$H^r(X,\Qell) = H^r(X,\mathbb{Z}_\ell) \otimes_{\mathbb{Z}_\ell} \Qell$$
+
+Un rezultat ce se moștenește în mod trivial la această coomologie $\ell$-adică este dimensiunea coomologică.
+
+\begin{teo}
+(Formula Künneth) Are loc izomorfismul de inele graduate:
+$$H^*(X\times Y,\Qell) \simeq H^*(X,\Qell) \otimes_{\Qell} H^*(Y,\Qell)$$
+\end{teo}
+
 
 
 \chapter{Numărarea punctelor}
@@ -255,18 +306,18 @@ Ca urmare diferențiala lui $F$ în $P$ este zero, ca urmare graficul lui Froben
 \end{proof}
 
 Aplicând formula de punct fix a lui Lefschetz, rezultă (pentru $(\ell,q)=1$):
-$$N_m(X) = \sum\limits_r (-1)^r Tr(F^m_{\mid  H^r(X,\mathbb{Q}_\ell)})$$
+$$N_m(X) = \sum\limits_r (-1)^r Tr(F^m_{\mid  H^r(X,\Qell)})$$
 
 Putem folosi formula pentru a prelucra funcția $Z$ a lui $X$:
 \begin{align*}
 Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} N_m(X) \frac{t^m}{m})\\
-&=exp(\sum\limits_{m=1}^{\infty} (\sum\limits_{r=0}^{2d} (-1)^r Tr(F^m_{\mid  H^r(X,\mathbb{Q}_\ell)}) \frac{t^m}{m})\\
-&=\prod\limits_{r=0}^{2d}exp(\sum\limits_{m=1}^{\infty}Tr(F^m_{\mid  H^r(X,\mathbb{Q}_\ell)})  \frac{t^m}{m}) ^ { (-1)^r }
+&=exp(\sum\limits_{m=1}^{\infty} (\sum\limits_{r=0}^{2d} (-1)^r Tr(F^m_{\mid  H^r(X,\Qell)}) \frac{t^m}{m})\\
+&=\prod\limits_{r=0}^{2d}exp(\sum\limits_{m=1}^{\infty}Tr(F^m_{\mid  H^r(X,\Qell)})  \frac{t^m}{m}) ^ { (-1)^r }
 \end{align*}
 
-Scriem acum fiecare $F_{\mid  H^r(X,\mathbb{Q}_\ell)}$ ca matrice pătratică superior triunghiulară (eventual peste o extindere a lui $\mathbb{F}_q$) cu numărul de linii egal cu $b_r=dim\ H^r(X,\mathbb{Q}_\ell)$. Se observă atunci că dacă elementele de pe diagonală (valorile proprii) sunt $\alpha_{r,1},...,\alpha_{r,b_r}$, atunci $Tr(F^m_{\mid  H^r(X,\mathbb{Q}_\ell)})$ va fi egal cu $\sum\limits_{i=1}^{b_r} \alpha_{r,i}^m$ și deci pot aplica exact același raționament ca mai devreme pentru a exprima rațional pe $Z_X$.
+Scriem acum fiecare $F_{\mid  H^r(X,\Qell)}$ ca matrice pătratică superior triunghiulară (eventual peste o extindere a lui $\mathbb{F}_q$) cu numărul de linii egal cu $b_r=dim\ H^r(X,\Qell)$. Se observă atunci că dacă elementele de pe diagonală (valorile proprii) sunt $\alpha_{r,1},...,\alpha_{r,b_r}$, atunci $Tr(F^m_{\mid  H^r(X,\Qell)})$ va fi egal cu $\sum\limits_{i=1}^{b_r} \alpha_{r,i}^m$ și deci pot aplica exact același raționament ca mai devreme pentru a exprima rațional pe $Z_X$.
 
-Vom avea $Z_X \in \mathbb{Q}_\ell(t) \cap \mathbb{Q}[[t]] \subseteq \mathbb{Q}(t)$, însă aceasta nu ne garantează că fiecare $P_j$ este în $\mathbb{Q}[t]$ (altfel spus, că este „independent de $\ell$”) - aceasta se poate face doar presupunând ipoteza lui Riemann, care ne permite, după cum am spus și mai devreme, să separăm $P_j$-urile după modulul rădăcinilor.
+Vom avea $Z_X \in \Qell(t) \cap \mathbb{Q}[[t]] \subseteq \mathbb{Q}(t)$, însă aceasta nu ne garantează că fiecare $P_j$ este în $\mathbb{Q}[t]$ (altfel spus, că este „independent de $\ell$”) - aceasta se poate face doar presupunând ipoteza lui Riemann, care ne permite, după cum am spus și mai devreme, să separăm $P_j$-urile după modulul rădăcinilor.
 
 Altă consecință a raționamentului precedent a fost că am identificat $\alpha_{j,u}$-urile ca fiind valorile proprii ale operatorilor induși de Frobenius pe spațiile de coomologie.
 
@@ -275,11 +326,11 @@ Aceasta ne arată în particular că $b_0=b_{2d}=1$.
 Trecem acum la demonstrarea simetriei între valorile proprii pe spațiile de ordin $r$ și $2d-r$, relație care după cum am observat ne implică o ecuație funcțională.
 
 Avem biliniara nedegenerată dată de dualitatea Poincaré:
-$$\langle,\rangle=\eta_X\ \circ \smile\ : H^{2d-r}(X,\mathbb{Q}_\ell) \times H^{r}(X,\mathbb{Q}_\ell) \rightarrow H^{2d}(X,\mathbb{Q}_\ell) \simeq \mathbb{Q}_\ell(-d)$$
+$$\langle,\rangle=\eta_X\ \circ \smile\ : H^{2d-r}(X,\Qell) \times H^{r}(X,\Qell) \rightarrow H^{2d}(X,\Qell) \simeq \Qell(-d)$$
 ce din start ne indică $b_r=b_{2d-r}$.
 
-Știm că $F^*_r=F_{\mid  H^r(X,\mathbb{Q}_\ell)}$ are adjunct relativ la $\langle,\rangle$:
-$$\langle F_{*2d-r}(x),x'\rangle=\langle x,F^*_r(x')\rangle, \forall\ x \in H^{2d-r}(X,\mathbb{Q}_\ell), x' \in H^{r}(X,\mathbb{Q}_\ell)$$
+Știm că $F^*_r=F_{\mid  H^r(X,\Qell)}$ are adjunct relativ la $\langle,\rangle$:
+$$\langle F_{*2d-r}(x),x'\rangle=\langle x,F^*_r(x')\rangle, \forall\ x \in H^{2d-r}(X,\Qell), x' \in H^{r}(X,\Qell)$$
 
 Din considerente de algebră liniară rezultă că valorile proprii ale lui $F^*_r$ coincid cu ale lui $F_{*2d-r}$. Însă $F_{*r} \circ F^*_r = q^d (=deg\ F)$.
 
@@ -292,7 +343,7 @@ De aici rezultă că dacă $(\alpha_1,...,\alpha_v)$ sunt valorile proprii ale l
 Mai precis, ce avem de demonstrat este:
 
 \begin{teo}
-(Deligne, 1974) Fie $X$ o varietate proiectivă $d$-dimensională absolut nesingulară și absolut ireductibilă definită peste $\mathbb{F}_q$; $\alpha$ o valoare proprie a lui $F^*_r$; $\tau$ o scufundare a lui $\mathbb{Q}_\ell$ în $\mathbb{C}$.
+(Deligne, 1974) Fie $X$ o varietate proiectivă $d$-dimensională absolut nesingulară și absolut ireductibilă definită peste $\mathbb{F}_q$; $\alpha$ o valoare proprie a lui $F^*_r$; $\tau$ o scufundare a lui $\Qell$ în $\mathbb{C}$.
 
 Atunci $\tau(\alpha)$ (mai departe simbolul $\tau$ va fi subînțeles) este algebric și de modul $q^{\frac{r}{2}}$.
 \end{teo}
@@ -301,11 +352,11 @@ Atunci $\tau(\alpha)$ (mai departe simbolul $\tau$ va fi subînțeles) este alge
 
 În al doilea rând, se vede că pot demonstra doar pentru spațiile cu rangul cel mult $d$. Aceasta deoarece de la rangul $d+1$ încolo, valorile proprii au simetria implicată de dualitatea Poincaré pe care am văzut-o mai devreme.
 
-În al treilea rând, vom arăta că este suficent să arătăm teorema doar pentru $r=d$. Iată de ce: din teorema lui Bertini, există $Z \subset X$ o secțiune hiperplană netedă (eventual extinzând corpul).  Aplicând teorema Lefschetz slabă, aplicația canonică (ce este compatibilă cu Frobenius) $H^r(X,\mathbb{Q}_\ell) \rightarrow H^r(Z,\mathbb{Q}_\ell)$ este injectivă pentru $r \leq d - 1$ și pot aplica un raționament prin inducție (pasul de bază fiind varietățile zero-dimensionale, pentru care clar este adevărat, din modul cum acționează Frobenius pe $H^0$).
+În al treilea rând, vom arăta că este suficent să arătăm teorema doar pentru $r=d$. Iată de ce: din teorema lui Bertini, există $Z \subset X$ o secțiune hiperplană netedă (eventual extinzând corpul).  Aplicând teorema Lefschetz slabă, aplicația canonică (ce este compatibilă cu Frobenius) $H^r(X,\Qell) \rightarrow H^r(Z,\Qell)$ este injectivă pentru $r \leq d - 1$ și pot aplica un raționament prin inducție (pasul de bază fiind varietățile zero-dimensionale, pentru care clar este adevărat, din modul cum acționează Frobenius pe $H^0$).
 
 În al patrulea rând, putem să arătăm chiar și numai pentru varietățile de dimensiune pară, iar pentru acelea, doar că valorile proprii $\alpha$ corespunzătoare spațiului de coomologie din mijloc satisfac inegalitatea
 $$q^{\frac{d}{2}-\frac{1}{2}}\leq\mid \alpha\mid \leq q^{\frac{d}{2}+\frac{1}{2}}$$
-Presupunând că am arătat așa ceva, vreau să demonstrez teorema pentru o varietate oarecare $X$ și $\alpha$ valoare proprie a lui $F^*_d$. Fie $k$ număr natural. Iau $Y$ ca fiind produsul lui $X$ cu el însuși de $2k$ ori. Conform Künneth, $H^d(X,\mathbb{Q}_\ell)^{\otimes 2k}$ se scufundă în $H^{2kd}(Y,\mathbb{Q}_\ell)$, iar $\alpha^{2k}$ va fi valoare proprie a lui Frobenius aplicat pe spațiul de pe urmă. Ca urmare, va avea loc:
+Presupunând că am arătat așa ceva, vreau să demonstrez teorema pentru o varietate oarecare $X$ și $\alpha$ valoare proprie a lui $F^*_d$. Fie $k$ număr natural. Iau $Y$ ca fiind produsul lui $X$ cu el însuși de $2k$ ori. Conform Künneth, $H^d(X,\Qell)^{\otimes 2k}$ se scufundă în $H^{2kd}(Y,\Qell)$, iar $\alpha^{2k}$ va fi valoare proprie a lui Frobenius aplicat pe spațiul de pe urmă. Ca urmare, va avea loc:
 $$q^{\frac{2kd}{2}-\frac{1}{2}}\leq\mid \alpha\mid ^{2k}\leq q^{\frac{2kd}{2}+\frac{1}{2}}$$
 Scoțând radical de ordin $2k$, obțin:
 $$q^{\frac{d}{2}-\frac{1}{4k}}\leq\mid \alpha\mid \leq q^{\frac{d}{2}+\frac{1}{4k}}$$
@@ -319,7 +370,7 @@ Alegem o scufundare a lui $X$ într-un $\mathbb{P}^N$ și luăm $L$ un subspați
 $$\widetilde{X}=\{(x,d)\in X \times \mathbb{P}^1 \mid x \in H_d\}$$
 ce are structură de varietate algebrică, anume este {\it eclatarea lui $X$ în $L\cap X$} (este netedă, din faptul că $L$ intersectează transversal pe $X$). Ea este înzestrată cu două aplicații canonice:
 $$X \leftarrow \widetilde{X} \xrightarrow{f} \mathbb{P}^1$$
-iar din teoria eclatării, aplicația $H^d(X,\mathbb{Q}_\ell) \rightarrow H^d(\widetilde{X},\mathbb{Q}_\ell)$ este injectivă. Putem trece deci de la $X$ la $\widetilde{X}$ fără probleme.
+iar din teoria eclatării, aplicația $H^d(X,\Qell) \rightarrow H^d(\widetilde{X},\Qell)$ este injectivă. Putem trece deci de la $X$ la $\widetilde{X}$ fără probleme.
 
 Ceea ce caracterizează $\widetilde{X}$ este că este înzestrat cu aplicația $f : \widetilde{X} \rightarrow \mathbb{P}^1$. Ea se numește {\bf pencil Lefschetz} dacă numai un număr finit de fibre $f^{-1}(d)$, pentru $d$ din $\mathbb{P}^1$ (fibre pe care le vom nota cu $\widetilde{X}_d$) sunt singulare, iar acelea care sunt au drept singularități numai câte un punct dublu ordinare. Presupun că fac o extindere a corpului astfel încât toate aceste singularități să fie definite de ecuații peste corpul nou.
 
@@ -328,39 +379,39 @@ Toată această construcție depinde de alegerea scufundării și a $L$-ului. Î
 Notăm cu $U$ mulțimea $d$-urilor din $\mathbb{P}^1$ pentru care fibra e netedă, cu $S$ complementara lui $U$ și cu $j$ aplicația de incluziune a lui $U$ în $\mathbb{P}^1$.
 
 Ne vom folosit în continuare de șirul spectral Leray, ale cărui aplicații sunt compatibile cu operatorii Frobenius:
-$$E_2^{p,q}=H^p(\mathbb{P}^1,R^q f_* \mathbb{Q}_\ell) \Rightarrow H^{p+q}(\widetilde{X},\mathbb{Q}_\ell)$$
-Deci $H^d(\widetilde{X},\mathbb{Q}_\ell)$ admite o filtrare cu spațiile cât $\{E_\infty^{p.q}\}_{p+q=d}$, care la rândul lor sunt subcâturi ale $E_2^{p,q}$-uri, ca urmare e suficient să arăt pentru spațiile din stânga. Dintr-o teoremă de anulare, acestea sunt nenule doar pentru $p$ între $0$ și $2$.
+$$E_2^{p,q}=H^p(\mathbb{P}^1,R^q f_* \Qell) \Rightarrow H^{p+q}(\widetilde{X},\Qell)$$
+Deci $H^d(\widetilde{X},\Qell)$ admite o filtrare cu spațiile cât $\{E_\infty^{p.q}\}_{p+q=d}$, care la rândul lor sunt subcâturi ale $E_2^{p,q}$-uri, ca urmare e suficient să arăt pentru spațiile din stânga. Dintr-o teoremă de anulare, acestea sunt nenule doar pentru $p$ între $0$ și $2$.
 
 Notez $d-1$ cu $n$ (număr impar). Astfel ne-am redus la a considera următoarele spații:
-$$H^2(\mathbb{P}^1,R^{n-1} f_* \mathbb{Q}_\ell);\ H^0(\mathbb{P}^1,R^{n+1} f_* \mathbb{Q}_\ell);\ H^1(\mathbb{P}^1,R^n f_* \mathbb{Q}_\ell)$$
+$$H^2(\mathbb{P}^1,R^{n-1} f_* \Qell);\ H^0(\mathbb{P}^1,R^{n+1} f_* \Qell);\ H^1(\mathbb{P}^1,R^n f_* \Qell)$$
 Ne va fi de folos următorul rezultat:
 
 \begin{teo}
-(a ciclilor evanescenți) Fie $u$ din $U$. Există $E$ subspațiu vectorial al lui $H^n(\widetilde{X}_u,\mathbb{Q}_\ell)$ (spațiul ciclilor evanescenți) astfel încât:
+(a ciclilor evanescenți) Fie $u$ din $U$. Există $E$ subspațiu vectorial al lui $H^n(\widetilde{X}_u,\Qell)$ (spațiul ciclilor evanescenți) astfel încât:
 \begin{enumerate}[I.]
 \item Când $E=0$:
 \begin{enumerate}[1.]
-\item Fasciculul $R^i f_* \mathbb{Q}_\ell$ este constant pentru $i\neq n+1$.
+\item Fasciculul $R^i f_* \Qell$ este constant pentru $i\neq n+1$.
 \item Există un șir exact scurt de fascicule pe $\mathbb{P}^1$:
-$$0 \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s \rightarrow R^{n+1}f_*\mathbb{Q}_\ell \rightarrow \underline{H^{n+1}(\widetilde{X}_u,\mathbb{Q}_\ell)} \rightarrow 0$$
+$$0 \rightarrow \bigoplus\limits_{s\in S} (\Qell(-\frac{n+1}{2}))_s \rightarrow R^{n+1}f_*\Qell \rightarrow \underline{H^{n+1}(\widetilde{X}_u,\Qell)} \rightarrow 0$$
 \end{enumerate}
 
 \item Când $E\neq 0$ (ceea ce se întâmplă mai frecvent):
 \begin{enumerate}[1.]
-\item Fasciculul $R^i f_* \mathbb{Q}_\ell$ este constant pentru $i\neq n$.
-\item $R^n f_* \mathbb{Q}_\ell = j_* j^* R^n f_* \mathbb{Q}_\ell$.
+\item Fasciculul $R^i f_* \Qell$ este constant pentru $i\neq n$.
+\item $R^n f_* \Qell = j_* j^* R^n f_* \Qell$.
 \item $E$ este subspațiu stabil la acțiunea lui $\pi_1(U,u)$ iar acțiunea pe spațiul cât este trivială.
-\item Notând cu $E^\perp$ subspațiul $H^n(\widetilde{X}_u,\mathbb{Q}_\ell)^{\pi_1(U,u)}$, avem că acțiunea pe $\frac{E}{E \cap E^\perp}$ este absolut ireductibilă.
-\item Notăm fasciculele constructibile pe U asociate lui $E$ și $E^\perp$ cu $\mathcal{E}$, respectiv $\mathcal{E}^\perp$ (ambele sunt subfascicule ale lui $j^* R^n f_* \mathbb{Q}_\ell$, ce corespunde lui $H^n(\widetilde{X}_u,\mathbb{Q}_\ell)$).
+\item Notând cu $E^\perp$ subspațiul $H^n(\widetilde{X}_u,\Qell)^{\pi_1(U,u)}$, avem că acțiunea pe $\frac{E}{E \cap E^\perp}$ este absolut ireductibilă.
+\item Notăm fasciculele constructibile pe U asociate lui $E$ și $E^\perp$ cu $\mathcal{E}$, respectiv $\mathcal{E}^\perp$ (ambele sunt subfascicule ale lui $j^* R^n f_* \Qell$, ce corespunde lui $H^n(\widetilde{X}_u,\Qell)$).
 \begin{enumerate}[a)]
 \item dacă $E \subseteq E^\perp$, există șirul exact de fascicule pe $\mathbb{P}^1$:
-$$0 \rightarrow j_* \mathcal{E}^\perp \rightarrow R^n f_* \mathbb{Q}_\ell \rightarrow j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s \rightarrow 0$$
+$$0 \rightarrow j_* \mathcal{E}^\perp \rightarrow R^n f_* \Qell \rightarrow j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\Qell(-\frac{n+1}{2}))_s \rightarrow 0$$
 \item dacă $E \nsubseteq E^\perp$, există următoarele două șiruri exacte scurte de fascicule pe $\mathbb{P}^1$:
-$$0\rightarrow j_*\mathcal{E} \rightarrow R^n f_* \mathbb{Q}_\ell \rightarrow j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}}) \rightarrow 0$$
+$$0\rightarrow j_*\mathcal{E} \rightarrow R^n f_* \Qell \rightarrow j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}}) \rightarrow 0$$
 $$0 \rightarrow j_*(\mathcal{E} \cap \mathcal{E}^\perp)  \rightarrow j_*\mathcal{E}  \rightarrow j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})  \rightarrow 0$$
 \end{enumerate}
 \item Produsul cup pe coomologia lui $\widetilde{X}_u$ induce o biliniară simplectică
-$$\psi : \frac{E}{E \cap E^\perp} \times \frac{E}{E \cap E^\perp} \rightarrow \mathbb{Q}_\ell(-n)$$
+$$\psi : \frac{E}{E \cap E^\perp} \times \frac{E}{E \cap E^\perp} \rightarrow \Qell(-n)$$
 care este echivariantă relativ la acțiunea lui $\pi_1(U,u)$, iar aplicația canonică rezultantă:
 $$\pi_1(U,u) \rightarrow Sp(\frac{E}{E \cap E^\perp},\psi)$$
 are imaginea deschisă și densă.
@@ -370,29 +421,29 @@ are imaginea deschisă și densă.
 
 Mai departe, pot presupune că există $u_0$ punct al lui $U$ definit peste $\mathbb{F}_q$ astfel încât $\widetilde{X}_{u_0}$ admite o secțiune hiperplană netedă $Z_0$, la rândul ei definită peste $\mathbb{F}_q$ (făcând eventual extinderi), de dimensiune, firește, $d-2$ (fiind tot pară, voi putea aplica un raționament prin inducție mai jos).
 
-Demonstrăm mai întâi aserțiunea despre spațiile $H^2(\mathbb{P}^1,R^{n-1} f_* \mathbb{Q}_\ell)$ și $H^0(\mathbb{P}^1,R^{n+1} f_* \mathbb{Q}_\ell)$.
+Demonstrăm mai întâi aserțiunea despre spațiile $H^2(\mathbb{P}^1,R^{n-1} f_* \Qell)$ și $H^0(\mathbb{P}^1,R^{n+1} f_* \Qell)$.
 
-Dat fiind că fasciculul $R^{n-1} f_* \mathbb{Q}_\ell$ este constant în ambele cazuri, el are fibra $H^{n-1}(\widetilde{X}_u,\mathbb{Q}_\ell)$, din teorema de schimbare proprie a bazei. Deci $H^2(\mathbb{P}^1,R^{n-1} f_* \mathbb{Q}_\ell) = H^2(\mathbb{P}^1,\underline{H^{n-1}(\widetilde{X}_u,\mathbb{Q}_\ell)}) = H^2(\mathbb{P}^1,\mathbb{Q}_\ell) \otimes H^{n-1}(\widetilde{X}_u,\mathbb{Q}_\ell) = \mathbb{Q}_\ell(-1)\otimes H^{n-1}(\widetilde{X}_u,\mathbb{Q}_\ell) = H^{n-1}(\widetilde{X}_u,\mathbb{Q}_\ell)(-1)$. Pentru ultimul modul putem aplica ipoteza de inducție, deoarece se scufundă (din teorema Lefschetz slabă) în $H^{n-1}(Z,\mathbb{Q}_\ell)(-1)$, pentru care aplic ipoteza de inducție.
+Dat fiind că fasciculul $R^{n-1} f_* \Qell$ este constant în ambele cazuri, el are fibra $H^{n-1}(\widetilde{X}_u,\Qell)$, din teorema de schimbare proprie a bazei. Deci $H^2(\mathbb{P}^1,R^{n-1} f_* \Qell) = H^2(\mathbb{P}^1,\underline{H^{n-1}(\widetilde{X}_u,\Qell)}) = H^2(\mathbb{P}^1,\Qell) \otimes H^{n-1}(\widetilde{X}_u,\Qell) = \Qell(-1)\otimes H^{n-1}(\widetilde{X}_u,\Qell) = H^{n-1}(\widetilde{X}_u,\Qell)(-1)$. Pentru ultimul modul putem aplica ipoteza de inducție, deoarece se scufundă (din teorema Lefschetz slabă) în $H^{n-1}(Z,\Qell)(-1)$, pentru care aplic ipoteza de inducție.
 
-Pentru $H^0(\mathbb{P}^1,R^{n+1} f_* \mathbb{Q}_\ell)$, în cazul în care $E$ e nenul, argumentul funcționează asemănător cu cel precedent, cu deosebirea că aplicăm surjectivitatea morfismului Gysin, care schimbă și rangul coomologiei de la $n+1$ la $n-1$ pentru $Z$ pentru a putea funcționa inducția. Când $E$ este nul, nu fac decât să trec de la șirul exact scurt din teoremă la șirul exact lung în coomologie și să aplic acolo inducția.
+Pentru $H^0(\mathbb{P}^1,R^{n+1} f_* \Qell)$, în cazul în care $E$ e nenul, argumentul funcționează asemănător cu cel precedent, cu deosebirea că aplicăm surjectivitatea morfismului Gysin, care schimbă și rangul coomologiei de la $n+1$ la $n-1$ pentru $Z$ pentru a putea funcționa inducția. Când $E$ este nul, nu fac decât să trec de la șirul exact scurt din teoremă la șirul exact lung în coomologie și să aplic acolo inducția.
 
-Ne-a rămas $H^1(\mathbb{P}^1,R^n f_* \mathbb{Q}_\ell)$. Când $E$ este nul, $R^{n} f_* \mathbb{Q}_\ell$ este constant și cum $H^1(\mathbb{P}^1,\mathbb{Q}_\ell)=0$, am și $H^1(\mathbb{P}^1,R^n f_* \mathbb{Q}_\ell)=0$ și deci nu am nimic de demonstrat.
+Ne-a rămas $H^1(\mathbb{P}^1,R^n f_* \Qell)$. Când $E$ este nul, $R^{n} f_* \Qell$ este constant și cum $H^1(\mathbb{P}^1,\Qell)=0$, am și $H^1(\mathbb{P}^1,R^n f_* \Qell)=0$ și deci nu am nimic de demonstrat.
 
 Când $E$ este nenul, trec prin $j_*$ incluziunea de fascicule de pe $U$ într-una pe $\mathbb{P}^1$:
-$$0 \subseteq j_*(\mathcal{E} \cap \mathcal{E}^\perp) \subseteq j_*\mathcal{E} \subseteq R^n f_* \mathbb{Q}_\ell$$
+$$0 \subseteq j_*(\mathcal{E} \cap \mathcal{E}^\perp) \subseteq j_*\mathcal{E} \subseteq R^n f_* \Qell$$
 (la ultimul am aplicat punctul 2 din cazul II al teoremei).
 
-Subcazul simplu este $E \subseteq E^\perp$. Notând cu $\mathcal{F}$ conucleul morfismului $j_* \mathcal{E}^\perp \rightarrow R^n f_* \mathbb{Q}_\ell$, ce este izomorf cu nucleul morfismului $j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s$, putem sparge șirul exact din teoremă în două șiruri exacte scurte:
-$$0 \rightarrow j_* \mathcal{E}^\perp \rightarrow R^n f_* \mathbb{Q}_\ell \rightarrow \mathcal{F} \rightarrow 0$$
-$$0 \rightarrow \mathcal{F} \rightarrow j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\mathbb{Q}_\ell(-\frac{n+1}{2}))_s \rightarrow 0$$
-Cum $ j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}^\perp})$ e constant, are $H^1$ nul (suntem pe $\mathbb{P}^1$), și rezultă că în al doilea șir exact lung corespunzător, morfismul conectant de la $H^0$ la $H^1$ e surjectiv, și rezultă ce trebuie pentru $H^1(\mathbb{P}^1,\mathcal{F})$. La fel, $ j_* \mathcal{E}^\perp$ e constant și deci modulul nostru, $H^1(\mathbb{P}^1,R^n f_* \mathbb{Q}_\ell)$ se scufundă în $H^1(\mathbb{P}^1,\mathcal{F})$ (considerând primul șir exact lung corespunzător). De aici rezultă concluzia.
+Subcazul simplu este $E \subseteq E^\perp$. Notând cu $\mathcal{F}$ conucleul morfismului $j_* \mathcal{E}^\perp \rightarrow R^n f_* \Qell$, ce este izomorf cu nucleul morfismului $j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\Qell(-\frac{n+1}{2}))_s$, putem sparge șirul exact din teoremă în două șiruri exacte scurte:
+$$0 \rightarrow j_* \mathcal{E}^\perp \rightarrow R^n f_* \Qell \rightarrow \mathcal{F} \rightarrow 0$$
+$$0 \rightarrow \mathcal{F} \rightarrow j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\Qell(-\frac{n+1}{2}))_s \rightarrow 0$$
+Cum $ j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}^\perp})$ e constant, are $H^1$ nul (suntem pe $\mathbb{P}^1$), și rezultă că în al doilea șir exact lung corespunzător, morfismul conectant de la $H^0$ la $H^1$ e surjectiv, și rezultă ce trebuie pentru $H^1(\mathbb{P}^1,\mathcal{F})$. La fel, $ j_* \mathcal{E}^\perp$ e constant și deci modulul nostru, $H^1(\mathbb{P}^1,R^n f_* \Qell)$ se scufundă în $H^1(\mathbb{P}^1,\mathcal{F})$ (considerând primul șir exact lung corespunzător). De aici rezultă concluzia.
 
-Trecem la subcazul ce prezintă probleme, $E \nsubseteq E^\perp$. Din cele două șiruri exacte lungi corespunzătoare șirurilor exacte scurte din teoremă, obțin că este suficient să arăt aserțiunea pentru modulul $H^1(\mathbb{P}^1,j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}))$ (am folosit că $j_*(\mathcal{E} \cap \mathcal{E}^\perp)$ și $j_*(\frac{j^* R^n f_* \mathbb{Q}_\ell}{\mathcal{E}})$ sunt constante).
+Trecem la subcazul ce prezintă probleme, $E \nsubseteq E^\perp$. Din cele două șiruri exacte lungi corespunzătoare șirurilor exacte scurte din teoremă, obțin că este suficient să arăt aserțiunea pentru modulul $H^1(\mathbb{P}^1,j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}))$ (am folosit că $j_*(\mathcal{E} \cap \mathcal{E}^\perp)$ și $j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}})$ sunt constante).
 
 În primul rând, pot arăta doar $|\alpha|\leq q^{\frac{d+1}{2}}$ (utilizând dualitatea și forma simplectică).
 
 În al doilea rând, dat fiind că $supp\ coker(j_!(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}) \rightarrow j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})) = S$ (zero-dimensional și finit), am că $H^1(\mathbb{P}^1,coker)=0$, și ca urmare morfismul indus pe $H^1$ este surjectiv. Am redus la a studia problema pe $H^1(\mathbb{P}^1,j_!(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})) = H^1_c (U, \frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})$. Vom refolosi notația $\mathcal{F}$ pentru a denota fasciculul $\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}$ pe $U$, iar $\mathcal{F}_0$ va fi fasciculul corespunzător pe $U(\mathbb{F}_q)$. Notăm cu $V$ $\pi_1(U_0,u)$-reprezentarea corespunzătoare. Reamintim că avem biliniara simplectică $\pi_1(U,u)$-echivariantă:
-$$\psi : V \times V \rightarrow \mathbb{Q}_\ell(-n)$$
+$$\psi : V \times V \rightarrow \Qell(-n)$$
 iar aplicația canonică rezultantă $\pi_1(U,u) \rightarrow Sp(\frac{E}{E \cap E^\perp},\psi)$ are imaginea deschisă și densă.
 
 Definim, prin analogie cu funcția zeta, $L$-funcția fasciculului $\mathcal{F}_0$ ca:
@@ -429,7 +480,7 @@ H^2_c(U,\mathcal{F}^{\otimes 2k}) &\simeq (H^0(U,(\mathcal{F}^{\vee})^{\otimes 2
 &\simeq ((((\mathcal{F}^\vee)^{\otimes 2k})_u)^{\pi_1(U,u)})^{\vee}(-1)\\
 &\simeq ((\mathcal{F}^{\otimes 2k})_u)_{\pi_1(U,u)}(-1)\\
 &\simeq ((\mathcal{F}^{\otimes 2k})_u)_{Sp(\mathcal{F}_u,\psi)}(-1)\\
-&\simeq \mathbb{Q}_\ell(-kn-1)^N
+&\simeq \Qell(-kn-1)^N
 \end{align*}
 pentru un anume $N$, ultimul izomorfism rezultând din teoria reprezentării grupurilor simplectice.
 
@@ -447,7 +498,7 @@ Fie $\mathcal{G}_0$ un fascicul pe $U_0$ astfel încât $\mathcal{G}$ e constant
 Dat fiind că $\mathcal{G}$ e constant, $\pi_1(U,u)$ acționează trivial, și de aici rezultă factorizarea prin $G_{\mathbb{F}_q}$.
 \end{proof}
 
-Avem $\zeta_{\widetilde{X}_x}(t)=\prod_i det(1-tF^{deg(x)}_{\mid H^i(\widetilde{X}_x,\mathbb{Q}_\ell)})^{(-1)^{i+1}}=\prod_i det(1-tF^{deg(x)}_{\mid (R^i f_* \mathbb{Q}_\ell)_x})^{(-1)^{i+1}}$. Și cum toate fasciculele $R^i$ sunt constante în afară de $R^n$, iar acesta din urmă se poate filtra în $\frac{R^n f_* \mathbb{Q}_\ell}{\mathcal{E}}$, $\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}$ și $\mathcal{E} \cap \mathcal{E}^\perp$, unde primul și ultimul sunt constante. Deci putem scrie funcția ca:
+Avem $\zeta_{\widetilde{X}_x}(t)=\prod_i det(1-tF^{deg(x)}_{\mid H^i(\widetilde{X}_x,\Qell)})^{(-1)^{i+1}}=\prod_i det(1-tF^{deg(x)}_{\mid (R^i f_* \Qell)_x})^{(-1)^{i+1}}$. Și cum toate fasciculele $R^i$ sunt constante în afară de $R^n$, iar acesta din urmă se poate filtra în $\frac{R^n f_* \Qell}{\mathcal{E}}$, $\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}$ și $\mathcal{E} \cap \mathcal{E}^\perp$, unde primul și ultimul sunt constante. Deci putem scrie funcția ca:
 $$\zeta_{\widetilde{X}_x}(t)=\frac{(1-\alpha_1^{deg(x)}t)...(1-\alpha_r^{deg(x)}t)}{(1-\beta_1^{deg(x)}t)...(1-\beta_s^{deg(x)}t)}det((1-F_xt)_{\mid V})$$
 unde membrul stâng este clar rațional. Dacă arătăm că fracția din membrul drept este rațională, va reieși și raționalitatea ultimului termen, pe care dorim să o arătăm.
 
@@ -480,7 +531,7 @@ Pot identifica $H$ cu $H'=Sp(V) \times \hat{\mathbb{Z}}$ prin aplicația $(\alph
 
 Clar este o mulțime închisă, fiind dată de ecuații determinantale.
 
-Fixând $n$, notez $P_n$ polinomul minimal al lui $\lambda'^n$ peste $\mathbb{Q}_\ell$. Mulțimea $Z'_n=\{\alpha\in Sp(V,\psi)\mid \lambda'^n \in Spec(\alpha)\}$ este algebrică, deci de măsură Haar nulă. În final, putem zice:
+Fixând $n$, notez $P_n$ polinomul minimal al lui $\lambda'^n$ peste $\Qell$. Mulțimea $Z'_n=\{\alpha\in Sp(V,\psi)\mid \lambda'^n \in Spec(\alpha)\}$ este algebrică, deci de măsură Haar nulă. În final, putem zice:
 $$\mu(Z')=\int\limits_{n \in \hat{\mathbb{Z}}} \mu(Z'_n) = 0$$
 \end{proof}
 
