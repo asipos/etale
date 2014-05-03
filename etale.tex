@@ -186,12 +186,117 @@ Numim doi cicli primi {\bf rațional echivalenți} dacă există o deformare pla
 
 Dacă factorizăm fiecare $C^r$ la relația de congruență indusă de echivalența rațională, vom obține grupuri notate cu $CH^r(X)$. Grupul $CH^*(X)$, suma directă a lor, are în mod natural o structură de inel graduat cu următoarele proprietăți:
 
-pâs, pâs, pâs, pâs, pâs... (intersecție transversală? puncte? uită punctul?) să punem graduare dublă!!!!
+pâs, pâs, pâs, pâs, pâs... Hartshorne (intersecție transversală? puncte? uită punctul?) să punem graduare dublă!!!!
 
 Ideea fundamentală aici este existența unei transformări naturale în variabila $X$:
 $$cl_X : CH^*(X) \rightarrow H^*(X,\Qell)$$
 pentru orice $\ell$ diferit de caracteristica corpului peste care lucrăm (fiind forțați de șirul exact Kummer). Aceste morfisme sunt morfisme de inele graduate. În acest mod, putem reduce calculele de intersecții la calcule de produse {\it cup}.
 
+Precum formula Künneth, și dualitatea Poincaré este un rezultat ce are loc și în context $\ell$-adic:
+
+\begin{teo}
+(Dualitatea Poincaré) Fie $X$ o varietate nesingulară completă de dimensiune $d$ definită peste un corp $k$ algebric închis. Atunci:
+\begin{enumerate}[a)]
+\item există și este unică o aplicație (ce este în particular izomorfism):
+$$\eta_X : H^{2d}(X,\Qell) \rightarrow \Qell$$
+(numită {\bf aplicația urmă}) astfel încât pentru orice $P$ punct închis, $\eta_X(cl_X(P))=1$;
+\item pentru orice $r$ există o biliniară nedegenerată:
+$$H^r(X,\Qell) \times H^{2d-r}(X,\Qell) \rightarrow H^{2d}(X,\Qell)$$
+\end{enumerate}
+\end{teo}
+
+??? Peste tot identificăm $\Qell$ cu $\Qell(1)$, ceea ce identifică toate $\Qell(d)$-urile.
+
+Fie $\pi : Y \rightarrow X$ o aplicație proprie între varietăți complete definite peste un corp $k$ algebric închis. Notăm cu $a$ dimensiunea lui $X$, cu $d$ dimensiunea lui $Y$ și cu $c$ numărul $d-a$.
+
+Această aplicație induce în coomologie:
+$$\pi^*: H^{2d-r}(Y,\Qell) \rightarrow H^{2d-r}(Y,\Qell)$$
+de unde obținem via dualitatea Poincaré adjuncta ei:
+$$\pi_* : H^r(Y,\Qell) \rightarrow H^{r-2c}(X,\Qell)$$
+ce satisface, firește proprietatea definitorie:
+$$\langle \pi_*(y),x \rangle=\langle y,\pi^*(x)\rangle$$
+pentru orice $x$ din $H^{2d-r}(X,\Qell)$, $y$ din $H^r(Y,\Qell)$.
+
+Adjuncta, numită {\bf aplicația Gysin}, satisface un număr de proprietăți.
+
+\begin{propr}
+Dacă $\pi : Y \rightarrow Z$ este imersie închisă, atunci $\pi_*(1_Y)=cl_Z(Y)$.
+\end{propr}
+
+\begin{propr}
+Pentru orice $y$ din $H^{2d}(Y,\Qell)$, $\eta_X(\pi_*(y))=\eta_Y(y)$.
+\end{propr}
+
+\begin{proof}
+\begin{align*}
+\eta_X(\pi_*(y))&=\eta_X(\pi_*(y)\smile 1_X)\\
+&=\langle \pi_*(y), 1_X \rangle \\
+&= \langle y, \pi^*(1_X) \\
+&= \langle y, 1_Y \rangle \\
+&= \eta_Y (y \smile 1_Y) \\
+&= \eta_Y(y).
+\end{align*}
+\end{proof}
+
+\begin{propr}
+Pentru orice $x$, $y$ adecvate, $\pi_*(y \cup \pi^*(x)) = \pi_*(y) \cup x$.
+\end{propr}
+
+\begin{proof}
+$\langle \pi_*(y \smile \pi^*(x)), x' \rangle = \langle y \smile \pi^*(x), \pi^*(x') \rangle = \langle y, \pi^*(x \smile x') \rangle = \langle \pi_*(y),x\smile x' \rangle = \langle \pi_*(y) \smile x, x' \rangle$.
+\end{proof}
+
+\begin{propr}
+Dacă $\pi:Y \rightarrow X$ este în plus finită de grad $\delta$ (implicit varietățile au aceeași dimensiune), $\pi_* \circ \pi^* = (\delta \cdot)$.
+\end{propr}
+
+\begin{proof}
+DE PUS
+\end{proof}
+
+Dat fiind că în acest ultim caz $\pi^*$ este identitatea pe $H^0$ (morfism de inele), $pi_*$ este identitatea pe $H^{2d}(X,\Qell)$, $\pi^*$ este înmulțirea cu $\delta$ pe $H^{2d}(X,\Qell)$ și în sfârșit $\pi_*$ este înmulțirea cu $\delta$ pe $H^0(X,\Qell)$.
+
+Ultimul rezultat ce mai trebuie arătat pentru a finaliza mașinăria coomologică este formula de punct fix a lui Lefschetz. Ceea ce este interesant este că ea decurge formal din teoremele expuse mai devreme.
+
+Presupunem că $X$ este o varietate completă nesingulară peste un corp $k$, iar $\phi$ o aplicație regulată de la $X$ la $X$. Atunci $\Gamma_\phi \cdot \Delta_X$ (ca intersecție a doi cicli în $X \times X$ îmi contabilizează punctele fixe ale lui $\phi$, numărate cu multiplicități. Are loc:
+remarcabil
+\begin{teo}
+(Formula de punct fix Lefschetz)
+$$\langle \Gamma_\phi \cdot \Delta_X \rangle = \sum\limits_r (-1)^r Tr(\phi^*_{\mid H^r(X,\Qell)})$$
+\end{teo}
+
+\begin{proof}
+În primul rând, știm că dacă $\{e_i\}_i$ este o bază într-un spațiu vectorial finit-dimensional $V$ și $\phi$ un endomorfism al lui $V$ avem relația:
+$$Tr(\phi)=\sum\limits_i e_i^*(\phi(e_i))$$
+unde prin $\{e_i^*\}_i$ am notat baza duală corespunzătoare.
+
+Peste tot vom identifica (din Künneth) $H^*(X\times X,\Qell)$ cu $H^*(X,\Qell) \otimes_{\Qell} H^*(X,\Qell)$.
+
+Fie, pentru orice $r$ $\{e_i^r\}_i$ bază pentru $H^r(X,\Qell)$ (cu $e^{2d}_1=cl_X(P)$ și, firește, $e^{2d}_1 \otimes e^{2d}_1 = cl_{X\times X}(P)$) și $\{f_i^{2d-r}\}_i$ bază pentru $H^{2d-r}(X,\Qell)$ duală relativ la produsul {\it cup}, i.e. pentru orice $i,j,r$, avem $e_i^r \smile f_j^{2d-r} = \delta_{ij}e^{2d}_1$.
+
+Scriem $cl(\Gamma_\phi)=\sum\limits_{r,i} a_i^r \otimes f_i^{2d-r}$. Vrem să aflăm coeficienții $a_i^r$. Pentru aceasta, notând cele două proiecții $X \times X \rightarrow X$ cu $p$ și $q$, avem:
+\begin{align*}
+a^r_j&=p_*(a^r_j \otimes e^{2d}_1)\\
+&=p_* ((\sum\limits_i (a^r_i \otimes f^{2d-r}_i)) \smile (1 \otimes e^r_j)) \\
+&= p_*(cl(\Gamma_\phi) \smile q^* e^r_j) \\
+&= p_*( (1,\phi)_*(1) \smile q^* e^r_j) \\
+&= p_* (1,\phi)_* (1 \smile (q \circ (1,\phi))^*e_j^r)\\
+&= id_*(1 \smile \phi^*(e_j^r))\\
+&= \phi^*(e_j^r)
+\end{align*}
+
+Deci $cl(\Gamma_\phi)=\sum\limits_{r,i} \phi^*(e^r_i) \otimes f^{2d-r}_i$ și:
+$$cl(\Delta_X)=cl(\Gamma_{id_X})=\sum\limits_{r,i} e^r_i \otimes f^{2d-r}_i = \sum\limits_{r,i} (-1)^r f_i^{2d-r} \otimes e^r_i$$
+Ca urmare:
+\begin{align*}
+cl(\Gamma_\phi \cdot \Delta_X) &= cl(\Gamma_\phi) \smile cl(\Delta_X) \\
+&= \sum\limits_{r,i} ((-1)^r \phi^*(e^r_i) \smile f^{2d-r}_i) \otimes (f^{2d-r}_i \smile e^r_i) \\
+&= \sum\limits_r (-1)^r Tr(\phi^*_{\mid H^r(X,\Qell)}) (e^{2d}_1 \otimes e^{2d}_1)
+\end{align*}
+de unde rezultă imediat formula.
+\end{proof}
+
+Ca atare, putem număra puncte.
 
 \chapter{Numărarea punctelor}
 
