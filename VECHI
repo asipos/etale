@@ -1,24 +1,3 @@
-\begin{defi}
-Un morfism de inele $A \rightarrow B$ se numește {\bf plat} dacă functorul $B \otimes_A \cdot :  A\textnormal{-Mod} \rightarrow B\textnormal{-Mod}$ este exact.
-\end{defi}
-
-\begin{defi}
-Un morfism de varietăți (sau scheme) $\phi: Y \rightarrow X$ este {\bf plat} dacă morfismele locale $\mathcal{O}_{X,\phi(y)} \rightarrow \mathcal{O}_{Y,y}$ sunt plate pentru orice $y$ din $Y$.
-\end{defi}
-
-\begin{defi}
-Un morfism local de inele locale $f: A \rightarrow B$ se numește {\bf neramificat} dacă $A/\mathfrak{m}_A \hookrightarrow B/f(\mathfrak{m}_A)B$ este o extindere finită și separabilă.
-\end{defi}
-
-%definiția morfismului de tip finit între varietăți
-
-\begin{defi}
-Un morfism de varietăți (sau scheme) $\phi: Y \rightarrow X$ este {\bf neramificat} dacă este de tip finit și morfismele locale $\mathcal{O}_{X,\phi(y)} \rightarrow \mathcal{O}_{Y,y}$ sunt neramificate pentru orice $y$ din $Y$.
-\end{defi}
-
-\begin{defi}
-Un morfism (regulat) între două varietăți este {\bf étale} dacă este plat și neramificat.
-\end{defi}
 
 Morfismele étale au următoarele proprietăți:
 

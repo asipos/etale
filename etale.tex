@@ -106,6 +106,28 @@ Acest text își propune să:
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
+Orice schemă este înzestrată cu un morfism canonic către Spec $\mathbb{Z}$, acesta fiind obiectul terminal al categoriei. Să presupunem însă că imaginea unei scheme prin acel morfism unic este doar un punct, să zicem $(p)$, cu $p$ număr prim. În acest caz, fasciculul structural al schemei va avea o structură naturală de fascicul de $\mathbb{F}_p$-algebre, iar morfismul va putea fi „corestricționat” la un morfism către Spec $\mathbb{F}_p$.
+
+Pe baza acestor idei, putem construi următoarea categorie: obiectele sunt perechi $(T,\phi)$ cu $T$ schemă și $\phi: T \rightarrow$ Spec $\mathbb{F}_p$ morfism de scheme, iar morfismele între două obiecte $(T,\phi)$ și $(T',\phi')$ sunt morfismele $\psi: T \rightarrow T'$ cu proprietatea că $\phi'\circ\psi=\phi$. Această categorie „virgulă” ({\it comma category}) o vom numi {\bf categoria schemelor peste $\mathbb{F}_p$}. Iar construcția, firește, o putem face luând orice schemă $S$ în loc de Spec $\mathbb{F}_p$, categoria rezultantă numindu-se {\bf categoria $S$-schemelor}.
+
+Acest „punct de vedere local” sau „relativ”, cum l-a numit A. Grothendieck, va fi folosit exhaustiv în cele ce urmează, în sensul că, deși ne vom concentra atenția asupra unei scheme $S$, o vom face într-un mod extrinsec, considerând morfismele, ca mai sus, ce au pe $S$ drept codomeniu, însă numai pe acelea ce satisfac o oarecare noțiune de „acoperire”. Noțiunea precisă va fi aceea de {\bf morfism étale}.
+
+Un morfism étale între două scheme este un morfism plat și neramificat. Platitudinea este definită la nivel local: un {\bf morfism plat} de scheme în sensul că morfismele induse între inelele locale sunt plate în sensul algebric (induc functori exacți la nivelul categoriilor de module). Ca un morfism să fie {\bf neramificat}, el trebuie să fie {\bf de tip finit} (adică luând preimaginea oricărui deschis afin, ea admite o acoperire finită cu deschiși afini astfel încât morfismele de inele induse de deschișii acoperirii sunt toate de tip finit) și să satisfacă următoarea proprietate definită tot la nivel local: morfismele induse între inelele locale $\mathcal{O}_x \rightarrow \mathcal{O}_{f(x)}$ fac ca extinderile induse de corpuri $\frac{\mathcal{O}_x}{\mathfrak{m}_{\mathcal{O}_x}} \hookrightarrow \frac{\mathcal{O}_{f(x)}}{f(\mathfrak{m}_{\mathcal{O}_x})\mathcal{O}_{f(x)}}$ să fie finite și separabile. (Pentru un morfism neramificat $X \rightarrow Y$, aplicația canonică $X \rightarrow X\times_Y X$ are imaginea deschisă.)
+
+Morfismele étale se comportă bine cu compunerea, în două moduri. Primul este cel evident - compunerea a două morfisme étale este étale. Al doilea este oarecum mai subtil - dacă fixăm o schemă $S$ și ne uităm la subcategoria $S$-schemelor étale (în sensul că $\phi$-ul de mai devreme este morfism étale), atunci toate morfismele din această subcategorie sunt și ele étale - legătura cu compunerea este dată de faptul că proprietatea se poate exprima și: {\it dacă $f$ și $g$ sunt morfisme de scheme astfel încât $g$ și $g \circ f$ sunt étale, atunci și $f$ este étale}.
+
+Am ajuns acum la enunțarea primului rezultat semnificativ al teoriei, ce corespunde oarecum teoremei clasice din topologie a unicității ridicării drumului într-o acoperire. Mai întâi, însă, să definim noțiunea de punct geometric. Fie $x$ un punct al unei scheme $X$. Fixăm o închidere algebrică $K$ a corpului rezidual în $x$ ce induce un morfism $\bar{x}=$ Spec $K\rightarrow X$. Acest morfism îl numim {\bf punct geometric}.
+
+\begin{lema}
+(Lema de rigiditate) Fie $X$, $Y$ două $S$-scheme étale finite, astfel încât $X$ este conexă și $Y$ separată, și $f$ și $g$ două morfisme de la $X$ la $Y$. Fie $\bar{x} \rightarrow X$ un punct geometric, astfel încât $f(\bar{x})=g(\bar{x})$. Atunci $f=g$.
+\end{lema}
+
+\begin{proof}
+Dat fiind că aplicația $Y \rightarrow S$ este étală și separabilă, $\Delta : Y \rightarrow Y \times_S Y$ este deschisă și închisă. Ca urmare putem scrie codomeniul ca reuniune disjunctă de scheme între imagine și o schemă $Z$. Însă imaginea aplicației $f \times_S g: X \rightarrow Y \times_S Y$ taie imaginea lui $\Delta$ în $(f(\bar{x}),g(\bar{x}))$, și ca urmare (cum $X$ este conexă) este conținută pe de-a-ntregul în imaginea lui $\Delta$. Deci $f=g$.
+\end{proof}
+
+
+
 \chapter{De la étale la \texorpdfstring{$\ell$}{l}-adic}
 
 Din proprietățile de bază ale grupurilor de coomologie étală, avem că pentru orice grup abelian $G$ are loc relația:
