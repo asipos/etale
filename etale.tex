@@ -126,7 +126,18 @@ Am ajuns acum la enunțarea primului rezultat semnificativ al teoriei, ce coresp
 Dat fiind că aplicația $Y \rightarrow S$ este étală și separabilă, $\Delta : Y \rightarrow Y \times_S Y$ este deschisă și închisă. Ca urmare putem scrie codomeniul ca reuniune disjunctă de scheme între imagine și o schemă $Z$. Însă imaginea aplicației $f \times_S g: X \rightarrow Y \times_S Y$ taie imaginea lui $\Delta$ în $(f(\bar{x}),g(\bar{x}))$, și ca urmare (cum $X$ este conexă) este conținută pe de-a-ntregul în imaginea lui $\Delta$. Deci $f=g$.
 \end{proof}
 
+Această lemă ne conduce imediat către următorul raționament: dacă $X$ este o $S$-schemă finită étală conexă, $\bar{x} \rightarrow S$ un punct geometric și $\bar{x}'\rightarrow X$ o secțiune a sa - mulțimea acestor secțiuni o notăm cu $X_{\bar{x}}$ - aplicația care duce un $S$-automorfism $f$ al lui $X$ în $f(\bar{x})$ este clar injectivă. Spunem că $X$ este o $S$-schemă {\bf Galois} (sau că morfismul $X \rightarrow S$ este Galois) dacă această aplicație este chiar bijectivă.
 
+De acum încolo, considerăm $S$ conexă. Prin analogie cu teoria clasică Galois, avem următorul rezultat.
+
+\begin{prop}
+Fie $X \rightarrow S$ aplicație Galois finită și $G=Aut_S(X)$ grupul $S$-automorfismelor lui $X$. Aplicațiile $Y \mapsto Aut_Y(X)$ și $H \mapsto X^H$ realizează o echivalență de categorii între subacoperirile étale ale lui $X \rightarrow S$ și subgrupurile lui $G$ (această ultimă categorie este la rândul ei echivalentă cu cea a $G$-mulțimilor tranzitive). În plus, dacă $X \rightarrow S$ este o aplicație finită doar étală, există și este unic (până la izomorfism) $X' \rightarrow X$ ce acoperă Galois pe $S$ în mod universal relativ la $X$ („închiderea Galois” a lui $X \rightarrow S$).
+\end{prop}
+
+
+Asemenea idei se mai pot exprima după cum urmează. Dacă $S$ este o schemă, notăm cu $FEt(S)$ categoria $S$-schemelor finite étale. Fie $\bar{x} \rightarrow S$ un punct geometric. Atunci:
+$$Fib_{\bar{x}} : FEt(S) \rightarrow FinSet$$
+ce acționează ca $(X \rightarrow S) \mapsto Hom_S(\bar{x},X)=X_{\bar{x}}$ este un functor, numit {\bf functorul fibră al lui Grothendieck}. Vom nota cu $\pi_1(S,\bar{x})$ și vom numi grupul fundamental étale grupul de automorfisme ale acestui functor.
 
 \chapter{De la étale la \texorpdfstring{$\ell$}{l}-adic}
 
