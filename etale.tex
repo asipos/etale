@@ -95,6 +95,8 @@ Acest text își propune să:
 \item aplice aceste rezultate la studiul funcțiilor zeta asociate varietăților peste corpuri finite
 \end{itemize}
 
+\cite{milne}\cite{lovering}\cite{dugger}
+
 \newpage
 \phantom{X}
 \newpage
@@ -138,6 +140,17 @@ Fie $X \rightarrow S$ aplicație Galois finită și $G=Aut_S(X)$ grupul $S$-auto
 Asemenea idei se mai pot exprima după cum urmează. Dacă $S$ este o schemă, notăm cu $FEt(S)$ categoria $S$-schemelor finite étale. Fie $\bar{x} \rightarrow S$ un punct geometric. Atunci:
 $$Fib_{\bar{x}} : FEt(S) \rightarrow FinSet$$
 ce acționează ca $(X \rightarrow S) \mapsto Hom_S(\bar{x},X)=X_{\bar{x}}$ este un functor, numit {\bf functorul fibră al lui Grothendieck}. Vom nota cu $\pi_1(S,\bar{x})$ și vom numi grupul fundamental étale grupul de automorfisme ale acestui functor.
+
+O identificare mai concretă a grupului se poate face într-un mod asemănător cu spațiile de acoperire din topologia algebrică clasică. Fixăm o schemă $S$ și un punct geometric al ei $\bar{x}$. Consider familia $\{X_\alpha\}_\alpha$ a tuturor acoperirilor finite Galois ale lui $S$, ce are structură de diagramă în categoria $S$-schemelor. Pun în fiecare $X_\alpha$ câte un punct geometric $\bar{x}_\alpha$ astfel încât alegerile făcute să fie compatibile cu morfismele diagramei. Atunci putem arăta:
+$$Fib_{\bar{x}} \simeq \varinjlim Hom_S(X_\alpha,\cdot)$$
+Pentru a construi morfismul de la dreapta la stânga, trebuie să dăm câte un morfism $\phi_{\alpha,Y} : Hom_S(X_\alpha,Y) \rightarrow Fib_{\bar{x}}(Y)$ pentru orice $\alpha,Y$. Aceasta se face punând $\phi(f)=f(\bar{x}_\alpha)$. Invers, luând o schemă $Y$ și $\bar{y}$ în $Fib_{\bar{x}}(Y)$, aleg o închidere Galois a lui $Y$ și factorizez $\bar{y} \rightarrow X_\alpha \rightarrow Y$. Atunci există un unic $S$-automorfism al lui $X_\alpha$ care duce pe $\bar{x}_\alpha$ în $\bar{y}$, ce dă un element al limitei inductive. Izomorfismul este deci arătat.
+
+Ca o consecință, avem descrierea:
+$$\pi_1(S,\bar{x}) \simeq \varprojlim Aut_S(X_\alpha)^{op}$$
+
+
+
+
 
 \chapter{De la étale la \texorpdfstring{$\ell$}{l}-adic}
 
