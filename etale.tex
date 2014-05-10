@@ -118,7 +118,7 @@ Un morfism étale între două scheme este un morfism plat și neramificat. Plat
 
 Morfismele étale se comportă bine cu compunerea, în două moduri. Primul este cel evident - compunerea a două morfisme étale este étale. Al doilea este oarecum mai subtil - dacă fixăm o schemă $S$ și ne uităm la subcategoria $S$-schemelor étale (în sensul că $\phi$-ul de mai devreme este morfism étale), atunci toate morfismele din această subcategorie sunt și ele étale - legătura cu compunerea este dată de faptul că proprietatea se poate exprima și: {\it dacă $f$ și $g$ sunt morfisme de scheme astfel încât $g$ și $g \circ f$ sunt étale, atunci și $f$ este étale}.
 
-Am ajuns acum la enunțarea primului rezultat semnificativ al teoriei, ce corespunde oarecum teoremei clasice din topologie a unicității ridicării drumului într-o acoperire. Mai întâi, însă, să definim noțiunea de punct geometric. Fie $x$ un punct al unei scheme $X$. Fixăm o închidere algebrică $K$ a corpului rezidual în $x$ ce induce un morfism $\bar{x}=$ Spec $K\rightarrow X$. Acest morfism îl numim {\bf punct geometric}.
+Am ajuns acum la enunțarea primului rezultat semnificativ al teoriei, ce corespunde oarecum teoremei clasice din topologie a unicității ridicării drumului într-o acoperire. Mai întâi, însă, să definim noțiunea de punct geometric. Fie $x$ un punct al unei scheme $X$. Fixăm o închidere algebrică $K$ a corpului rezidual în $x$ ce induce un morfism $\bar{x}=$ Spec $K\rightarrow X$. Numim un astfel de morfism {\bf punct geometric}.
 
 \begin{lema}
 (Lema de rigiditate) Fie $X$, $Y$ două $S$-scheme étale finite, astfel încât $X$ este conexă și $Y$ separată, și $f$ și $g$ două morfisme de la $X$ la $Y$. Fie $\bar{x} \rightarrow X$ un punct geometric, astfel încât $f(\bar{x})=g(\bar{x})$. Atunci $f=g$.
@@ -136,8 +136,7 @@ De acum încolo, considerăm $S$ conexă. Prin analogie cu teoria clasică Galoi
 Fie $X \rightarrow S$ aplicație Galois finită și $G=Aut_S(X)$ grupul $S$-automorfismelor lui $X$. Aplicațiile $Y \mapsto Aut_Y(X)$ și $H \mapsto X^H$ realizează o echivalență de categorii între subacoperirile étale ale lui $X \rightarrow S$ și subgrupurile lui $G$ (această ultimă categorie este la rândul ei echivalentă cu cea a $G$-mulțimilor tranzitive). În plus, dacă $X \rightarrow S$ este o aplicație finită doar étală, există și este unic (până la izomorfism) $X' \rightarrow X$ ce acoperă Galois pe $S$ în mod universal relativ la $X$ („închiderea Galois” a lui $X \rightarrow S$).
 \end{prop}
 
-
-Asemenea idei se mai pot exprima după cum urmează. Dacă $S$ este o schemă, notăm cu $FEt(S)$ categoria $S$-schemelor finite étale. Fie $\bar{x} \rightarrow S$ un punct geometric. Atunci:
+Să privim această corespondență dintr-un alt punct de vedere. Dacă $S$ este o schemă, notăm cu $FEt(S)$ categoria $S$-schemelor finite étale. Fie $\bar{x} \rightarrow S$ un punct geometric. Atunci:
 $$Fib_{\bar{x}} : FEt(S) \rightarrow FinSet$$
 ce acționează ca $(X \rightarrow S) \mapsto Hom_S(\bar{x},X)=X_{\bar{x}}$ este un functor, numit {\bf functorul fibră al lui Grothendieck}. Vom nota cu $\pi_1(S,\bar{x})$ și vom numi grupul fundamental étale grupul de automorfisme ale acestui functor.
 
@@ -147,6 +146,24 @@ Pentru a construi morfismul de la dreapta la stânga, trebuie să dăm câte un 
 
 Ca o consecință, avem descrierea:
 $$\pi_1(S,\bar{x}) \simeq \varprojlim Aut_S(X_\alpha)^{op}$$
+
+\begin{ex}
+Dacă avem un corp $k$, a alege un punct geometric al său $\bar{x}$ se rezumă la a fixa o închidere algebrică. Putem acum calcula:
+$$\pi_1(\text{Spec }k,\bar{x})=\varprojlim\limits_{L \text{ ext. finită separabilă}} Gal(\frac{L}{k}) = Gal(\frac{k^s}{k})$$
+adică grupul Galois absolut al corpului $k$.
+\end{ex}
+
+Prin urmare, grupurile $\pi_1(S,\bar{x})$ sunt profinite și acționează continuu pe $Fib_{\bar{x}}(X)$ pentru orice $X \rightarrow S$ finită étală, iar orbitele acțiunilor sunt componentele conexe ale fibrelor. Functorul $Fib_{\bar{x}}$ poate fi deci privit ca fiind definit pe $FEt(S)$ și luând valori în categoria $\pi_1(S,\bar{x})$-mulțimilor la stânga, finite și continue. Am ajuns acum să putem reexprima în acest cadru corespondența de mai devreme:
+
+\begin{teo}
+Functorul $Fib_{\bar{x}}$, redefinit ca mai înainte, reprezintă o echivalență de categorii.
+\end{teo}
+
+\begin{proof}
+În primul rând, să arătăm că este esențial surjectiv. Fie $\Sigma$ o $\pi_1(S,\bar{x})$-mulțime finită și continuă. Pentru simplitate, o presupunem tranzitivă. Pentru orice $x$ din $\Sigma$, stabilizatorul său este deschis, deci conține un element al unei baze de deschiși, în particular un subgrup normal al cărui cât este de forma $G=Aut_S(P)$, cu $P \rightarrow S$ acoperire Galois. Ca urmare $\pi_1(S,\bar{x})$ acționează printr-un asemena cât finit, iar imaginea în $G$ a stabilizatorului conduce via corespondența de mai devreme la o $S$-schemă finită étală $X$, care din lema de rigiditate are fibra izomorfă cu $(G/H)_s$, care din teorema orbită-stabilizator este izomorfă cu $\Sigma$.
+
+Demonstrăm acum că functorul este deplin fidel. Lema de rigiditate ne indică imediat că este fidel, așa că rămâne de arătat doar surjectivitatea pe Hom-set-uri. Fără a restrânge generalitatea, presupunem $X$ și $Y$ conexe. Consider un morfism de $\pi_1(S,\bar{x})$-mulțimi $f:X_{\bar{x}} \rightarrow Y_{\bar{x}}$. Atunci stabilizatorul lui $\bar{x}'$ este inclus în stabilizatorul lui $f(\bar{x}')$, pentru orice $\bar{x}'$ din $X_{\bar{x}}$. Alegem o închidere Galois $P \rightarrow X$ și observăm că orice $\sigma$ ce acționează trivial pe $P$ stabilizează și pe $\bar{x}'$, și pe $f(\bar{x}')$. Reducându-ne la câtul finit de $X$-automorfisme ale lui $P$, aplicăm iar corespondența de mai devreme pentru a obține morfismul dorit $X \rightarrow Y$.
+\end{proof}
 
 
 
