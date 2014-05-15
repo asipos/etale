@@ -165,6 +165,39 @@ Functorul $Fib_{\bar{x}}$, redefinit ca mai înainte, reprezintă o echivalenț�
 Demonstrăm acum că functorul este deplin fidel. Lema de rigiditate ne indică imediat că este fidel, așa că rămâne de arătat doar surjectivitatea pe Hom-set-uri. Fără a restrânge generalitatea, presupunem $X$ și $Y$ conexe. Consider un morfism de $\pi_1(S,\bar{x})$-mulțimi $f:X_{\bar{x}} \rightarrow Y_{\bar{x}}$. Atunci stabilizatorul lui $\bar{x}'$ este inclus în stabilizatorul lui $f(\bar{x}')$, pentru orice $\bar{x}'$ din $X_{\bar{x}}$. Alegem o închidere Galois $P \rightarrow X$ și observăm că orice $\sigma$ ce acționează trivial pe $P$ stabilizează și pe $\bar{x}'$, și pe $f(\bar{x}')$. Reducându-ne la câtul finit de $X$-automorfisme ale lui $P$, aplicăm iar corespondența de mai devreme pentru a obține morfismul dorit $X \rightarrow Y$.
 \end{proof}
 
+\begin{prop}
+Fie $S$ o schemă conexă și $\bar{x}$, $\bar{x}'$ două puncte geometrice ale sale. Atunci există un izomorfism între functorii fibră $Fib_{\bar{x}}$ și $Fib_{\bar{x}'}$.
+\end{prop}
+
+\begin{proof}
+Știm de mai devreme că fiecare functor fibră se scrie ca limită de reprezentabile, în a cărei diagramă obiectele coincid de la un functor la altul, însă diferă funcțiile de „tranziție”. Pentru a construi un izomorfism între functori este suficient să dăm un izomorfism între diagrame. Luăm $X_\alpha$ și $X_\beta$ două acoperiri Galois ale lui $S$ cu funcțiile de tranziție $\phi_{\alpha\beta}$ și $\psi_{\alpha,\beta}$, pentru $\bar{x}$ și respectiv $\bar{x}'$. Fie punctele bază peste $\bar{x}$ ale acoperirilor $p_\alpha$ și $p_\beta$. Din construcție, $Fib_{\bar{x}}(\phi_{\alpha\beta})(p_\beta)=p_\alpha$. Luăm $\lambda_\beta$ un $S$-automorfism al lui $P_\beta$ și fie $p'_\alpha:=Fib_{\bar{x}}(\psi_{\alpha\beta})(\lambda_\beta(p_\beta))$. Dat fiind că $P_\alpha$ este Galois, există un unic $S$-automorfism $\lambda_\alpha$ al lui $P_\alpha$ care duce $p_\alpha$ în $p'_\alpha$. Rezultă că $\lambda_\alpha \circ \phi_{\alpha\beta} = \psi_{\alpha\beta} \circ \lambda_\beta$. Această construcție induce izomorfismul de diagrame cerut.
+\end{proof}
+
+\begin{cor}
+Dacă $S$ este o schemă conexă și $\bar{x}$, $\bar{x}'$ două puncte geometrice ale sale. Atunci există un izomorfism continuu de grupuri profinite $\pi_1(S,\bar{x}) \rightarrow \pi_1(S,\bar{x}')$.
+\end{cor}
+
+Începe deja să se vadă analogia cu grupul fundamental clasic: acolo un izomorfism între grupurile asociate aceluiași spațiu cu puncte bază diferite era indus de un drum între cele două puncte. Aici, analogul drumului este dat de izomorfismul între cei doi functori fibră, care din aceasta similaritate, este numit {\bf drum} între punctele geometrice.
+
+Dacă avem o schemă conexă $W$ de tip finit (peste Spec $\mathbb{Z}$), toate punctele sale închise au corpuri reziduale finite, astfel că aplicațiile canonice Spec $\kappa(x) \rightarrow W$ vor induce morfisme $\pi_1(\text{Spec }\kappa(x),\bar{x}) \rightarrow \pi_1(W,\bar{x})$. Însă primul grup este izomorf cu completarea profinită a lui $\mathbb{Z}$, ce are un generator topologic canonic (morfismul Frobenius), iar imaginea sa este un element canonic în $ \pi_1(W,\bar{x})$.
+
+Însă dacă $\bar{w}$ este un alt punct bază pentru $W$, pot din izomorfismul de mai devreme $ \pi_1(W,\bar{x}) \rightarrow \pi_1(W,\bar{w})$ să obțin un element canonic în $\pi_1(W,\bar{w})$, modulo conjugare. Clasa elementului se va numi clasa Frobenius a lui $\bar{x}$. Astfel că s-a construit pentru orice $\bar{w}$ o aplicație de la punctele închise ale lui $W$ la clasele de conjugare din $\pi_1(W,\bar{w})$.
+
+Precum grupul fundamental clasic, și acest „$\pi_1$ étale” are un comportament functorial. Dacă avem un morfism de scheme $f: S' \rightarrow S$, atunci functorul de schimbare a bazei $BC_{S'\rightarrow S}$ duce $S$-scheme finite étale în $S'$-scheme finite étale. Iar dacă $\bar{x}'$ este un punct geometric al lui $S'$, din proprietatea de pull-back avem:
+$$Hom_{S'}(\bar{x}',X \times_S S')\simeq Hom_S(\bar{x},X)$$
+Ca urmare $Fib_{\bar{x}} = Fib_{\bar{x}'} \circ BC_{S'\rightarrow S}$, de unde se obține o aplicație naturală:
+$$f_* : \pi_1(S',\bar{x}') \rightarrow \pi_1(S,\bar{x})$$
+care induce un functor $Res_{f_*}$ de la $\pi_1(S,\bar{x})$-mulțimile finite continue la $\pi_1(S',\bar{x}')$-mulțimile finite continue. Chiar din definiție, rezultă următoarea compatibilitate:
+$$Res_{f_*} \circ Fib_{\bar{x}} = Fib_{\bar{x}'} \circ BC_{S'\rightarrow S}$$
+
+Introducem o ultimă proprietate a acestui grup fundamental étale.
+
+\begin{teo}
+Fie $X_0$ o schemă geometric conexă și quasi-compactă peste un corp perfect $k$, $X$ schema obținută prin schimbarea de bază spre o închidere algebrică $\bar{k}$, iar $\bar{x} : \text{Spec }\bar{k} \rightarrow X$ un punct geometric. Atunci există un șir exact:
+$$1 \rightarrow \pi_1(X,\bar{x}) \rightarrow \pi_1(X_0,\bar{x}) \rightarrow Gal(\bar{k}/k) \rightarrow 1$$
+\end{teo}
+
+
 
 
 
