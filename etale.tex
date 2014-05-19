@@ -197,6 +197,32 @@ Fie $X_0$ o schemă geometric conexă și quasi-compactă peste un corp perfect 
 $$1 \rightarrow \pi_1(X,\bar{x}) \rightarrow \pi_1(X_0,\bar{x}) \rightarrow Gal(\bar{k}/k) \rightarrow 1$$
 \end{teo}
 
+Notăm categoria morfismelor étale către o schemă fixată $S$ cu $Et(S)$.
+
+\begin{defi}
+Un {\bf prefascicul étale} (de mulțimi) pe $S$ este un functor $\mathcal{F} : Et(S)^{op} \rightarrow Set$.
+\end{defi}
+
+\begin{defi}
+Un {\bf fascicul étale} (de mulțimi) este un prefascicul étale cu proprietatea că pentru orice $U \rightarrow S$ morfism étale și orice $\{U_i \rightarrow U\}_i$ familie de morfisme étale ale căror imagini acoperă împreună pe $U$ am că diagrama:
+$$\mathcal{F}(U) \rightarrow \prod_i \mathcal{F}(U_i) \rightrightarrows \prod_{i,j} \mathcal{F}(U_i \times_U U_j)$$
+este egalizator în $Set$.
+\end{defi}
+
+În acest moment, comparația cu noțiunile clasice din studiul varietăților, oarecum întrezărită de pe la grupul fundamental, a devenit inevitabilă, așa că se cuvine să o etalăm explicit. Dacă pentru prefascicule am transpus exact definiția clasică, înlocuind categoria indusă de mulțimea ordonată a deschișilor unui spațiu topologic cu acea categorie a morfismelor étale, la fascicule nu am mai putut să folosim exclusiv structura de categorie, dat fiind că avem nevoie să știm ce familii de morfisme reprezintă acoperiri. Categoria $Et(S)$ devine deci, împreună cu această structură în plus, ceea ce se zice un {\bf sit}, numit {\bf situl étale} al schemei $S$. (De aici și explicația pentru titlul capitolului.) Această abstractizare merge mai departe către {\it teoria toposurilor}, asupra căreia vom păstra tăcerea aici.
+
+În practică, însă, ne este greu, folosind doar definiția, să verificăm condiția de fascicul. De aceea ne va fi de folos următorul rezultat.
+
+\begin{prop}
+\begin{enumerate}[i)]
+\item Orice prefascicul reprezentabil (de forma $\widetilde{V} = Hom_S(\cdot,V) \in Set^{Et_S^{op}}$) este fascicul.
+\item Condiția de mai sus este locală, în sensul că un prefasicul pe $S$ este reprezentabil dacă și numai dacă pentru orice $\bar{x} \rightarrow S$, punct geometric, există $U \rightarrow S$ vecinătate a lui astfel încât restricția prefascicului la $U$ e un prefascicul reprezentabil.
+\end{enumerate}
+\end{prop}
+
+De pildă, fasciculul constant de fibră $\Sigma$ peste $S$ poate fi gândit în această accepțiune ca fiind reprezentat de $\Sigma \times S$, adică o reuniune disjunctă de $\Sigma$ cópii ale lui $S$.
+
+Toate construcțiile cunoscute de la fasciculele pe spații topologice au un corespondent peste situl étale. La fel, subcategoria de fascicule este reflectivă și avem adjunctul de fasciculizare. Imaginea inversă a unui fascicul este construită tot luând limita inductivă și fasciculizând - de pildă, când morfismul pe care tragem fasciculul înapoi este un punct geometric, caz în care imaginea inversă o numim fibră. Analog, fasciculizarea păstrează fibrele.
 
 
 
@@ -206,7 +232,7 @@ $$1 \rightarrow \pi_1(X,\bar{x}) \rightarrow \pi_1(X_0,\bar{x}) \rightarrow Gal(
 
 Din proprietățile de bază ale grupurilor de coomologie étală, avem că pentru orice grup abelian $G$ are loc relația:
 $$H^1(X,G)\simeq Hom_{TopGr}(\pi_1(X,x),G)$$
-unde Hom-set-ul din dreapta este considerat în categoria grupurilor topologice (iar $G$ este considerat cu topologia discretă). Dacă vom considera, de pildă, $G$ ca fiind un grup infinit, fără torsiune, spre exemplu $\mathbb{Z}$ (cum se obișnuiește în topologia algebrică), atunci grupul de coomologie va fi trivial. Iată de ce: dacă iau un element al acelui Hom-set, $f: \pi_1(X,x) \rightarrow \mathbb{Z}$ (i.e. un morfism de grupuri continuu), atunci $f^{-1}(0)$ este deschis în $\pi_1(X,x)$. Cum grupul de omotopie este compact, $f^{-1}(0)$ este de indice finit. Prin urmare, $f$ atinge un număr finit de valori, însă singurul subgrup finit al lui $\mathbb{Z}$ este cel trivial. Deci $f$ este morfismul nul, iar $H^1(X,\mathbb{Z})=0$, comportament pe care nu ni-l dorim.
+unde Hom-set-ul din dreapta este considerat în categoria grupurilor topologice (iar $G$ este considerat cu topologia discretă). Dacă vom considera, de pildă, $G$ ca fiind un grup infinit, fără torsiune, spre exemplu $\mathbb{Z}$ (cum se obișnuiește în topologia algebrică), atunci grupul de coomologie va fi trivial. Iată de ce: dacă iau un element al acelui Hom-set, $f: \pi_1(X,x) \rightarrow \mathbb{Z}$ (i.e. un morfism de grupuri continuu), atunci $f^{-1}(0)$ este deschis în $\pi_1(X,x)$. Cum grupul de omotopie este compact, $f^{-1}(0)$ este de indice finit. Prin urmare, $f$ atinge un număr finit de valori, însă singurul subgrup finit al lui $\mathbb{Z}$ este cel trivial. Deci $f$ este morfismul nul, iar $H^1(X,\mathbb{Z})=0$, ceea ce nu corespunde unei oarecari intuiții topologice.
 
 În argumentul de mai sus a intervenit în mod crucial faptul că grupul este considerat cu topologia discretă. Dacă am considera un grup topologic cu o structură canonică de grup profinit nediscret, cum ar fi $\mathbb{Z}_\ell$, atunci analogul membrului drept, $Hom_{TopGr}(\pi_1(X,x),\mathbb{Z}_\ell)$, nu va mai fi în mod trivial nul. Însă:
 \begin{align*}
@@ -350,12 +376,12 @@ Dacă $\pi:Y \rightarrow X$ este în plus finită de grad $\delta$ (implicit var
 DE PUS
 \end{proof}
 
-Dat fiind că în acest ultim caz $\pi^*$ este identitatea pe $H^0$ (morfism de inele), $pi_*$ este identitatea pe $H^{2d}(X,\Qell)$, $\pi^*$ este înmulțirea cu $\delta$ pe $H^{2d}(X,\Qell)$ și în sfârșit $\pi_*$ este înmulțirea cu $\delta$ pe $H^0(X,\Qell)$.
+Dat fiind că în acest ultim caz $\pi^*$ este identitatea pe $H^0$ (morfism de inele), rezultă că $\pi_*$ este identitatea pe $H^{2d}(X,\Qell)$, $\pi^*$ este înmulțirea cu $\delta$ pe $H^{2d}(X,\Qell)$ și în sfârșit $\pi_*$ este înmulțirea cu $\delta$ pe $H^0(X,\Qell)$.
 
 Ultimul rezultat ce mai trebuie arătat pentru a finaliza mașinăria coomologică este formula de punct fix a lui Lefschetz. Ceea ce este interesant este că ea decurge formal din teoremele expuse mai devreme.
 
-Presupunem că $X$ este o varietate completă nesingulară peste un corp $k$, iar $\phi$ o aplicație regulată de la $X$ la $X$. Atunci $\Gamma_\phi \cdot \Delta_X$ (ca intersecție a doi cicli în $X \times X$ îmi contabilizează punctele fixe ale lui $\phi$, numărate cu multiplicități. Are loc:
-remarcabil
+Presupunem că $X$ este o varietate completă nesingulară peste un corp $k$, iar $\phi$ o aplicație regulată de la $X$ la $X$. Atunci $\Gamma_\phi \cdot \Delta_X$ (ca intersecție a doi cicli în $X \times X$) contabilizează punctele fixe ale lui $\phi$, numărate cu multiplicități. Are loc:
+
 \begin{teo}
 (Formula de punct fix Lefschetz)
 $$\langle \Gamma_\phi \cdot \Delta_X \rangle = \sum\limits_r (-1)^r Tr(\phi^*_{\mid H^r(X,\Qell)})$$
