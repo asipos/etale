@@ -43,7 +43,7 @@
 
 \pagenumbering{roman}
 \setcounter{page}{1}
-\fontsize{3.9mm}{5mm}\selectfont
+\fontsize{4.3mm}{6mm}\selectfont
 \pagestyle{empty}
 \begin{center}
 
@@ -53,7 +53,7 @@
 \Large Disertație masterală\\[3.5cm] 
  
 \rule{8cm}{0.5mm}\\[0.8cm]
-{ \huge \bfseries Étale stuff}\\[0.2cm]
+{ \huge \bfseries Geometria estimărilor}\\[0.2cm]
 \rule{8cm}{0.5mm}\\[2.5cm]
 
 \begin{minipage}{0.4\textwidth}
@@ -65,7 +65,7 @@ Andrei Sipoș
 \begin{minipage}{0.5\textwidth}
 \begin{flushright} \large
 \emph{Profesor coordonator:} \\
-Lect. dr. Victor Vuletescu
+Conf. dr. Victor Vuletescu
 \end{flushright}
 \end{minipage}
 
@@ -223,6 +223,84 @@ este egalizator în $Set$.
 De pildă, fasciculul constant de fibră $\Sigma$ peste $S$ poate fi gândit în această accepțiune ca fiind reprezentat de $\Sigma \times S$, adică o reuniune disjunctă de $\Sigma$ cópii ale lui $S$.
 
 Toate construcțiile cunoscute de la fasciculele pe spații topologice au un corespondent peste situl étale. La fel, subcategoria de fascicule este reflectivă și avem adjunctul de fasciculizare. Imaginea inversă a unui fascicul este construită tot luând limita inductivă și fasciculizând - de pildă, când morfismul pe care tragem fasciculul înapoi este un punct geometric, caz în care imaginea inversă o numim fibră. Analog, fasciculizarea păstrează fibrele.
+
+Pentru a defini, la fel cum o facem când lucrăm cu fascicule pe spații topologice, fascicule de grupuri abeliene, nu avem altceva de făcut decât să înlocuim peste tot mulțimile cu grupuri. Echivalent, putem spune că un fascicul de grupuri abeliene pe un sit étale este un obiect de tip grup abelian în categoria fasciculelor de mulțimi de pe acel sit, obținând astfel o categorie echivalentă cu cea definită anterior („comutativitatea abstracțiunii”!).
+
+Această categorie, a fasciculelor de grupuri abeliene pe un sit étale asociat unei varietăți X, categorie notată de acum înainte cu $Ab(X)$, este abeliană și are suficiente obiecte injective. (Putem face aceeași construcție și pentru prefascicule, obținând o categorie abeliană $PreshAb(X)$.) Demonstrația dată de Grothendieck acestui ultim fapt se bazează, firește, pe existența anvelopei injective a unui grup abelian arbitrar.
+
+În aceste condiții, cum $\Gamma: Ab(X) \rightarrow Ab$ este un functor exact la stânga, el admite functori derivați la dreapta. Vom nota $(R^r\Gamma)(\mathcal{F})$ cu $H^r(X,\mathcal{F})$ și îl vom numi al $r$-lea grup de {\bf coomologie étală} corespunzător varietății $X$.
+
+Imediat, din teoria functorilor derivați, rezultă că $H^0$ este $\Gamma$ și că un șir exact scurt de fascicule étale abeliene induce un șir exact lung în coomologia lor.
+
+O construcție înrudită (chiar o generalizare, după cum vom vedea) este derivarea imaginii directe a unui fascicul. Dacă $\pi: Y \rightarrow X$ este un morfism, iar $\mathcal{F}$ este un fascicul étale pe $Y$, definim $\pi_*(\mathcal{F})$ ca fiind fasciculul étale pe $X$ care verifică:
+$$(\pi_*\mathcal{F})(U)=\mathcal{F}(U\times_X Y)$$
+(bine definit, deoarece o schimbare de bază a unui morfism étale este étale). Această construcție este chiar un functor $\pi_*: Ab(Y) \rightarrow Ab(X)$, ce e exact la stânga, deci admite functori derivați notați cu $R^r\pi_*$.
+
+\begin{prop}
+$R^r\pi_*(\mathcal{F})$ este fasciculizatul lui $U \mapsto H^r(U \times_X Y, \mathcal{F})$.
+\end{prop}
+
+\begin{proof}
+Definim $\pi_P: PreshAb(Y) \rightarrow PreshAb(X)$ ca fiind analogul lui $\pi_*$ pentru prefascicule. Atunci $\pi_* =\  \widetilde{}\ \circ \pi_P \circ i$, unde $\ \widetilde{}\ $ (fasciculizarea) și $\pi_P$ sunt exacte.
+
+Fie $\mathcal{F} \rightarrow \mathcal{I}^\bullet$ o rezoluție injectivă. Atunci:
+\begin{align*}
+R^r\pi_*(\mathcal{F}) &= H^r(\pi_*\mathcal{I}^\bullet)\\
+&= H^r (\ \widetilde{}\ \circ \pi_P \circ i\mathcal{I}^\bullet)\\
+&= (\ \widetilde{}\ \circ \pi_P)(H^r(i\mathcal{I}^\bullet))\\
+&=(\ \widetilde{}\ \circ \pi_P)(U \mapsto H^r(U, \mathcal{F}))\\
+&=\ \widetilde{}\ (U \mapsto H^r(U \times_X Y, \mathcal{F}))
+\end{align*}
+\end{proof}
+
+\begin{cor}
+$(R^r\pi_*\mathcal{F})_{\bar{x}} = \varinjlim\limits_{(U,u) \rightarrow \bar{x}} H^r(U \times_X Y, \mathcal{F})$.
+\end{cor}
+
+Dacă ne uităm la o varietate $Y$ definită peste un corp separabil închis $k$ (cu morfismul asociat $Y \xrightarrow{\pi}$ Spec $k$), vom constata un lucru interesant. Anume, dat fiind că acoperirile étale ale lui Spec $k$ sunt date de spectrele unor sume directe de $k$-uri, condiția de lipire a secțiunilor ne spune că a da un fascicul pe Spec $k$ este același lucru cu a da un grup abelian, iar prin această echivalență de categorii $\pi_*$ îi corespunde lui $\Gamma$. Rezultă că aici coomologia étală este caz particular de derivare a imaginii directe.
+
+Dacă $\phi:Y \rightarrow X$ este un morfism, putem defini, analog cu teoria clasică, și un functor adjunct lui $\phi_*$, functorul imagine inversă $\phi^* : Ab(X) \rightarrow Ab(Y)$, ce este exact. Rezultă că un șir exact scurt de fascicule étale pe $X$:
+$$0 \rightarrow \mathcal{F}' \rightarrow \mathcal{F} \rightarrow \mathcal{F}'' \rightarrow 0$$
+induce șirul exact lung format din:
+$$\cdots \rightarrow H^r(Y,\phi^*\mathcal{F}') \rightarrow H^r(Y,\phi^*\mathcal{F}) \rightarrow H^r(Y,\phi^*\mathcal{F}'') \rightarrow \cdots$$
+iar aplicația naturală $\mathcal{F}(X) \rightarrow \phi^*\mathcal{F}(Y)$ induce, din teoria functorilor derivați, morfisme $H^r(X,\mathcal{F}) \rightarrow H^r(Y,\phi^*\mathcal{F})$ (astfel, coomologia étală este și ea contravariant functorială), ce sunt compatibile cu aplicațiile frontieră din șirurile exacte lungi.
+
+Dacă $j :U \rightarrow X$ este o imersie deschisă, iar $\mathcal{F}$ este un fascicul étale pe $U$, definim prefasciculul $\mathcal{F}_!$ prin:
+\begin{align*}
+\mathcal{F}_!(g: V \rightarrow X) = \left\{
+     \begin{array}{lr}
+       \mathcal{F}(V \rightarrow U) & \text{dacă } g(V)\subseteq U\\
+       0 & \text{altfel}
+     \end{array}
+   \right.
+\end{align*}
+iar fasciculul $j_!\mathcal{F}$ ca fiind fasciculizatul lui $\mathcal{F}_!$.
+
+O aplicație $X \rightarrow S$ se numește {\bf proprie} dacă este separată și pentru orice $T \rightarrow S$, aplicația $X \times_S T \rightarrow T$ este închisă. (O varietate $X$ peste un corp $k$ este {\bf completă} dacă $X \rightarrow$ Spec $k$ este proprie.)
+
+În cazul în care avem, ca mai devreme, $Y \rightarrow$ Spec $k$ o varietate peste un corp separabil închis, teorema de compactificare a lui Nagata ne dă o imersie deschisă $j: Y \rightarrow \bar{Y}$ peste Spec $K$, astfel încât $\bar{Y}$ este completă. Definim $H^r_c(Y,\mathcal{F}) = H^r(\bar{Y},j_!\mathcal{F})$ și o numim {\bf coomologie cu suport propriu}.
+
+Teorema lui Nagata are un enunț ceva mai larg, permițând să plecăm de la morfisme mai generale $Y \rightarrow S$, ceea ce ne duce cu gândul la derivări cu suport propriu ale imaginii directe.
+
+\begin{teo}
+Fie $\pi: X \rightarrow S$ proprie, $\mathcal{F}$ fascicul constructibil pe $X$. Atunci $R^r\pi_*\mathcal{F}$ este constructibil pentru orice $r \geq 0$, iar dacă $\bar{x} \rightarrow S$ este un punct geometric, $(R^r\pi_*\mathcal{F})_{\bar{x}} = H^r(X_{\bar{x}},\mathcal{F}_{\mid X_{\bar{x}}})$.
+\end{teo}
+
+Dacă luăm pe post de $S$ spectrul unui corp separabil închis, obținem:
+
+\begin{cor}
+Grupurile de coomologie ale unui fascicul constructibil peste o varietate completă sunt finite.
+\end{cor}
+
+În sfârșit, încheiem acest cerc de idei prin:
+
+\begin{teo}
+(Teorema de Schimbare Proprie a Bazei) Fie $\pi: X \rightarrow S$ aplicație proprie, $f: T \rightarrow S$ morfism, $X' = X \times_S T$ și $X\xleftarrow{f'}X'\xrightarrow{\pi'}T$ morfismele de pullback. Dacă $\mathcal{F}$ este un fascicul de torsiune pe $X$ (și deci limită de constructibile), există un izomorfism canonic $f^*(R^r\pi_*\mathcal{F}) \rightarrow R^r\pi'_*(f'^*\mathcal{F})$.
+\end{teo}
+
+
+
+
 
 
 
