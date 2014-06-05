@@ -90,8 +90,8 @@ Conf. dr. Victor Vuletescu
 Acest text își propune să:
 
 \begin{itemize}
-\item enunțe cadrul de desfășurare al coomologiei étale
-\item prezinte versiuni étale ale unor rezultate fundamentale în topologie, precum dualitatea Poincaré sau formulele de tip Lefschetz
+\item enunțe cadrul de desfășurare al coomologiei etale
+\item prezinte versiuni etale ale unor rezultate fundamentale în topologie, precum dualitatea Poincaré sau formulele de tip Lefschetz
 \item aplice aceste rezultate la studiul funcțiilor zeta asociate varietăților peste corpuri finite
 \end{itemize}
 
@@ -104,7 +104,7 @@ Acest text își propune să:
 \pagestyle{headings}
 \setcounter{secnumdepth}{2}
 
-\chapter{Situl étale}
+\chapter{Situl etal}
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
@@ -112,37 +112,37 @@ Orice schemă este înzestrată cu un morfism canonic către Spec $\mathbb{Z}$, 
 
 Pe baza acestor idei, putem construi următoarea categorie: obiectele sunt perechi $(T,\phi)$ cu $T$ schemă și $\phi: T \rightarrow$ Spec $\mathbb{F}_p$ morfism de scheme, iar morfismele între două obiecte $(T,\phi)$ și $(T',\phi')$ sunt morfismele $\psi: T \rightarrow T'$ cu proprietatea că $\phi'\circ\psi=\phi$. Această categorie „virgulă” ({\it comma category}) o vom numi {\bf categoria schemelor peste $\mathbb{F}_p$}. Iar construcția, firește, o putem face luând orice schemă $S$ în loc de Spec $\mathbb{F}_p$, categoria rezultantă numindu-se {\bf categoria $S$-schemelor}.
 
-Acest „punct de vedere local” sau „relativ”, cum l-a numit A. Grothendieck, va fi folosit exhaustiv în cele ce urmează, în sensul că, deși ne vom concentra atenția asupra unei scheme $S$, o vom face într-un mod extrinsec, considerând morfismele, ca mai sus, ce au pe $S$ drept codomeniu, însă numai pe acelea ce satisfac o oarecare noțiune de „acoperire”. Noțiunea precisă va fi aceea de {\bf morfism étale}.
+Acest „punct de vedere local” sau „relativ”, cum l-a numit A. Grothendieck, va fi folosit exhaustiv în cele ce urmează, în sensul că, deși ne vom concentra atenția asupra unei scheme $S$, o vom face într-un mod extrinsec, considerând morfismele, ca mai sus, ce au pe $S$ drept codomeniu, însă numai pe acelea ce satisfac o oarecare noțiune de „acoperire”. Noțiunea precisă va fi aceea de {\bf morfism etal}.
 
-Un morfism étale între două scheme este un morfism plat și neramificat. Platitudinea este definită la nivel local: un {\bf morfism plat} de scheme în sensul că morfismele induse între inelele locale sunt plate în sensul algebric (induc functori exacți la nivelul categoriilor de module). Ca un morfism să fie {\bf neramificat}, el trebuie să fie {\bf de tip finit} (adică luând preimaginea oricărui deschis afin, ea admite o acoperire finită cu deschiși afini astfel încât morfismele de inele induse de deschișii acoperirii sunt toate de tip finit) și să satisfacă următoarea proprietate definită tot la nivel local: morfismele induse între inelele locale $\mathcal{O}_x \rightarrow \mathcal{O}_{f(x)}$ fac ca extinderile induse de corpuri $\frac{\mathcal{O}_x}{\mathfrak{m}_{\mathcal{O}_x}} \hookrightarrow \frac{\mathcal{O}_{f(x)}}{f(\mathfrak{m}_{\mathcal{O}_x})\mathcal{O}_{f(x)}}$ să fie finite și separabile. (Pentru un morfism neramificat $X \rightarrow Y$, aplicația canonică $X \rightarrow X\times_Y X$ are imaginea deschisă.)
+Un morfism etal între două scheme este un morfism plat și neramificat. Platitudinea este definită la nivel local: un {\bf morfism plat} de scheme în sensul că morfismele induse între inelele locale sunt plate în sensul algebric (induc functori exacți la nivelul categoriilor de module). Ca un morfism să fie {\bf neramificat}, el trebuie să fie {\bf de tip finit} (adică luând preimaginea oricărui deschis afin, ea admite o acoperire finită cu deschiși afini astfel încât morfismele de inele induse de deschișii acoperirii sunt toate de tip finit) și să satisfacă următoarea proprietate definită tot la nivel local: morfismele induse între inelele locale $\mathcal{O}_x \rightarrow \mathcal{O}_{f(x)}$ fac ca extinderile induse de corpuri $\frac{\mathcal{O}_x}{\mathfrak{m}_{\mathcal{O}_x}} \hookrightarrow \frac{\mathcal{O}_{f(x)}}{f(\mathfrak{m}_{\mathcal{O}_x})\mathcal{O}_{f(x)}}$ să fie finite și separabile. (Pentru un morfism neramificat $X \rightarrow Y$, aplicația canonică $X \rightarrow X\times_Y X$ are imaginea deschisă.)
 
-Morfismele étale se comportă bine cu compunerea, în două moduri. Primul este cel evident - compunerea a două morfisme étale este étale. Al doilea este oarecum mai subtil - dacă fixăm o schemă $S$ și ne uităm la subcategoria $S$-schemelor étale (în sensul că $\phi$-ul de mai devreme este morfism étale), atunci toate morfismele din această subcategorie sunt și ele étale - legătura cu compunerea este dată de faptul că proprietatea se poate exprima și: {\it dacă $f$ și $g$ sunt morfisme de scheme astfel încât $g$ și $g \circ f$ sunt étale, atunci și $f$ este étale}.
+Morfismele etale se comportă bine cu compunerea, în două moduri. Primul este cel evident - compunerea a două morfisme etale este etală. Al doilea este oarecum mai subtil - dacă fixăm o schemă $S$ și ne uităm la subcategoria $S$-schemelor etale (în sensul că $\phi$-ul de mai devreme este morfism etal), atunci toate morfismele din această subcategorie sunt și ele etale - legătura cu compunerea este dată de faptul că proprietatea se poate exprima și: {\it dacă $f$ și $g$ sunt morfisme de scheme astfel încât $g$ și $g \circ f$ sunt etale, atunci și $f$ este etal}.
 
 Am ajuns acum la enunțarea primului rezultat semnificativ al teoriei, ce corespunde oarecum teoremei clasice din topologie a unicității ridicării drumului într-o acoperire. Mai întâi, însă, să definim noțiunea de punct geometric. Fie $x$ un punct al unei scheme $X$. Fixăm o închidere algebrică $K$ a corpului rezidual în $x$ ce induce un morfism $\bar{x}=$ Spec $K\rightarrow X$. Numim un astfel de morfism {\bf punct geometric}.
 
 \begin{lema}
-(Lema de rigiditate) Fie $X$, $Y$ două $S$-scheme étale finite, astfel încât $X$ este conexă și $Y$ separată, și $f$ și $g$ două morfisme de la $X$ la $Y$. Fie $\bar{x} \rightarrow X$ un punct geometric, astfel încât $f(\bar{x})=g(\bar{x})$. Atunci $f=g$.
+(Lema de rigiditate) Fie $X$, $Y$ două $S$-scheme etale finite, astfel încât $X$ este conexă și $Y$ separată, și $f$ și $g$ două morfisme de la $X$ la $Y$. Fie $\bar{x} \rightarrow X$ un punct geometric, astfel încât $f(\bar{x})=g(\bar{x})$. Atunci $f=g$.
 \end{lema}
 
 \begin{proof}
-Dat fiind că aplicația $Y \rightarrow S$ este étală și separabilă, $\Delta : Y \rightarrow Y \times_S Y$ este deschisă și închisă. Ca urmare putem scrie codomeniul ca reuniune disjunctă de scheme între imagine și o schemă $Z$. Însă imaginea aplicației $f \times_S g: X \rightarrow Y \times_S Y$ taie imaginea lui $\Delta$ în $(f(\bar{x}),g(\bar{x}))$, și ca urmare (cum $X$ este conexă) este conținută pe de-a-ntregul în imaginea lui $\Delta$. Deci $f=g$.
+Dat fiind că aplicația $Y \rightarrow S$ este etală și separabilă, $\Delta : Y \rightarrow Y \times_S Y$ este deschisă și închisă. Ca urmare putem scrie codomeniul ca reuniune disjunctă de scheme între imagine și o schemă $Z$. Însă imaginea aplicației $f \times_S g: X \rightarrow Y \times_S Y$ taie imaginea lui $\Delta$ în $(f(\bar{x}),g(\bar{x}))$, și ca urmare (cum $X$ este conexă) este conținută pe de-a-ntregul în imaginea lui $\Delta$. Deci $f=g$.
 \end{proof}
 
-Această lemă ne conduce imediat către următorul raționament: dacă $X$ este o $S$-schemă finită étală conexă, $\bar{x} \rightarrow S$ un punct geometric și $\bar{x}'\rightarrow X$ o secțiune a sa - mulțimea acestor secțiuni o notăm cu $X_{\bar{x}}$ - aplicația care duce un $S$-automorfism $f$ al lui $X$ în $f(\bar{x})$ este clar injectivă. Spunem că $X$ este o $S$-schemă {\bf Galois} (sau că morfismul $X \rightarrow S$ este Galois) dacă această aplicație este chiar bijectivă.
+Această lemă ne conduce imediat către următorul raționament: dacă $X$ este o $S$-schemă finită etală conexă, $\bar{x} \rightarrow S$ un punct geometric și $\bar{x}'\rightarrow X$ o secțiune a sa - mulțimea acestor secțiuni o notăm cu $X_{\bar{x}}$ - aplicația care duce un $S$-automorfism $f$ al lui $X$ în $f(\bar{x})$ este clar injectivă. Spunem că $X$ este o $S$-schemă {\bf Galois} (sau că morfismul $X \rightarrow S$ este Galois) dacă această aplicație este chiar bijectivă.
 
 De acum încolo, considerăm $S$ conexă. Prin analogie cu teoria clasică Galois, avem următorul rezultat.
 
 \begin{prop}
-Fie $X \rightarrow S$ aplicație Galois finită și $G=Aut_S(X)$ grupul $S$-automorfismelor lui $X$. Aplicațiile $Y \mapsto Aut_Y(X)$ și $H \mapsto X^H$ realizează o echivalență de categorii între subacoperirile étale ale lui $X \rightarrow S$ și subgrupurile lui $G$ (această ultimă categorie este la rândul ei echivalentă cu cea a $G$-mulțimilor tranzitive). În plus, dacă $X \rightarrow S$ este o aplicație finită doar étală, există și este unic (până la izomorfism) $X' \rightarrow X$ ce acoperă Galois pe $S$ în mod universal relativ la $X$ („închiderea Galois” a lui $X \rightarrow S$).
+Fie $X \rightarrow S$ aplicație Galois finită și $G=Aut_S(X)$ grupul $S$-automorfismelor lui $X$. Aplicațiile $Y \mapsto Aut_Y(X)$ și $H \mapsto X^H$ realizează o echivalență de categorii între subacoperirile etale ale lui $X \rightarrow S$ și subgrupurile lui $G$ (această ultimă categorie este la rândul ei echivalentă cu cea a $G$-mulțimilor tranzitive). În plus, dacă $X \rightarrow S$ este o aplicație finită doar etală, există și este unic (până la izomorfism) $X' \rightarrow X$ ce acoperă Galois pe $S$ în mod universal relativ la $X$ („închiderea Galois” a lui $X \rightarrow S$).
 \end{prop}
 
-Să privim această corespondență dintr-un alt punct de vedere. Dacă $S$ este o schemă, notăm cu $FEt(S)$ categoria $S$-schemelor finite étale. Fie $\bar{x} \rightarrow S$ un punct geometric. Atunci:
+Să privim această corespondență dintr-un alt punct de vedere. Dacă $S$ este o schemă, notăm cu $FEt(S)$ categoria $S$-schemelor finite etale. Fie $\bar{x} \rightarrow S$ un punct geometric. Atunci:
 $$Fib_{\bar{x}} : FEt(S) \rightarrow FinSet$$
-ce acționează ca $(X \rightarrow S) \mapsto Hom_S(\bar{x},X)=X_{\bar{x}}$ este un functor, numit {\bf functorul fibră al lui Grothendieck}. Vom nota cu $\pi_1(S,\bar{x})$ și vom numi grupul fundamental étale grupul de automorfisme ale acestui functor.
+ce acționează ca $(X \rightarrow S) \mapsto \text{Hom}_S(\bar{x},X)=X_{\bar{x}}$ este un functor, numit {\bf functorul fibră al lui Grothendieck}. Vom nota cu $\pi_1(S,\bar{x})$ și vom numi grupul fundamental etal grupul de automorfisme ale acestui functor.
 
 O identificare mai concretă a grupului se poate face într-un mod asemănător cu spațiile de acoperire din topologia algebrică clasică. Fixăm o schemă $S$ și un punct geometric al ei $\bar{x}$. Consider familia $\{X_\alpha\}_\alpha$ a tuturor acoperirilor finite Galois ale lui $S$, ce are structură de diagramă în categoria $S$-schemelor. Pun în fiecare $X_\alpha$ câte un punct geometric $\bar{x}_\alpha$ astfel încât alegerile făcute să fie compatibile cu morfismele diagramei. Atunci putem arăta:
-$$Fib_{\bar{x}} \simeq \varinjlim Hom_S(X_\alpha,\cdot)$$
-Pentru a construi morfismul de la dreapta la stânga, trebuie să dăm câte un morfism $\phi_{\alpha,Y} : Hom_S(X_\alpha,Y) \rightarrow Fib_{\bar{x}}(Y)$ pentru orice $\alpha,Y$. Aceasta se face punând $\phi(f)=f(\bar{x}_\alpha)$. Invers, luând o schemă $Y$ și $\bar{y}$ în $Fib_{\bar{x}}(Y)$, aleg o închidere Galois a lui $Y$ și factorizez $\bar{y} \rightarrow X_\alpha \rightarrow Y$. Atunci există un unic $S$-automorfism al lui $X_\alpha$ care duce pe $\bar{x}_\alpha$ în $\bar{y}$, ce dă un element al limitei inductive. Izomorfismul este deci arătat.
+$$Fib_{\bar{x}} \simeq \varinjlim \text{Hom}_S(X_\alpha,\cdot)$$
+Pentru a construi morfismul de la dreapta la stânga, trebuie să dăm câte un morfism $\phi_{\alpha,Y} : \text{Hom}_S(X_\alpha,Y) \rightarrow Fib_{\bar{x}}(Y)$ pentru orice $\alpha,Y$. Aceasta se face punând $\phi(f)=f(\bar{x}_\alpha)$. Invers, luând o schemă $Y$ și $\bar{y}$ în $Fib_{\bar{x}}(Y)$, aleg o închidere Galois a lui $Y$ și factorizez $\bar{y} \rightarrow X_\alpha \rightarrow Y$. Atunci există un unic $S$-automorfism al lui $X_\alpha$ care duce pe $\bar{x}_\alpha$ în $\bar{y}$, ce dă un element al limitei inductive. Izomorfismul este deci arătat.
 
 Ca o consecință, avem descrierea:
 $$\pi_1(S,\bar{x}) \simeq \varprojlim Aut_S(X_\alpha)^{op}$$
@@ -153,14 +153,14 @@ $$\pi_1(\text{Spec }k,\bar{x})=\varprojlim\limits_{L \text{ ext. finită separab
 adică grupul Galois absolut al corpului $k$.
 \end{ex}
 
-Prin urmare, grupurile $\pi_1(S,\bar{x})$ sunt profinite și acționează continuu pe $Fib_{\bar{x}}(X)$ pentru orice $X \rightarrow S$ finită étală, iar orbitele acțiunilor sunt componentele conexe ale fibrelor. Functorul $Fib_{\bar{x}}$ poate fi deci privit ca fiind definit pe $FEt(S)$ și luând valori în categoria $\pi_1(S,\bar{x})$-mulțimilor la stânga, finite și continue. Am ajuns acum să putem reexprima în acest cadru corespondența de mai devreme:
+Prin urmare, grupurile $\pi_1(S,\bar{x})$ sunt profinite și acționează continuu pe $Fib_{\bar{x}}(X)$ pentru orice $X \rightarrow S$ finită etală, iar orbitele acțiunilor sunt componentele conexe ale fibrelor. Functorul $Fib_{\bar{x}}$ poate fi deci privit ca fiind definit pe $FEt(S)$ și luând valori în categoria $\pi_1(S,\bar{x})$-mulțimilor la stânga, finite și continue. Am ajuns acum să putem reexprima în acest cadru corespondența de mai devreme:
 
 \begin{teo}
 Functorul $Fib_{\bar{x}}$, redefinit ca mai înainte, reprezintă o echivalență de categorii.
 \end{teo}
 
 \begin{proof}
-În primul rând, să arătăm că este esențial surjectiv. Fie $\Sigma$ o $\pi_1(S,\bar{x})$-mulțime finită și continuă. Pentru simplitate, o presupunem tranzitivă. Pentru orice $x$ din $\Sigma$, stabilizatorul său este deschis, deci conține un element al unei baze de deschiși, în particular un subgrup normal al cărui cât este de forma $G=Aut_S(P)$, cu $P \rightarrow S$ acoperire Galois. Ca urmare $\pi_1(S,\bar{x})$ acționează printr-un asemena cât finit, iar imaginea în $G$ a stabilizatorului conduce via corespondența de mai devreme la o $S$-schemă finită étală $X$, care din lema de rigiditate are fibra izomorfă cu $(G/H)_s$, care din teorema orbită-stabilizator este izomorfă cu $\Sigma$.
+În primul rând, să arătăm că este esențial surjectiv. Fie $\Sigma$ o $\pi_1(S,\bar{x})$-mulțime finită și continuă. Pentru simplitate, o presupunem tranzitivă. Pentru orice $x$ din $\Sigma$, stabilizatorul său este deschis, deci conține un element al unei baze de deschiși, în particular un subgrup normal al cărui cât este de forma $G=Aut_S(P)$, cu $P \rightarrow S$ acoperire Galois. Ca urmare $\pi_1(S,\bar{x})$ acționează printr-un asemena cât finit, iar imaginea în $G$ a stabilizatorului conduce via corespondența de mai devreme la o $S$-schemă finită etală $X$, care din lema de rigiditate are fibra izomorfă cu $(G/H)_s$, care din teorema orbită-stabilizator este izomorfă cu $\Sigma$.
 
 Demonstrăm acum că functorul este deplin fidel. Lema de rigiditate ne indică imediat că este fidel, așa că rămâne de arătat doar surjectivitatea pe Hom-set-uri. Fără a restrânge generalitatea, presupunem $X$ și $Y$ conexe. Consider un morfism de $\pi_1(S,\bar{x})$-mulțimi $f:X_{\bar{x}} \rightarrow Y_{\bar{x}}$. Atunci stabilizatorul lui $\bar{x}'$ este inclus în stabilizatorul lui $f(\bar{x}')$, pentru orice $\bar{x}'$ din $X_{\bar{x}}$. Alegem o închidere Galois $P \rightarrow X$ și observăm că orice $\sigma$ ce acționează trivial pe $P$ stabilizează și pe $\bar{x}'$, și pe $f(\bar{x}')$. Reducându-ne la câtul finit de $X$-automorfisme ale lui $P$, aplicăm iar corespondența de mai devreme pentru a obține morfismul dorit $X \rightarrow Y$.
 \end{proof}
@@ -183,58 +183,70 @@ Dacă avem o schemă conexă $W$ de tip finit (peste Spec $\mathbb{Z}$), toate p
 
 Însă dacă $\bar{w}$ este un alt punct bază pentru $W$, pot din izomorfismul de mai devreme $ \pi_1(W,\bar{x}) \rightarrow \pi_1(W,\bar{w})$ să obțin un element canonic în $\pi_1(W,\bar{w})$, modulo conjugare. Clasa elementului se va numi clasa Frobenius a lui $\bar{x}$. Astfel că s-a construit pentru orice $\bar{w}$ o aplicație de la punctele închise ale lui $W$ la clasele de conjugare din $\pi_1(W,\bar{w})$.
 
-Precum grupul fundamental clasic, și acest „$\pi_1$ étale” are un comportament functorial. Dacă avem un morfism de scheme $f: S' \rightarrow S$, atunci functorul de schimbare a bazei $BC_{S'\rightarrow S}$ duce $S$-scheme finite étale în $S'$-scheme finite étale. Iar dacă $\bar{x}'$ este un punct geometric al lui $S'$, din proprietatea de pull-back avem:
-$$Hom_{S'}(\bar{x}',X \times_S S')\simeq Hom_S(\bar{x},X)$$
+Precum grupul fundamental clasic, și acest „$\pi_1$ etal” are un comportament functorial. Dacă avem un morfism de scheme $f: S' \rightarrow S$, atunci functorul de schimbare a bazei $BC_{S'\rightarrow S}$ duce $S$-scheme finite etale în $S'$-scheme finite etale. Iar dacă $\bar{x}'$ este un punct geometric al lui $S'$, din proprietatea de pull-back avem:
+$$\text{Hom}_{S'}(\bar{x}',X \times_S S')\simeq \text{Hom}_S(\bar{x},X)$$
 Ca urmare $Fib_{\bar{x}} = Fib_{\bar{x}'} \circ BC_{S'\rightarrow S}$, de unde se obține o aplicație naturală:
 $$f_* : \pi_1(S',\bar{x}') \rightarrow \pi_1(S,\bar{x})$$
 care induce un functor $Res_{f_*}$ de la $\pi_1(S,\bar{x})$-mulțimile finite continue la $\pi_1(S',\bar{x}')$-mulțimile finite continue. Chiar din definiție, rezultă următoarea compatibilitate:
 $$Res_{f_*} \circ Fib_{\bar{x}} = Fib_{\bar{x}'} \circ BC_{S'\rightarrow S}$$
 
-Introducem o ultimă proprietate a acestui grup fundamental étale.
+Introducem o ultimă proprietate a acestui grup fundamental etal.
 
 \begin{teo}
 Fie $X_0$ o schemă geometric conexă și quasi-compactă peste un corp perfect $k$, $X$ schema obținută prin schimbarea de bază spre o închidere algebrică $\bar{k}$, iar $\bar{x} : \text{Spec }\bar{k} \rightarrow X$ un punct geometric. Atunci există un șir exact:
 $$1 \rightarrow \pi_1(X,\bar{x}) \rightarrow \pi_1(X_0,\bar{x}) \rightarrow Gal(\bar{k}/k) \rightarrow 1$$
 \end{teo}
 
-Notăm categoria morfismelor étale către o schemă fixată $S$ cu $Et(S)$.
+Notăm categoria morfismelor etale către o schemă fixată $S$ cu $Et(S)$.
 
 \begin{defi}
-Un {\bf prefascicul étale} (de mulțimi) pe $S$ este un functor $\mathcal{F} : Et(S)^{op} \rightarrow Set$.
+Un {\bf prefascicul etal} (de mulțimi) pe $S$ este un functor $\mathcal{F} : Et(S)^{op} \rightarrow Set$.
 \end{defi}
 
 \begin{defi}
-Un {\bf fascicul étale} (de mulțimi) este un prefascicul étale cu proprietatea că pentru orice $U \rightarrow S$ morfism étale și orice $\{U_i \rightarrow U\}_i$ familie de morfisme étale ale căror imagini acoperă împreună pe $U$ am că diagrama:
+Un {\bf fascicul etal} (de mulțimi) este un prefascicul etal cu proprietatea că pentru orice $U \rightarrow S$ morfism etal și orice $\{U_i \rightarrow U\}_i$ familie de morfisme etale ale căror imagini acoperă împreună pe $U$ am că diagrama:
 $$\mathcal{F}(U) \rightarrow \prod_i \mathcal{F}(U_i) \rightrightarrows \prod_{i,j} \mathcal{F}(U_i \times_U U_j)$$
 este egalizator în $Set$.
 \end{defi}
 
-În acest moment, comparația cu noțiunile clasice din studiul varietăților, oarecum întrezărită de pe la grupul fundamental, a devenit inevitabilă, așa că se cuvine să o etalăm explicit. Dacă pentru prefascicule am transpus exact definiția clasică, înlocuind categoria indusă de mulțimea ordonată a deschișilor unui spațiu topologic cu acea categorie a morfismelor étale, la fascicule nu am mai putut să folosim exclusiv structura de categorie, dat fiind că avem nevoie să știm ce familii de morfisme reprezintă acoperiri. Categoria $Et(S)$ devine deci, împreună cu această structură în plus, ceea ce se zice un {\bf sit}, numit {\bf situl étale} al schemei $S$. (De aici și explicația pentru titlul capitolului.) Această abstractizare merge mai departe către {\it teoria toposurilor}, asupra căreia vom păstra tăcerea aici.
+În acest moment, comparația cu noțiunile clasice din studiul varietăților, oarecum întrezărită de pe la grupul fundamental, a devenit inevitabilă, așa că se cuvine să o etalăm explicit. Dacă pentru prefascicule am transpus exact definiția clasică, înlocuind categoria indusă de mulțimea ordonată a deschișilor unui spațiu topologic cu acea categorie a morfismelor etale, la fascicule nu am mai putut să folosim exclusiv structura de categorie, dat fiind că avem nevoie să știm ce familii de morfisme reprezintă acoperiri. Categoria $Et(S)$ devine deci, împreună cu această structură în plus, ceea ce se zice un {\bf sit}, numit {\bf situl etal} al schemei $S$. (De aici și explicația pentru titlul capitolului.) Această abstractizare merge mai departe către {\it teoria toposurilor}, asupra căreia vom păstra tăcerea aici.
 
 În practică, însă, ne este greu, folosind doar definiția, să verificăm condiția de fascicul. De aceea ne va fi de folos următorul rezultat.
 
 \begin{prop}
 \begin{enumerate}[i)]
-\item Orice prefascicul reprezentabil (de forma $\widetilde{V} = Hom_S(\cdot,V) \in Set^{Et_S^{op}}$) este fascicul.
+\item Orice prefascicul reprezentabil (de forma $\widetilde{V} = \text{Hom}_S(\cdot,V) \in Set^{Et_S^{op}}$) este fascicul.
 \item Condiția de mai sus este locală, în sensul că un prefasicul pe $S$ este reprezentabil dacă și numai dacă pentru orice $\bar{x} \rightarrow S$, punct geometric, există $U \rightarrow S$ vecinătate a lui astfel încât restricția prefascicului la $U$ e un prefascicul reprezentabil.
 \end{enumerate}
 \end{prop}
 
 De pildă, fasciculul constant de fibră $\Sigma$ peste $S$ poate fi gândit în această accepțiune ca fiind reprezentat de $\Sigma \times S$, adică o reuniune disjunctă de $\Sigma$ cópii ale lui $S$.
 
-Toate construcțiile cunoscute de la fasciculele pe spații topologice au un corespondent peste situl étale. La fel, subcategoria de fascicule este reflectivă și avem adjunctul de fasciculizare. Imaginea inversă a unui fascicul este construită tot luând limita inductivă și fasciculizând - de pildă, când morfismul pe care tragem fasciculul înapoi este un punct geometric, caz în care imaginea inversă o numim fibră. Analog, fasciculizarea păstrează fibrele.
+Toate construcțiile cunoscute de la fasciculele pe spații topologice au un corespondent peste situl etal. La fel, subcategoria de fascicule este reflectivă și avem adjunctul de fasciculizare. Imaginea inversă a unui fascicul este construită tot luând limita inductivă și fasciculizând - de pildă, când morfismul pe care tragem fasciculul înapoi este un punct geometric, caz în care imaginea inversă o numim fibră. Analog, fasciculizarea păstrează fibrele.
 
-Pentru a defini, la fel cum o facem când lucrăm cu fascicule pe spații topologice, fascicule de grupuri abeliene, nu avem altceva de făcut decât să înlocuim peste tot mulțimile cu grupuri. Echivalent, putem spune că un fascicul de grupuri abeliene pe un sit étale este un obiect de tip grup abelian în categoria fasciculelor de mulțimi de pe acel sit, obținând astfel o categorie echivalentă cu cea definită anterior („comutativitatea abstracțiunii”!).
+Revenind la problema clasificării fasciculelor, manifestate adineauri printr-o echivalență de categorii, ne vom uita la propoziția anterioară și o vom exploata într-o oarecare măsură. Avem schema noastră de bază $S$ și $X \rightarrow S$ o acoperire etală a sa. Ea este în particular o $S$-schemă, deci ne dă un fascicul. Ne întrebăm ce fascicule se obțin în felul acesta. Găsim o clasă nouă de fascicule, denumite {\bf fascicule constructibile}, adică cele pentru care orice punct geometric $\bar{x} \rightarrow S$ admite o vecinătate etală astfel încât fasciculul restricționat la acea vecinătate este fascicul constant de fibră finită.
 
-Această categorie, a fasciculelor de grupuri abeliene pe un sit étale asociat unei varietăți X, categorie notată de acum înainte cu $Ab(X)$, este abeliană și are suficiente obiecte injective. (Putem face aceeași construcție și pentru prefascicule, obținând o categorie abeliană $PreshAb(X)$.) Demonstrația dată de Grothendieck acestui ultim fapt se bazează, firește, pe existența anvelopei injective a unui grup abelian arbitrar.
+\begin{teo}
+Acest functor reprezintă o echivalență de categorii între acoperirile finite etale ale lui $S$ și fasciculele constructibile pe $S$.
+\end{teo}
 
-În aceste condiții, cum $\Gamma: Ab(X) \rightarrow Ab$ este un functor exact la stânga, el admite functori derivați la dreapta. Vom nota $(R^r\Gamma)(\mathcal{F})$ cu $H^r(X,\mathcal{F})$ și îl vom numi al $r$-lea grup de {\bf coomologie étală} corespunzător varietății $X$.
+(Demonstrația se folosește de tehnici de {\it teoria descentului}.)
 
-Imediat, din teoria functorilor derivați, rezultă că $H^0$ este $\Gamma$ și că un șir exact scurt de fascicule étale abeliene induce un șir exact lung în coomologia lor.
+\begin{cor}
+Avem o echivalență de categorii între fasciculele constructibile pe $S$ și $\pi_1(S,\bar{x})$-mulțimile finite continue, dată chiar de functorul de luare a fibrei în $\bar{x}$.
+\end{cor}
 
-O construcție înrudită (chiar o generalizare, după cum vom vedea) este derivarea imaginii directe a unui fascicul. Dacă $\pi: Y \rightarrow X$ este un morfism, iar $\mathcal{F}$ este un fascicul étale pe $Y$, definim $\pi_*(\mathcal{F})$ ca fiind fasciculul étale pe $X$ care verifică:
+Pentru a defini, la fel cum o facem când lucrăm cu fascicule pe spații topologice, fascicule de grupuri abeliene, nu avem altceva de făcut decât să înlocuim peste tot mulțimile cu grupuri. Echivalent, putem spune că un fascicul de grupuri abeliene pe un sit etal este un obiect de tip grup abelian în categoria fasciculelor de mulțimi de pe acel sit, obținând astfel o categorie echivalentă cu cea definită anterior („comutativitatea abstracțiunii”!).
+
+Această categorie, a fasciculelor de grupuri abeliene pe un sit etal asociat unei varietăți X, categorie notată de acum înainte cu $Ab(X)$, este abeliană și are suficiente obiecte injective. (Putem face aceeași construcție și pentru prefascicule, obținând o categorie abeliană $PreshAb(X)$.) Demonstrația dată de Grothendieck acestui ultim fapt se bazează, firește, pe existența anvelopei injective a unui grup abelian arbitrar.
+
+În aceste condiții, cum $\Gamma: Ab(X) \rightarrow Ab$ este un functor exact la stânga, el admite functori derivați la dreapta. Vom nota $(R^r\Gamma)(\mathcal{F})$ cu $H^r(X,\mathcal{F})$ și îl vom numi al $r$-lea grup de {\bf coomologie etală} corespunzător varietății $X$.
+
+Imediat, din teoria functorilor derivați, rezultă că $H^0$ este $\Gamma$ și că un șir exact scurt de fascicule etale abeliene induce un șir exact lung în coomologia lor.
+
+O construcție înrudită (chiar o generalizare, după cum vom vedea) este derivarea imaginii directe a unui fascicul. Dacă $\pi: Y \rightarrow X$ este un morfism, iar $\mathcal{F}$ este un fascicul etal pe $Y$, definim $\pi_*(\mathcal{F})$ ca fiind fasciculul etal pe $X$ care verifică:
 $$(\pi_*\mathcal{F})(U)=\mathcal{F}(U\times_X Y)$$
-(bine definit, deoarece o schimbare de bază a unui morfism étale este étale). Această construcție este chiar un functor $\pi_*: Ab(Y) \rightarrow Ab(X)$, ce e exact la stânga, deci admite functori derivați notați cu $R^r\pi_*$.
+(bine definit, deoarece o schimbare de bază a unui morfism etal este etal). Această construcție este chiar un functor $\pi_*: Ab(Y) \rightarrow Ab(X)$, ce e exact la stânga, deci admite functori derivați notați cu $R^r\pi_*$.
 
 \begin{prop}
 $R^r\pi_*(\mathcal{F})$ este fasciculizatul lui $U \mapsto H^r(U \times_X Y, \mathcal{F})$.
@@ -257,15 +269,15 @@ R^r\pi_*(\mathcal{F}) &= H^r(\pi_*\mathcal{I}^\bullet)\\
 $(R^r\pi_*\mathcal{F})_{\bar{x}} = \varinjlim\limits_{(U,u) \rightarrow \bar{x}} H^r(U \times_X Y, \mathcal{F})$.
 \end{cor}
 
-Dacă ne uităm la o varietate $Y$ definită peste un corp separabil închis $k$ (cu morfismul asociat $Y \xrightarrow{\pi}$ Spec $k$), vom constata un lucru interesant. Anume, dat fiind că acoperirile étale ale lui Spec $k$ sunt date de spectrele unor sume directe de $k$-uri, condiția de lipire a secțiunilor ne spune că a da un fascicul pe Spec $k$ este același lucru cu a da un grup abelian, iar prin această echivalență de categorii $\pi_*$ îi corespunde lui $\Gamma$. Rezultă că aici coomologia étală este caz particular de derivare a imaginii directe.
+Dacă ne uităm la o varietate $Y$ definită peste un corp separabil închis $k$ (cu morfismul asociat $Y \xrightarrow{\pi}$ Spec $k$), vom constata un lucru interesant. Anume, dat fiind că acoperirile etale ale lui Spec $k$ sunt date de spectrele unor sume directe de $k$-uri, condiția de lipire a secțiunilor ne spune că a da un fascicul pe Spec $k$ este același lucru cu a da un grup abelian, iar prin această echivalență de categorii $\pi_*$ îi corespunde lui $\Gamma$. Rezultă că aici coomologia etală este caz particular de derivare a imaginii directe.
 
-Dacă $\phi:Y \rightarrow X$ este un morfism, putem defini, analog cu teoria clasică, și un functor adjunct lui $\phi_*$, functorul imagine inversă $\phi^* : Ab(X) \rightarrow Ab(Y)$, ce este exact. Rezultă că un șir exact scurt de fascicule étale pe $X$:
+Dacă $\phi:Y \rightarrow X$ este un morfism, putem defini, analog cu teoria clasică, și un functor adjunct lui $\phi_*$, functorul imagine inversă $\phi^* : Ab(X) \rightarrow Ab(Y)$, ce este exact. Rezultă că un șir exact scurt de fascicule etale pe $X$:
 $$0 \rightarrow \mathcal{F}' \rightarrow \mathcal{F} \rightarrow \mathcal{F}'' \rightarrow 0$$
 induce șirul exact lung format din:
 $$\cdots \rightarrow H^r(Y,\phi^*\mathcal{F}') \rightarrow H^r(Y,\phi^*\mathcal{F}) \rightarrow H^r(Y,\phi^*\mathcal{F}'') \rightarrow \cdots$$
-iar aplicația naturală $\mathcal{F}(X) \rightarrow \phi^*\mathcal{F}(Y)$ induce, din teoria functorilor derivați, morfisme $H^r(X,\mathcal{F}) \rightarrow H^r(Y,\phi^*\mathcal{F})$ (astfel, coomologia étală este și ea contravariant functorială), ce sunt compatibile cu aplicațiile frontieră din șirurile exacte lungi.
+iar aplicația naturală $\mathcal{F}(X) \rightarrow \phi^*\mathcal{F}(Y)$ induce, din teoria functorilor derivați, morfisme $H^r(X,\mathcal{F}) \rightarrow H^r(Y,\phi^*\mathcal{F})$ (astfel, coomologia etală este și ea contravariant functorială), ce sunt compatibile cu aplicațiile frontieră din șirurile exacte lungi.
 
-Dacă $j :U \rightarrow X$ este o imersie deschisă, iar $\mathcal{F}$ este un fascicul étale pe $U$, definim prefasciculul $\mathcal{F}_!$ prin:
+Dacă $j :U \rightarrow X$ este o imersie deschisă, iar $\mathcal{F}$ este un fascicul etal pe $U$, definim prefasciculul $\mathcal{F}_!$ prin:
 \begin{align*}
 \mathcal{F}_!(g: V \rightarrow X) = \left\{
      \begin{array}{lr}
@@ -298,24 +310,22 @@ Grupurile de coomologie ale unui fascicul constructibil peste o varietate comple
 (Teorema de Schimbare Proprie a Bazei) Fie $\pi: X \rightarrow S$ aplicație proprie, $f: T \rightarrow S$ morfism, $X' = X \times_S T$ și $X\xleftarrow{f'}X'\xrightarrow{\pi'}T$ morfismele de pullback. Dacă $\mathcal{F}$ este un fascicul de torsiune pe $X$ (și deci limită de constructibile), există un izomorfism canonic $f^*(R^r\pi_*\mathcal{F}) \rightarrow R^r\pi'_*(f'^*\mathcal{F})$.
 \end{teo}
 
+Să ne întoarcem la ceea ce am vorbit mai devreme despre functorul fibră - după cum am văzut, el induce o echivalență de categorii între acoperirile etale ale unei varietăți conexe și $\pi_1(X,\bar{x})$-mulțimile finite, continue. Aceasta ne spune, în particular, că, dat fiind un grup $G$, a da o acoperire Galois de grup $G$ este același lucru cu a da un morfism continuu de la $\pi_1(X,\bar{x})$ la $G$. Mai departe, o acoperire Galois poate fi văzută ca un spațiu omogen corespunzător fasciculului etal constant de fibră $G$ (notat acum cu $\mathcal{G}$). Aceste spații omogene peste $\mathcal{G}$ sunt structuri asemănătoare fibratelor vectoriale și avem chiar o echivalență de categorii între clasele lor de izomorfism și un anumit grup $H^1$, anume $H^1(X,\mathcal{G})$ (corespunzător lui $H^1(X,\mathcal{O}^*)$ din teoria clasică). Am obținut, care va să zică, relația:
+$$H^1(X,\mathcal{G}) \simeq \text{Hom}_{TopGr}(\pi_1(X,\bar{x}),G)$$
+care pare că ne va simplifica multe calcule.
 
+Însă, după cum imediat vom vedea, tocmai această relație ne va crea probleme.
 
+\chapter{De la etal la \texorpdfstring{$\ell$}{l}-adic}
 
+Așadar, din raționamentul anterior, avem că pentru orice grup abelian $G$ are loc relația:
+$$H^1(X,G)\simeq \text{Hom}_{TopGr}(\pi_1(X,x),G)$$
+unde Hom-set-ul din dreapta este în categoria grupurilor topologice (iar $G$ este considerat cu topologia discretă). Dacă vom considera, de pildă, $G$ ca fiind un grup infinit, fără torsiune, spre exemplu $\mathbb{Z}$ (cum se obișnuiește în topologia algebrică), atunci grupul de coomologie va fi trivial. Iată de ce: dacă iau un element al acelui Hom-set, $f: \pi_1(X,x) \rightarrow \mathbb{Z}$ (i.e. un morfism de grupuri continuu), atunci $f^{-1}(0)$ este deschis în $\pi_1(X,x)$. Cum grupul de omotopie este compact, $f^{-1}(0)$ este de indice finit. Prin urmare, $f$ atinge un număr finit de valori, însă singurul subgrup finit al lui $\mathbb{Z}$ este cel trivial. Deci $f$ este morfismul nul, iar $H^1(X,\mathbb{Z})=0$, ceea ce nu corespunde unei oarecari intuiții topologice.
 
-
-
-
-
-\chapter{De la étale la \texorpdfstring{$\ell$}{l}-adic}
-
-Din proprietățile de bază ale grupurilor de coomologie étală, avem că pentru orice grup abelian $G$ are loc relația:
-$$H^1(X,G)\simeq Hom_{TopGr}(\pi_1(X,x),G)$$
-unde Hom-set-ul din dreapta este considerat în categoria grupurilor topologice (iar $G$ este considerat cu topologia discretă). Dacă vom considera, de pildă, $G$ ca fiind un grup infinit, fără torsiune, spre exemplu $\mathbb{Z}$ (cum se obișnuiește în topologia algebrică), atunci grupul de coomologie va fi trivial. Iată de ce: dacă iau un element al acelui Hom-set, $f: \pi_1(X,x) \rightarrow \mathbb{Z}$ (i.e. un morfism de grupuri continuu), atunci $f^{-1}(0)$ este deschis în $\pi_1(X,x)$. Cum grupul de omotopie este compact, $f^{-1}(0)$ este de indice finit. Prin urmare, $f$ atinge un număr finit de valori, însă singurul subgrup finit al lui $\mathbb{Z}$ este cel trivial. Deci $f$ este morfismul nul, iar $H^1(X,\mathbb{Z})=0$, ceea ce nu corespunde unei oarecari intuiții topologice.
-
-În argumentul de mai sus a intervenit în mod crucial faptul că grupul este considerat cu topologia discretă. Dacă am considera un grup topologic cu o structură canonică de grup profinit nediscret, cum ar fi $\mathbb{Z}_\ell$, atunci analogul membrului drept, $Hom_{TopGr}(\pi_1(X,x),\mathbb{Z}_\ell)$, nu va mai fi în mod trivial nul. Însă:
+În argumentul de mai sus a intervenit în mod crucial faptul că grupul este luat cu topologia discretă. Dacă am considera un grup topologic cu o structură canonică de grup profinit nediscret, cum ar fi $\mathbb{Z}_\ell$, atunci analogul membrului drept, care este $\text{Hom}_{TopGr}(\pi_1(X,x),\mathbb{Z}_\ell)$, nu va mai fi în mod trivial nul. Însă:
 \begin{align*}
-Hom_{TopGr}(\pi_1(X,x),\mathbb{Z}_\ell)&\simeq Hom_{TopGr}(\pi_1(X,x),\varprojlim_n \frac{\mathbb{Z}}{\ell^n\mathbb{Z}}) \\
-&\simeq \varprojlim_n Hom_{TopGr}(\pi_1(X,x), \frac{\mathbb{Z}}{\ell^n\mathbb{Z}}) \\
+\text{Hom}_{TopGr}(\pi_1(X,x),\mathbb{Z}_\ell)&\simeq \text{Hom}_{TopGr}(\pi_1(X,x),\varprojlim_n \frac{\mathbb{Z}}{\ell^n\mathbb{Z}}) \\
+&\simeq \varprojlim_n \text{Hom}_{TopGr}(\pi_1(X,x), \frac{\mathbb{Z}}{\ell^n\mathbb{Z}}) \\
 &\simeq \varprojlim_n H^1(X, \frac{\mathbb{Z}}{\ell^n\mathbb{Z}}) \\
 \end{align*}
 Soluția este deci de a defini:
@@ -329,6 +339,16 @@ astfel încât pentru orice $n$, $\calm_n$ este fascicul constructibil de $\frac
 Un asemenea obiect se numește {\bf plat} dacă pentru orice $n$ și $s$ naturale, șirul:
 $$0 \rightarrow \frac{\calm_{n+s}}{\ell^s\calm_{n+s}} \xrightarrow{\cdot\ \ell^n} \calm_{n+s} \rightarrow \frac{\calm_{n+s}}{\ell^n\calm_{n+s}} \rightarrow 0$$
 este exact (unde fasiculul din stânga este izomorf cu $\calm_s$, iar cel din dreapta cu $\calm_n$).
+
+Pentru o ultimă dată, ne întoarcem la corespondența monodromică, dar de această dată scrisă pentru fascicule abeliene și chiar $\ell$-adice. Analogul fasiculelor constructibile vor fi familiile de constructibile, pe care le vom numi {\bf fascicule netede}.
+
+\begin{teo}
+Functorul fibră induce o echivalență de categorii între $\mathbb{Z}_\ell$-fascicule netede pe o schemă $S$ și modulele libere de rang finit peste $\mathbb{Z}_\ell$ înzestrate cu o acțiune continuă a lui $\pi_1(S,\bar{x})$ ($\mathbb{Z}_\ell$-reprezentările grupului fundamental etal).
+\end{teo}
+
+\begin{obs}
+Proprietatea rămâne valabilă schimbând $\mathbb{Z}_\ell$ cu $\mathbb{Q}_\ell$ sau chiar cu $\bar{\mathbb{Q}}_\ell$.
+\end{obs}
 
 Acum putem defini:
 $$H^r(X,\calm):=\varprojlim_n H^r(X,\calm_n)$$
@@ -384,38 +404,46 @@ Dacă $X$ este o varietate nesingulară, numim un {\bf ciclu prim} o subvarietat
 
 Numim doi cicli primi {\bf rațional echivalenți} dacă există o deformare plată între cele două subvarietăți, cu spațiul de bază să fie dreapta proiectivă, și care să fie inclusă în produsul dreptei proiective cu varietatea ambiantă.
 
-Dacă factorizăm fiecare $C^r$ la relația de congruență indusă de echivalența rațională, vom obține grupuri notate cu $CH^r(X)$. Grupul $CH^*(X)$, suma directă a lor, are în mod natural o structură de inel graduat cu următoarele proprietăți:
+Dacă factorizăm fiecare $C^r$ la relația de congruență indusă de echivalența rațională, vom obține grupuri notate cu $CH^r(X)$. Grupul $CH^*(X)$, suma directă a lor, are în mod natural o structură de inel graduat (în care punem gradul elementelor din $C^r$ să fie $2r$, pentru a se potrivi mai jos cu coomologia), numit {\bf inelul Chow}, cu următoarele proprietăți:
+\begin{itemize}
+\item $CH^*(X)$ este comutativ;
+\item asocierea este contravariant-functorială, în sensul că dacă avem $f: X \rightarrow X'$ morfism de varietăți, funcția asociată $f^*:CH(X') \rightarrow CH(X)$ este morfism de inele și $f^*g^* = (g \circ f)^*$;
+\item pntru morfismele proprii $f: X \rightarrow X'$, există și un push-forward $f_*:CH(X) \rightarrow CH(X')$ ce este morfism de grupuri graduate (cu o translație în grade), la fel oarecum functorial;
+\item dacă $f: X \rightarrow X'$ e propriu, atunci $f_*(x \cdot f^*(y)) = f_*(x) \cdot y$;
+\item dacă $Y$ și $Z$ sunt cicli pe $X$ și $\Delta: X \rightarrow X \times X$ este morfismul diagonal, atunci $Y \cdot Z = \Delta^*(Y \times Z)$;
+\item dacă $Y$ și $Z$ sunt subvarietăți ce se intersectează propriu (i.e. orice componentă ireductibilă $W$ a lui $Y \cap Z$ are codimensiunea în $X$ egală cu suma codimensiunilor lui $Y$ și $Z$), atunci:
+$$Y \cdot Z = \sum \iota(Y,Z;W_j) W_j$$
+\item dacă $Y$ este subvarietate a lui $X$, iar $Z$ un divizor efectiv pe $X$ ce intersectează propriu pe $Y$, atunci $Y \cdot Z$ este ciclul asociat divizorului $Y \cap Z$ pe $Y$.
+\end{itemize}
 
-pâs, pâs, pâs, pâs, pâs... Hartshorne (intersecție transversală? puncte? uită punctul?) să punem graduare dublă!!!!
-
-Ideea fundamentală aici este existența unei transformări naturale în variabila $X$:
+Ideea fundamentală aici este existența unei transformări (naturale în variabila $X$):
 $$cl_X : CH^*(X) \rightarrow H^*(X,\Qell)$$
 pentru orice $\ell$ diferit de caracteristica corpului peste care lucrăm (fiind forțați de șirul exact Kummer). Aceste morfisme sunt morfisme de inele graduate. În acest mod, putem reduce calculele de intersecții la calcule de produse {\it cup}.
 
-Precum formula Künneth, și dualitatea Poincaré este un rezultat ce are loc și în context $\ell$-adic:
+Precum formula Künneth, și dualitatea Poincaré este un rezultat ce are loc și în context $\ell$-adic. Însă, după cum știm, dualitatea Poincaré reprezintă un fenomen strâns legat de orientare. Geometria pe care o dezvoltăm aici își trage intuiția mai ales din geometria complexă, unde orientarea este indicată de alegerea unei rădăcini a lui $-1$. Grupul de coeficienți cu care lucrăm noi este $\mathbb{Q}_\ell$, obținut din $\mathbb{Z}_\ell$, care la rându-i este limită proiectivă de $\mathbb{Z}/\ell^n\mathbb{Z}$-uri. Fiecare $\mathbb{Z}/\ell^n\mathbb{Z}$ este izomorf necanonic cu grupul rădăcinilor de ordin $\ell^n$ ale unității (notat cu $\mu_{\ell^n}(k)$, unde $k$ este corpul peste care lucrăm), acesta din urmă fiind varianta „neorientată” a lui $\mathbb{Z}/\ell^n\mathbb{Z}$. Din el putem construi $\mathbb{Z}_\ell(1)=\varprojlim \mu_{\ell^n}$ și apoi $\mathbb{Z}_\ell(n)=(\mathbb{Z}_\ell(1))^{\otimes_{\mathbb{Z}_\ell}^n}$. Și, firește, $\mathbb{Q}_\ell(n)$ este $\mathbb{Z}_\ell(n) \otimes_{\mathbb{Z}_\ell} \mathbb{Q}_\ell$. Acum putem da versiunea $\ell$-adică a dualității Poincaré fără a comite alegeri necanonice.
 
 \begin{teo}
-(Dualitatea Poincaré) Fie $X$ o varietate nesingulară completă de dimensiune $d$ definită peste un corp $k$ algebric închis. Atunci:
+(Dualitatea Poincaré) Fie $X$ o varietate nesingulară de dimensiune $d$ definită peste un corp $k$ algebric închis. Atunci:
 \begin{enumerate}[a)]
 \item există și este unică o aplicație (ce este în particular izomorfism):
-$$\eta_X : H^{2d}(X,\Qell) \rightarrow \Qell$$
+$$\eta_X : H^{2d}_c(X,\Qell) \rightarrow \Qell$$
 (numită {\bf aplicația urmă}) astfel încât pentru orice $P$ punct închis, $\eta_X(cl_X(P))=1$;
 \item pentru orice $r$ există o biliniară nedegenerată:
-$$H^r(X,\Qell) \times H^{2d-r}(X,\Qell) \rightarrow H^{2d}(X,\Qell)$$
+$$H^r_c(X,\Qell) \times H^{2d-r}(X,\Qell(-d)) \rightarrow H^{2d}_c(X,\Qell(d)) \simeq \Qell$$
 \end{enumerate}
+Iar pentru varietățile complete, putem elimina $c$-urile și scrie simplu biliniara ca:
+$$H^r(X,\Qell) \times H^{2d-r}(X,\Qell) \rightarrow H^{2d}(X,\Qell) \simeq \Qell(-d)$$
 \end{teo}
-
-??? Peste tot identificăm $\Qell$ cu $\Qell(1)$, ceea ce identifică toate $\Qell(d)$-urile.
 
 Fie $\pi : Y \rightarrow X$ o aplicație proprie între varietăți complete definite peste un corp $k$ algebric închis. Notăm cu $a$ dimensiunea lui $X$, cu $d$ dimensiunea lui $Y$ și cu $c$ numărul $d-a$.
 
 Această aplicație induce în coomologie:
-$$\pi^*: H^{2d-r}(Y,\Qell) \rightarrow H^{2d-r}(Y,\Qell)$$
+$$\pi^*: H^{2d-r}(Y,\Qell(d)) \rightarrow H^{2d-r}(Y,\Qell(d))$$
 de unde obținem via dualitatea Poincaré adjuncta ei:
-$$\pi_* : H^r(Y,\Qell) \rightarrow H^{r-2c}(X,\Qell)$$
+$$\pi_* : H^r(Y,\Qell) \rightarrow H^{r-2c}(X,\Qell(-c))$$
 ce satisface, firește proprietatea definitorie:
 $$\langle \pi_*(y),x \rangle=\langle y,\pi^*(x)\rangle$$
-pentru orice $x$ din $H^{2d-r}(X,\Qell)$, $y$ din $H^r(Y,\Qell)$.
+pentru orice $x$, $y$ potrivite.
 
 Adjuncta, numită {\bf aplicația Gysin}, satisface un număr de proprietăți.
 
@@ -439,7 +467,7 @@ Pentru orice $y$ din $H^{2d}(Y,\Qell)$, $\eta_X(\pi_*(y))=\eta_Y(y)$.
 \end{proof}
 
 \begin{propr}
-Pentru orice $x$, $y$ adecvate, $\pi_*(y \cup \pi^*(x)) = \pi_*(y) \cup x$.
+Pentru orice $x$, $y$ adecvate, $\pi_*(y \smile \pi^*(x)) = \pi_*(y) \smile x$ (asemănător cu proprietatea de la inelul Chow).
 \end{propr}
 
 \begin{proof}
@@ -447,14 +475,22 @@ $\langle \pi_*(y \smile \pi^*(x)), x' \rangle = \langle y \smile \pi^*(x), \pi^*
 \end{proof}
 
 \begin{propr}
-Dacă $\pi:Y \rightarrow X$ este în plus finită de grad $\delta$ (implicit varietățile au aceeași dimensiune), $\pi_* \circ \pi^* = (\delta \cdot)$.
+Dacă $\pi:Y \rightarrow X$ este în plus finită de grad $\delta$ (implicit varietățile au aceeași dimensiune) atunci, $\pi_* \circ \pi^*$ este înmulțirea cu $\delta$.
 \end{propr}
 
 \begin{proof}
-DE PUS
+În primul rând $\langle \pi_*(1),x\rangle = \langle1,\pi^*(x)\rangle = \langle1,\delta x\rangle = \langle \delta,x\rangle$, astfel că $\pi_*(1)=\delta$.
+Deci $\pi_*(\pi^*(x)) = \pi_*(1 \smile \pi^*(x)) = \pi_*(1) \smile x = \delta \smile x = \delta x$.
 \end{proof}
+Rezultă deci că în acest ultim caz $\pi_*$ este identitatea pe $H^{2d}(X,\Qell)$ și înmulțirea cu $\delta$ pe $H^0(X,\Qell)$.
 
-Dat fiind că în acest ultim caz $\pi^*$ este identitatea pe $H^0$ (morfism de inele), rezultă că $\pi_*$ este identitatea pe $H^{2d}(X,\Qell)$, $\pi^*$ este înmulțirea cu $\delta$ pe $H^{2d}(X,\Qell)$ și în sfârșit $\pi_*$ este înmulțirea cu $\delta$ pe $H^0(X,\Qell)$.
+O consecință mai importantă a dualității Poincaré este:
+
+\begin{teo}
+(Teorema slabă Lefschetz) Fie $X$ o varietate proiectivă de dimensiune $d$ și $H$ un hiperplan în spațiul ambiant astfel încât complementara în $X$ a lui $A = X \cap H$ este netedă. Atunci aplicațiile canonice:
+$$H^r(X,\mathbb{Q}_\ell) \rightarrow H^r(A,\mathbb{Q}_\ell)$$
+sunt bijective pentru $r < d-1$ și injective pentru $r=d-1$.
+\end{teo}
 
 Ultimul rezultat ce mai trebuie arătat pentru a finaliza mașinăria coomologică este formula de punct fix a lui Lefschetz. Ceea ce este interesant este că ea decurge formal din teoremele expuse mai devreme.
 
@@ -601,7 +637,7 @@ Rezultă că acea condiție 3 este echivalentă cu faptul că funcția zeta a va
 
 Mai mult decât atât, această separare după modul a zerourilor și polilor lui $Z_X$ ne permitm să extragem $P_j$-urile din $Z_X$ și să obținem în mod reciproc din ecuația funcțională condiția 2 din conjecturile Weil.
 
-Toate aceste manipulări de formule ne învață să apreciem modul cum coomologia étală conduce în mod natural măcar la expresia rațională și la ecuația funcțională a funcției $Z_X$.
+Toate aceste manipulări de formule ne învață să apreciem modul cum coomologia etală conduce în mod natural măcar la expresia rațională și la ecuația funcțională a funcției $Z_X$.
 
 Să vedem cum. Mai întâi, vom obține o altă descriere a lui $X(\mathbb{F}_{q^m})$ cu ajutorul aplicației Frobenius.
 
