@@ -122,7 +122,7 @@ O aplicație este {\bf afină} atunci când preimaginea oricărui deschis afin e
 
 În general, în geometria algebrică, spunem că un ideal definește o submulțime închisă, astfel că la nivel de inele avem de-a face cu un morfism surjectiv. Pe baza acestui model definim noțiunea de {\bf imersie închisă}, care este o aplicație afină cu proprietatea că morfismele de inele de mai devreme sunt toate surjective. Produsul fibrat cu o subschemă închisă este o subschemă închisă în mod natural, ca urmare schimbarea de bază a unei imersii închise este imersie închisă. Mai departe, putem defini și noțiunea de {\bf aplicație separată}, care este un morfism $X \to Y$ ce verifică proprietatea că morfismul canonic $X \to X \times_Y X$ este imersie închisă (un spațiu topologic $X$ se zice separat dacă $X \to \{*\}$ verifică aceeași proprietate, însă în categoria spațiilor topologice, aceasta fiind motivația definiției). Ca exemplu, orice morfism afin este separat.
 
-Platitudinea este definită la nivel local: un {\bf morfism plat} de scheme va să zică că morfismele induse între inelele locale sunt plate în sensul algebric (induc functori exacți la nivelul categoriilor de module). Să luăm cazul unei imersii deschise, anume deschisul unde un anume polinom $f$ nu se anulează în planul afin. Algebric este vorba de un morfism $A \to S^{-1}A$, unde $S$ este generat de $f$. Iar localizarea știm că este un morfism plat de inele, ca urmare este și la nivelul inelelor locale.
+Platitudinea este definită la nivel local: un morfism de scheme este {\bf plat } dacă morfismele induse între inelele locale sunt plate în sensul algebric (induc functori exacți la nivelul categoriilor de module). Să luăm cazul unei imersii deschise, anume deschisul unde un anume polinom $f$ nu se anulează în planul afin. Algebric este vorba de un morfism $A \to S^{-1}A$, unde $S$ este generat de $f$. Iar localizarea știm că este un morfism plat de inele, ca urmare este și la nivelul inelelor locale.
 
 Ca un morfism să fie {\bf neramificat}, el trebuie să fie {\bf de tip finit} (adică luând preimaginea oricărui deschis afin, ea admite o acoperire finită cu deschiși afini astfel încât morfismele de inele induse de deschișii acoperirii sunt toate de tip finit) și să satisfacă următoarea proprietate definită tot la nivel local: morfismele induse între inelele locale $\mathcal{O}_x \rightarrow \mathcal{O}_{f(x)}$ fac să se inducă extinderi de corpuri $\frac{\mathcal{O}_x}{\mathfrak{m}_{\mathcal{O}_x}} \hookrightarrow \frac{\mathcal{O}_{f(x)}}{f(\mathfrak{m}_{\mathcal{O}_x})\mathcal{O}_{f(x)}}$ finite și separabile. (Pentru un morfism neramificat $X \rightarrow Y$, aplicația canonică $X \rightarrow X\times_Y X$ are imaginea deschisă, a se compara cu definiția morfismului separat). Dacă luăm endomorfismul dreptei afine complexe $z \mapsto z^2$, acesta va induce un morfism ce nu va fi de corpuri deoarece unul din inelele locale în origine va fi factorizat la idealul generat de $Z^2$, ce nu mai e maximal. Avem de-a face cu un fenomen de ramificare.
 
@@ -200,11 +200,15 @@ $$\pi_1(X,\bar{x}) = \varprojlim Aut_X(X_i) = \varprojlim Aut_{X^{an}}(X_i^{an})
 \begin{exs}
 Putem calcula acum:
 \begin{enumerate}[i)]
-\item $\pi_1(\mathbb{A}^1 - \{0\},\bar{x}) = \hat{\mathbb{Z}}$.
+\item $\pi_1(\mathbb{A}^1\mathbb{C},\bar{x}) = 0$.
 
-\item $\pi_1(\mathbb{P}^1,\bar{x}) = 0$.
+\item $\pi_1(\mathbb{A}^1\mathbb{C} \setminus \{0\},\bar{x}) = \hat{\mathbb{Z}}$.
+
+\item $\pi_1(\mathbb{P}^1\mathbb{C},\bar{x}) = 0$.
 \end{enumerate}
 \end{exs}
+
+În caracteristică $p > 0$, fenomenul este mult mai complex, în sensul că dreapta afină $\mathbb{A}^1\mathbb{F}_p$ este acoperită de aplicațiile Artin-Schreier $x \mapsto x^{p^n}-x$, pentru orice $n$ natural, cu grupul de automorfisme corespunzător $(\mathbb{Z}/p\mathbb{Z})^n$. Rezultă că $\pi_1(\mathbb{A}^1\mathbb{F}_p,\bar{x})$ nu este nici măcar finit generat!!
 
 Dacă avem o schemă conexă $W$ de tip finit (peste Spec $\mathbb{Z}$), toate punctele sale închise au corpuri reziduale finite, astfel că aplicațiile canonice Spec $\kappa(x) \rightarrow W$ vor induce morfisme $\pi_1(\text{Spec }\kappa(x),\bar{x}) \rightarrow \pi_1(W,\bar{x})$. Însă primul grup este izomorf cu completarea profinită a lui $\mathbb{Z}$, ce are un generator topologic canonic (morfismul Frobenius), iar imaginea sa este un element canonic în $ \pi_1(W,\bar{x})$.
 
@@ -339,7 +343,7 @@ Grupurile de coomologie ale unui fascicul constructibil peste o varietate comple
 (Teorema de Schimbare Proprie a Bazei) Fie $\pi: X \rightarrow S$ aplicație proprie, $f: T \rightarrow S$ morfism, $X' = X \times_S T$ și $X\xleftarrow{f'}X'\xrightarrow{\pi'}T$ morfismele de pullback. Dacă $\mathcal{F}$ este un fascicul de torsiune pe $X$ (și deci limită de constructibile), există un izomorfism canonic $f^*(R^r\pi_*\mathcal{F}) \rightarrow R^r\pi'_*(f'^*\mathcal{F})$.
 \end{teo}
 
-Să ne întoarcem la ceea ce am vorbit mai devreme despre functorul fibră - după cum am văzut, el induce o echivalență de categorii între acoperirile etale ale unei varietăți conexe și $\pi_1(X,\bar{x})$-mulțimile finite, continue. Aceasta ne spune, în particular, că, dat fiind un grup $G$, a da o acoperire Galois de grup $G$ este același lucru cu a da un morfism continuu de la $\pi_1(X,\bar{x})$ la $G$. Mai departe, o acoperire Galois poate fi văzută ca un spațiu omogen corespunzător fasciculului etal constant de fibră $G$ (notat acum cu $\mathcal{G}$). Aceste spații omogene peste $\mathcal{G}$ sunt structuri asemănătoare fibratelor vectoriale și avem chiar o corespondență între clasele lor de izomorfism și elementel unui anumit grup $H^1$, anume $H^1(X,\mathcal{G})$ (corespunzător lui $H^1(X,\mathcal{O}^*)$ din teoria clasică). Am obținut, care va să zică, relația:
+Să ne întoarcem la ceea ce am vorbit mai devreme despre functorul fibră - după cum am văzut, el induce o echivalență de categorii între acoperirile etale ale unei varietăți conexe și $\pi_1(X,\bar{x})$-mulțimile finite, continue. Aceasta ne spune, în particular, că, dat fiind un grup $G$, a da o acoperire Galois de grup $G$ este același lucru cu a da un morfism continuu de la $\pi_1(X,\bar{x})$ la $G$. Mai departe, o acoperire Galois poate fi văzută ca un spațiu omogen corespunzător fasciculului etal constant de fibră $G$ (notat acum cu $\mathcal{G}$). Aceste spații omogene peste $\mathcal{G}$ sunt structuri asemănătoare fibratelor vectoriale și avem chiar o corespondență între clasele lor de izomorfism și elementele unui anumit grup $H^1$, anume $H^1(X,\mathcal{G})$ (corespunzător lui $H^1(X,\mathcal{O}^*)$ din teoria clasică). Am obținut, așadar, relația:
 $$H^1(X,\mathcal{G}) \simeq \text{Hom}_{TopGr}(\pi_1(X,\bar{x}),G)$$
 care pare că ne va simplifica multe calcule.
 
