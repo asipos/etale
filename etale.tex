@@ -95,7 +95,8 @@ Acest text își propune să:
 \item aplice aceste rezultate la studiul funcțiilor zeta asociate varietăților peste corpuri finite
 \end{itemize}
 
-\cite{milne}\cite{lovering}\cite{dugger}
+\cite{milne}\cite{lovering}\cite{dugger}\cite{szam}\cite{deligne}
+\cite{hart}\cite{vakil}\cite{clark}
 
 \newpage
 \phantom{X}
@@ -112,7 +113,7 @@ Orice schemă este înzestrată cu un morfism canonic către Spec $\mathbb{Z}$, 
 
 Pe baza acestor idei, putem construi următoarea categorie: obiectele sunt perechi $(T,\phi)$ cu $T$ schemă și $\phi: T \rightarrow$ Spec $\mathbb{F}_p$ morfism de scheme, iar morfismele între două obiecte $(T,\phi)$ și $(T',\phi')$ sunt morfismele $\psi: T \rightarrow T'$ cu proprietatea că $\phi'\circ\psi=\phi$. Această categorie „virgulă” ({\it comma category}) o vom numi {\bf categoria schemelor peste $\mathbb{F}_p$}. Iar construcția, firește, o putem face luând orice schemă $S$ în loc de Spec $\mathbb{F}_p$, categoria rezultantă numindu-se {\bf categoria $S$-schemelor}.
 
-Acest „punct de vedere local” sau „relativ”, cum l-a numit A. Grothendieck, va fi folosit exhaustiv în cele ce urmează, în sensul că, deși ne vom concentra atenția asupra unei scheme $S$, o vom face într-un mod extrinsec, considerând morfismele, ca mai sus, ce au pe $S$ drept codomeniu. Să vedem mai concret ce vrea să însemne asta.
+Acest „punct de vedere local” sau „relativ”, cum l-a numit A. Grothendieck, va fi folosit exhaustiv în cele ce urmează, în sensul că, deși ne vom concentra atenția asupra unei scheme $S$, o vom face într-un mod extrinsec, considerând morfismele, ca mai sus, ce au pe $S$ drept destinație. Să vedem mai concret ce vrea să însemne asta.
 
 Se spune că geometria algebrică începe cu spectrul unui inel. De aceea, și ca să nu ne complicăm, vom ilustra conceptele în principal cu scheme afine. Cum ar fi Spec $\mathbb{C}$ - aceasta este o (Spec $\mathbb{R}$)-schemă (sau, mai simplu, o $\mathbb{R}$-schemă), cu morfismul structural dat de incluziunea $\mathbb{R}  \hookrightarrow \mathbb{C}$. Această schemă are doar un punct, deci este în mod trivial o {\bf schemă conexă}. Când facem schimbarea de bază la $\mathbb{C}$, obținem Spec $\mathbb{C} \otimes_{\mathbb{R}} \mathbb{C} =$ Spec $\mathbb{C} \times \mathbb{C} =$ Spec $\mathbb{C} \coprod$ Spec $\mathbb{C}$, care nu mai e conexă. Numim o schemă care își păstrează conexitatea la extinderi de corpuri schemă {\bf geometric conexă}. Noi, deseori, vom lucra cu scheme peste corpuri nealgebric închise (peste corpuri finite, de pildă), însă le vom număra punctele peste extinderi. Pentru aceasta, însă, e oarecum suficient să ne uităm la schema inițială - $\mathbb{C}$-ul inițial peste $\mathbb{R}$ reprezintă oarecum polinomul ireductibil $X^2+1$, ce odată cu extinderea scindează în două „puncte”: $X+i$ și $X-i$ - însă acest număr doi ne este deja dat de gradul extinderii corpului rezidual al punctului inițial peste corpul de bază: $[\mathbb{C}:\mathbb{R}]=2$. Această contabilizare a gradelor ne va permite să dăm formule de numărare a punctelor - acesta este și motivul pentru care preferăm să lucrăm cu scheme. Deseori se va nota schema inițială cu $X_0$, iar schimbarea ei de bază la închiderea algebrică cu $X$.
 
@@ -124,7 +125,7 @@ O aplicație este {\bf afină} atunci când preimaginea oricărui deschis afin e
 
 Platitudinea este definită la nivel local: un morfism de scheme este {\bf plat } dacă morfismele induse între inelele locale sunt plate în sensul algebric (induc functori exacți la nivelul categoriilor de module). Să luăm cazul unei imersii deschise, anume deschisul unde un anume polinom $f$ nu se anulează în planul afin. Algebric este vorba de un morfism $A \to S^{-1}A$, unde $S$ este generat de $f$. Iar localizarea știm că este un morfism plat de inele, ca urmare este și la nivelul inelelor locale.
 
-Ca un morfism să fie {\bf neramificat}, el trebuie să fie {\bf de tip finit} (adică luând preimaginea oricărui deschis afin, ea admite o acoperire finită cu deschiși afini astfel încât morfismele de inele induse de deschișii acoperirii sunt toate de tip finit) și să satisfacă următoarea proprietate definită tot la nivel local: morfismele induse între inelele locale $\mathcal{O}_x \rightarrow \mathcal{O}_{f(x)}$ fac să se inducă extinderi de corpuri $\frac{\mathcal{O}_x}{\mathfrak{m}_{\mathcal{O}_x}} \hookrightarrow \frac{\mathcal{O}_{f(x)}}{f(\mathfrak{m}_{\mathcal{O}_x})\mathcal{O}_{f(x)}}$ finite și separabile. (Pentru un morfism neramificat $X \rightarrow Y$, aplicația canonică $X \rightarrow X\times_Y X$ are imaginea deschisă, a se compara cu definiția morfismului separat). Dacă luăm endomorfismul dreptei afine complexe $z \mapsto z^2$, acesta va induce un morfism ce nu va fi de corpuri deoarece unul din inelele locale în origine va fi factorizat la idealul generat de $Z^2$, ce nu mai e maximal. Avem de-a face cu un fenomen de ramificare.
+Ca un morfism să fie {\bf neramificat}, el trebuie să fie {\bf de tip finit} (adică luând preimaginea oricărui deschis afin, ea admite o acoperire finită cu deschiși afini astfel încât morfismele de inele induse de deschișii acoperirii sunt toate de tip finit) și să satisfacă următoarea proprietate definită tot la nivel local: morfismele induse între inelele locale $\mathcal{O}_x \rightarrow \mathcal{O}_{f(x)}$ fac să se inducă extinderi de corpuri $\frac{\mathcal{O}_x}{\mathfrak{m}_{\mathcal{O}_x}} \hookrightarrow \frac{\mathcal{O}_{f(x)}}{f(\mathfrak{m}_{\mathcal{O}_x})\mathcal{O}_{f(x)}}$ finite și separabile. (Pentru un morfism neramificat $X \rightarrow Y$, aplicația canonică $X \rightarrow X\times_Y X$ are imaginea deschisă, a se compara cu definiția morfismului separat). Dacă luăm endomorfismul dreptei afine complexe $z \mapsto z^2$, acesta va induce un morfism ce nu va fi nici măcar de corpuri deoarece unul din inelele locale în origine va fi factorizat la idealul generat de $Z^2$, ce nu mai e maximal. Avem de-a face cu un fenomen de ramificare.
 
 Iar un morfism etal între două scheme este un morfism plat și neramificat, ceea ce ne conduce la o oarecare idee de „acoperire”.
 
@@ -159,9 +160,17 @@ Pentru a construi morfismul de la dreapta la stânga, trebuie să dăm câte un 
 Ca o consecință, avem descrierea:
 $$\pi_1(S,\bar{x}) \simeq \varprojlim Aut_S(X_\alpha)$$
 
+Rezultă că grupul fundamental etal este un grup profinit, deci compact, ca urmare există o unică măsură $\mu$ pe mulțimile sale boreliene, numită {\bf măsura Haar la stânga, normalizată}, cu următoarele proprietăți:
+\begin{itemize}
+\item $\mu$ este invariantă la înmulțirea la stânga
+\item $\mu(\pi_1(S,\bar{x}))=1$
+\item $\mu(E) = inf\ \{\mu(U) \mid E \subseteq U, U \text{ deschisă}\}$, pentru orice $E$ boreliană
+\item $\mu(E) = sup\ \{\mu(K) \mid K \subseteq E, K \text{ compactă}\}$, pentru orice $E$ boreliană
+\end{itemize}
+
 \begin{ex}
 Dacă avem un corp $k$, a alege un punct geometric al său $\bar{x}$ se rezumă la a fixa o închidere algebrică. Putem acum calcula:
-$$\pi_1(\text{Spec }k,\bar{x})=\varprojlim\limits_{L \text{ ext. finită separabilă}} Gal(\frac{L}{k}) = Gal(\frac{k^s}{k})$$
+$$\pi_1(\text{Spec }k,\bar{x})=\varprojlim\limits_{k \subseteq L \text{, finită separabilă}} Gal(\frac{L}{k}) = Gal(\frac{k^s}{k})$$
 adică grupul Galois absolut al corpului $k$.
 \end{ex}
 
@@ -178,7 +187,7 @@ Demonstrăm acum că functorul este deplin fidel. Lema de rigiditate ne indică 
 \end{proof}
 
 \begin{prop}
-Fie $S$ o schemă conexă și $\bar{x}$, $\bar{x}'$ două puncte geometrice ale sale. Atunci există un izomorfism între functorii fibră $Fib_{\bar{x}}$ și $Fib_{\bar{x}'}$.
+(\cite{szam}) Fie $S$ o schemă conexă și $\bar{x}$, $\bar{x}'$ două puncte geometrice ale sale. Atunci există un izomorfism între functorii fibră $Fib_{\bar{x}}$ și $Fib_{\bar{x}'}$.
 \end{prop}
 
 \begin{proof}
@@ -189,7 +198,7 @@ Fie $S$ o schemă conexă și $\bar{x}$, $\bar{x}'$ două puncte geometrice ale 
 Dacă $S$ este o schemă conexă și $\bar{x}$, $\bar{x}'$ două puncte geometrice ale sale. Atunci există un izomorfism continuu de grupuri profinite $\pi_1(S,\bar{x}) \rightarrow \pi_1(S,\bar{x}')$.
 \end{cor}
 
-Începe deja să se vadă analogia cu grupul fundamental clasic: acolo un izomorfism între grupurile asociate aceluiași spațiu cu puncte bază diferite era indus de un drum între cele două puncte. Aici, analogul drumului este dat de izomorfismul între cei doi functori fibră, care din aceasta similaritate, este numit {\bf drum} între punctele geometrice.
+Începe deja să se vadă analogia cu grupul fundamental clasic: acolo un izomorfism între grupurile asociate aceluiași spațiu cu puncte bază diferite era indus de un drum între cele două puncte. Aici, analogul drumului este dat de izomorfismul între cei doi functori fibră, care din această similaritate, este numit {\bf drum} între punctele geometrice.
 
 Peste numerele complexe, legătura este chiar mai strânsă, în sensul următor: {\it teorema de existență a lui Riemann} spune că functorul ce duce o acoperire finită etală a unei varietăți algebrice nesingulare $X$ peste corpul $\mathbb{C}$ în spațiul de acoperire corespunzător al lui $X^{an}$ ($X$ considerat ca varietate complexă) reprezintă o echivalență de categorii.
 
@@ -208,7 +217,7 @@ Putem calcula acum:
 \end{enumerate}
 \end{exs}
 
-În caracteristică $p > 0$, fenomenul este mult mai complex, în sensul că dreapta afină $\mathbb{A}^1\mathbb{F}_p$ este acoperită de aplicațiile Artin-Schreier $x \mapsto x^{p^n}-x$, pentru orice $n$ natural, cu grupul de automorfisme corespunzător $(\mathbb{Z}/p\mathbb{Z})^n$. Rezultă că $\pi_1(\mathbb{A}^1\mathbb{F}_p,\bar{x})$ nu este nici măcar finit generat!!
+În caracteristică $p > 0$, fenomenul este mult mai complex (\cite{clark}), în sensul că dreapta afină $\mathbb{A}^1\mathbb{F}_p$ este acoperită de aplicațiile Artin-Schreier $x \mapsto x^{p^n}-x$, pentru orice $n$ natural, cu grupul de automorfisme corespunzător $(\mathbb{Z}/p\mathbb{Z})^n$. Rezultă că $\pi_1(\mathbb{A}^1\mathbb{F}_p,\bar{x})$ nu este nici măcar finit generat!!
 
 Dacă avem o schemă conexă $W$ de tip finit (peste Spec $\mathbb{Z}$), toate punctele sale închise au corpuri reziduale finite, astfel că aplicațiile canonice Spec $\kappa(x) \rightarrow W$ vor induce morfisme $\pi_1(\text{Spec }\kappa(x),\bar{x}) \rightarrow \pi_1(W,\bar{x})$. Însă primul grup este izomorf cu completarea profinită a lui $\mathbb{Z}$, ce are un generator topologic canonic (morfismul Frobenius), iar imaginea sa este un element canonic în $ \pi_1(W,\bar{x})$.
 
@@ -269,6 +278,8 @@ Avem o echivalență de categorii între fasciculele constructibile pe $S$ și $
 
 Pentru a defini, la fel cum o facem când lucrăm cu fascicule pe spații topologice, fascicule de grupuri abeliene, nu avem altceva de făcut decât să înlocuim peste tot mulțimile cu grupuri. Echivalent, putem spune că un fascicul de grupuri abeliene pe un sit etal este un obiect de tip grup abelian în categoria fasciculelor de mulțimi de pe acel sit, obținând astfel o categorie echivalentă cu cea definită anterior („comutativitatea abstracțiunii”!).
 
+Există și exemple de fascicule reprezentabile ce au în mod natural structură de fascicul abelian, cum ar fi $\mu_n$ („rădăcinile de ordin $n$ ale unității”), reprezentat de spectrul lui $\mathbb{Z}[T]/(T^n-1)$, sau, dacă lucrăm peste un corp $k$ avem ca exemplu pe $\mathbb{G}_m$ („grupul multiplicativ”), reprezentat, firește, de $\mathbb{A}^1 k$ din care scoatem originea.
+
 Această categorie, a fasciculelor de grupuri abeliene pe un sit etal asociat unei varietăți X, categorie notată de acum înainte cu $Ab(X)$, este abeliană și are suficiente obiecte injective. (Putem face aceeași construcție și pentru prefascicule, obținând o categorie abeliană $PreshAb(X)$.) Demonstrația dată de Grothendieck acestui ultim fapt se bazează, firește, pe existența anvelopei injective a unui grup abelian arbitrar.
 
 În aceste condiții, cum $\Gamma: Ab(X) \rightarrow Ab$ este un functor exact la stânga, el admite functori derivați la dreapta. Vom nota $(R^r\Gamma)(\mathcal{F})$ cu $H^r(X,\mathcal{F})$ și îl vom numi al $r$-lea grup de {\bf coomologie etală} corespunzător varietății $X$.
@@ -307,6 +318,8 @@ $$0 \rightarrow \mathcal{F}' \rightarrow \mathcal{F} \rightarrow \mathcal{F}'' \
 induce șirul exact lung format din:
 $$\cdots \rightarrow H^r(Y,\phi^*\mathcal{F}') \rightarrow H^r(Y,\phi^*\mathcal{F}) \rightarrow H^r(Y,\phi^*\mathcal{F}'') \rightarrow \cdots$$
 iar aplicația naturală $\mathcal{F}(X) \rightarrow \phi^*\mathcal{F}(Y)$ induce, din teoria functorilor derivați, morfisme $H^r(X,\mathcal{F}) \rightarrow H^r(Y,\phi^*\mathcal{F})$ (astfel, coomologia etală este și ea contravariant functorială), ce sunt compatibile cu aplicațiile frontieră din șirurile exacte lungi.
+
+Mai mult decât atât, precum grupurile de coomologie singulară, și grupurile de coomologie etală, atunci când le sumăm, au un produs {\it„cup”} ce le dă o structură naturală de inel, cu elementul neutru în $H^0$ (construcția realizându-se redefinind coomologia à la Čech și transferând aplicația naturală de acolo la functorii derivați), iar morfismul dual de mai sus devine chiar morfism de inele.
 
 Dacă $j :U \rightarrow X$ este o imersie deschisă, iar $\mathcal{F}$ este un fascicul etal pe $U$, definim prefasciculul $\mathcal{F}_!$ prin:
 \begin{align*}
@@ -424,7 +437,7 @@ $$0 \rightarrow \varprojlim_n \frac{H^r(X,\calm)}{\ell^n H^r(X,\calm)} \rightarr
 Vom nota în continuare, la fel de formal,
 $$H^r(X,\Qell) = H^r(X,\mathbb{Z}_\ell) \otimes_{\mathbb{Z}_\ell} \Qell$$
 
-Un rezultat ce se moștenește în mod trivial la această coomologie $\ell$-adică este dimensiunea coomologică.
+Un rezultat ce se moștenește în mod trivial la această coomologie $\ell$-adică este dimensiunea coomologică, dar și cunoscuta relație:
 
 \begin{teo}
 (Formula Künneth) Are loc izomorfismul de inele graduate:
@@ -435,9 +448,9 @@ $$H^*(X\times Y,\Qell) \simeq H^*(X,\Qell) \otimes_{\Qell} H^*(Y,\Qell)$$
 
 Dacă $X$ este o varietate nesingulară, numim un {\bf ciclu prim} o subvarietate închisă ireductibilă. Notăm cu $C^r(X)$ grupul abelian liber generat de ciclii primi de codimensiune $r$, iar cu $C^*(X)$ suma directă a acestor $C^r$-uri.
 
-Numim doi cicli primi {\bf rațional echivalenți} dacă există o deformare plată între cele două subvarietăți, cu spațiul de bază să fie dreapta proiectivă, și care să fie inclusă în produsul dreptei proiective cu varietatea ambiantă.
+Numim doi cicli primi {\bf rațional echivalenți} dacă există o deformare plată între cele două subvarietăți, cu spațiul de bază fiind dreapta proiectivă, și care să fie inclusă în produsul dreptei proiective cu varietatea ambiantă.
 
-Dacă factorizăm fiecare $C^r$ la relația de congruență indusă de echivalența rațională, vom obține grupuri notate cu $CH^r(X)$. Grupul $CH^*(X)$, suma directă a lor, are în mod natural o structură de inel graduat (în care punem gradul elementelor din $C^r$ să fie $2r$, pentru a se potrivi mai jos cu coomologia), numit {\bf inelul Chow}, cu următoarele proprietăți:
+Dacă factorizăm fiecare $C^r$ la relația de congruență indusă de echivalența rațională, vom obține grupuri notate cu $CH^r(X)$. Grupul $CH^*(X)$, suma directă a lor, are în mod natural o structură de inel graduat (în care punem gradul elementelor din $C^r$ să fie $2r$, pentru a se potrivi mai jos cu coomologia), numit {\bf inelul Chow}, cu următoarele proprietăți (\cite{hart}):
 \begin{itemize}
 \item $CH^*(X)$ este comutativ;
 \item asocierea este contravariant-functorială, în sensul că dacă avem $f: X \rightarrow X'$ morfism de varietăți, funcția asociată $f^*:CH(X') \rightarrow CH(X)$ este morfism de inele și $f^*g^* = (g \circ f)^*$;
@@ -451,21 +464,28 @@ $$Y \cdot Z = \sum \iota(Y,Z;W_j) W_j$$
 
 Ideea fundamentală aici este existența unei transformări (naturale în variabila $X$):
 $$cl_X : CH^*(X) \rightarrow H^*(X,\Qell)$$
-pentru orice $\ell$ diferit de caracteristica corpului peste care lucrăm (fiind forțați de șirul exact Kummer). Aceste morfisme sunt morfisme de inele graduate. În acest mod, putem reduce calculele de intersecții la calcule de produse {\it cup}.
+pentru orice $\ell$ diferit de caracteristica corpului peste care lucrăm, deoarece în grad $1$ aceste morfisme vor proveni din șirul exact lung în coomologie asociat șirului exact scurt Kummer:
+$$0 \to \mu_\ell \to \mathbb{G}_m \xrightarrow{t\mapsto t^\ell} \mathbb{G}_m \to 0$$
+ce este exact doar pentru că în acest caz $t^\ell$ este polinom separabil.
 
-Precum formula Künneth, și dualitatea Poincaré este un rezultat ce are loc și în context $\ell$-adic. Însă, după cum știm, dualitatea Poincaré reprezintă un fenomen strâns legat de orientare. Geometria pe care o dezvoltăm aici își trage intuiția mai ales din geometria complexă, unde orientarea este indicată de alegerea unei rădăcini a lui $-1$. Grupul de coeficienți cu care lucrăm noi este $\mathbb{Q}_\ell$, obținut din $\mathbb{Z}_\ell$, care la rându-i este limită proiectivă de $\mathbb{Z}/\ell^n\mathbb{Z}$-uri. Fiecare $\mathbb{Z}/\ell^n\mathbb{Z}$ este izomorf necanonic cu grupul rădăcinilor de ordin $\ell^n$ ale unității (notat cu $\mu_{\ell^n}(k)$, unde $k$ este corpul peste care lucrăm), acesta din urmă fiind varianta „neorientată” a lui $\mathbb{Z}/\ell^n\mathbb{Z}$. Din el putem construi $\mathbb{Z}_\ell(1)=\varprojlim \mu_{\ell^n}$ și apoi $\mathbb{Z}_\ell(n)=(\mathbb{Z}_\ell(1))^{\otimes_{\mathbb{Z}_\ell}^n}$. Și, firește, $\mathbb{Q}_\ell(n)$ este $\mathbb{Z}_\ell(n) \otimes_{\mathbb{Z}_\ell} \mathbb{Q}_\ell$. Acum putem da versiunea $\ell$-adică a dualității Poincaré fără a comite alegeri necanonice.
+Morfismele $cl_X$ sunt morfisme de inele graduate. În acest mod, putem reduce calculele de intersecții la calcule de produse {\it cup}.
+
+Precum formula Künneth, și dualitatea Poincaré este un rezultat ce are loc și în context $\ell$-adic. Însă, după cum știm, dualitatea Poincaré reprezintă un fenomen strâns legat de orientare. Geometria pe care o dezvoltăm aici își trage intuiția mai ales din geometria complexă, unde orientarea este indicată de alegerea unei rădăcini a lui $-1$. Grupul de coeficienți cu care lucrăm noi este $\mathbb{Q}_\ell$, obținut din $\mathbb{Z}_\ell$, care la rându-i este limită proiectivă de $\mathbb{Z}/\ell^n\mathbb{Z}$-uri. Fiecare $\mathbb{Z}/\ell^n\mathbb{Z}$ este izomorf necanonic cu grupul rădăcinilor de ordin $\ell^n$ ale unității (notat cu $\mu_{\ell^n}(k)$, unde $k$ este corpul peste care lucrăm), acesta din urmă fiind varianta „neorientată” a lui $\mathbb{Z}/\ell^n\mathbb{Z}$. Din el putem construi $\mathbb{Z}_\ell(1)=\varprojlim \mu_{\ell^n}$ și apoi $\mathbb{Z}_\ell(n)=(\mathbb{Z}_\ell(1))^{\otimes_{\mathbb{Z}_\ell}n}$. Și, firește, $\mathbb{Q}_\ell(n)$ este $\mathbb{Z}_\ell(n) \otimes_{\mathbb{Z}_\ell} \mathbb{Q}_\ell$. Acum putem da versiunea $\ell$-adică a dualității Poincaré fără a comite alegeri necanonice.
 
 \begin{teo}
 (Dualitatea Poincaré) Fie $X$ o varietate nesingulară de dimensiune $d$ definită peste un corp $k$ algebric închis. Atunci:
 \begin{enumerate}[a)]
 \item există și este unică o aplicație (ce este în particular izomorfism):
-$$\eta_X : H^{2d}_c(X,\Qell) \rightarrow \Qell$$
+$$\eta_X : H^{2d}_c(X,\Qell) \xrightarrow{\sim} \Qell$$
 (numită {\bf aplicația urmă}) astfel încât pentru orice $P$ punct închis, $\eta_X(cl_X(P))=1$;
 \item pentru orice $r$ există o biliniară nedegenerată:
 $$H^r_c(X,\Qell) \times H^{2d-r}(X,\Qell(-d)) \rightarrow H^{2d}_c(X,\Qell(d)) \simeq \Qell$$
 \end{enumerate}
-Iar pentru varietățile complete, putem elimina $c$-urile și scrie simplu biliniara ca:
-$$H^r(X,\Qell) \times H^{2d-r}(X,\Qell) \rightarrow H^{2d}(X,\Qell) \simeq \Qell(-d)$$
+Iar pentru varietățile complete, putem elimina $c$-urile și scrie simplu aplicația urmă (notată la fel prin abuz de limbaj) ca:
+$$\eta_X: H^{2d}(X,\Qell) \xrightarrow{\sim} \Qell(-d)$$
+iar biliniara (dată acum de produsul {\it cup}) ca:
+$$\smile:H^r(X,\Qell) \times H^{2d-r}(X,\Qell) \rightarrow H^{2d}(X,\Qell)$$
+Vom nota în acest ultim caz compunerea $\eta_X \circ \smile$ cu $\langle,\rangle$, ca pe un soi de produs scalar.
 \end{teo}
 
 Fie $\pi : Y \rightarrow X$ o aplicație proprie între varietăți complete definite peste un corp $k$ algebric închis. Notăm cu $a$ dimensiunea lui $X$, cu $d$ dimensiunea lui $Y$ și cu $c$ numărul $d-a$.
@@ -569,25 +589,25 @@ Ca atare, putem număra puncte.
 
 \chapter{Numărarea punctelor}
 
-Problema pe care urmează să o formulăm a pornit de la cea a studiului modului cum variază numărul de puncte de pe o curbă eliptică, în momentul în care extindem corpul de bază. Ne este cunoscută din studiul acelor curbe inegalitatea Hasse-Weil, care spune că pentru orice curbă eliptică $X$ definită peste un corp finit $\mathbb{F}_q$, dacă notăm $N_m(X)=\#X(\mathbb{F}_{q^m})$, are loc relația:
-$$\mid N_m(X) - (q^m+1)\mid\  \leq 2\sqrt{q^m}$$
+Problema pe care urmează să o formulăm a pornit de la cea a studiului modului cum variază numărul de puncte de pe o curbă eliptică, în momentul în care extindem corpul de bază. Ne este cunoscută din studiul acelor curbe inegalitatea Hasse-Weil, care spune că pentru orice curbă eliptică $X_0$ definită peste un corp finit $\mathbb{F}_q$ (cu $X$ fiind notată schimbarea de bază la închiderea algebrică), dacă notăm $N_m(X_0)=\#X(\mathbb{F}_{q^m})$, are loc relația:
+$$\mid N_m(X_0) - (q^m+1)\mid\  \leq 2\sqrt{q^m}$$
 
 Mai precis, există două numere algebrice $\alpha_1,\alpha_2$ de modul $\sqrt{q}$ astfel încât pentru orice $m$:
-$$N_m(X) = 1 - \alpha_1^m - \alpha_2^m + q^m$$
+$$N_m(X_0) = 1 - \alpha_1^m - \alpha_2^m + q^m$$
 
 André Weil a propus următoarea generalizare:
 \begin{teo}
-(Conjecturile Weil) Fie $X$ o varietate proiectivă netedă definită peste $\mathbb{F}_q$ de dimensiune $d$. Atunci:
+(Conjecturile Weil) Fie $X_0$ o varietate proiectivă netedă definită peste $\mathbb{F}_q$ de dimensiune $d$, iar $X$ schimbarea sa de bază la închiderea algebrică. Atunci:
 \begin{enumerate}
-\item există $2d$ numere naturale $b_0,...,b_{2d}$ și o familie de numere complexe $\{a_{j,u}\}_{j\in\overline{0,2d}\atop s\in\overline{1,b_j}}$ astfel încât pentru orice $m$ am:
-$$N_m(X)=\sum\limits_{j=0}^{2d} (-1)^j (\sum\limits_{u=1}^{b_j} \alpha_{j,u}^m)$$
-Mai mult, $b_0=b_{2d}=1, \alpha_{0,1}=1, \alpha_{2d,1}=q^d$. Numărul $\sum\limits_j (-1)^j b_j$ va fi notat cu $\chi$.
-\item pentru orice $j$, $b_j$ este egal cu $b_{2d-j}$, iar $(\frac{q^d}{\alpha_{2d-j,1}},...,\frac{q^d}{\alpha_{2d-j,b_j}})$ e o permutare a enumerării $(\alpha_{j,1},...,\alpha_{j,b_j})$.
-\item pentru orice $j,u$, avem că $\alpha_{j,u}$ e număr algebric de modul $q^{\frac{j}{2}}$.
+\item există $2d$ numere naturale $b_0,...,b_{2d}$ și o familie de numere complexe $\{a_{r,u}\}_{r\in\overline{0,2d}\atop u\in\overline{1,b_r}}$ astfel încât pentru orice $m$ am:
+$$N_m(X_0)=\sum\limits_{r=0}^{2d} (-1)^r (\sum\limits_{u=1}^{b_r} \alpha_{r,u}^m)$$
+Mai mult, $b_0=b_{2d}=1, \alpha_{0,1}=1, \alpha_{2d,1}=q^d$. Numărul $\sum\limits_r (-1)^r b_r$ va fi notat cu $\chi$.
+\item pentru orice $r$, $b_r$ este egal cu $b_{2d-r}$, iar $(\frac{q^d}{\alpha_{2d-r,1}},...,\frac{q^d}{\alpha_{2d-r,b_r}})$ e o permutare a enumerării $(\alpha_{r,1},...,\alpha_{r,b_r})$.
+\item pentru orice $r,u$, avem că $\alpha_{r,u}$ e număr algebric de modul $q^{\frac{r}{2}}$.
 \end{enumerate}
 \end{teo}
 
-Se observă că dacă X este curbă eliptică se reconstituie relația de mai devreme, cu $b_1=2=dim\ H^1(\mathbb{C}/\Lambda, \mathbb{Q})$ (pentru $\Lambda$ o latice în planul complex).
+Se observă că dacă $X_0$ este curbă eliptică se reconstituie relația de mai devreme, cu $b_1=2=dim\ H^1(\mathbb{C}/\Lambda, \mathbb{Q})$ (pentru $\Lambda$ o latice în planul complex).
 
 Un mod mai pragmatic de a exprima conjecturile Weil este reprezentat de instrumentul funcțiilor generatoare.
 
@@ -597,44 +617,44 @@ scrisă eventual
 $$\frac{1}{1-x}=exp(\sum\limits_{m=1}^{\infty} \frac{x^m}{m})$$
 ce se poate verifica via expansiune în serie Taylor în jurul lui zero.
 
-Definind $Z_X(t) = exp(\sum\limits_{m=1}^{\infty} N_m(X) \frac{t^m}{m})$, obținem din punctul 1 al conjecturilor:
+Definind $Z_{X_0}(t) = exp(\sum\limits_{m=1}^{\infty} N_m(X_0) \frac{t^m}{m})$, obținem din punctul 1 al conjecturilor:
 \begin{align*}
-Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} \sum\limits_{j=0}^{2d} (-1)^j \sum\limits_{u=1}^{b_j} \alpha_{j,u}^m \frac{t^m}{m})\\
-&=\prod\limits_{j=0}^{2d} (\prod_{u=1}^{b_j} exp(\sum\limits_{m=1}^{\infty} \frac{(a_{j,u} t)^m}{m}))^{(-1)^j}\\
-&=\prod\limits_{j=0}^{2d} (\frac{1}{\prod\limits_{u=1}^{b_j}(1-\alpha_{j,u}t)})^{(-1)^j}\\
-&=\prod\limits_{j=0}^{2d} P_j(t)^{(-1)^{j+1}}
+Z_{X_0}(t)&=exp(\sum\limits_{m=1}^{\infty} \sum\limits_{r=0}^{2d} (-1)^r \sum\limits_{u=1}^{b_r} \alpha_{r,u}^m \frac{t^m}{m})\\
+&=\prod\limits_{r=0}^{2d} (\prod_{u=1}^{b_r} exp(\sum\limits_{m=1}^{\infty} \frac{(a_{r,u} t)^m}{m}))^{(-1)^r}\\
+&=\prod\limits_{r=0}^{2d} (\frac{1}{\prod\limits_{u=1}^{b_r}(1-\alpha_{r,u}t)})^{(-1)^r}\\
+&=\prod\limits_{r=0}^{2d} P_r(t)^{(-1)^{r+1}}
 \end{align*}
-unde am notat $P_j(t)=\prod\limits_{u=1}^{b_j}(1-\alpha_{j,u}t)$ (și am $P_0(t)=1-t$, $P_{2d}(t)=1-q^dt$).
+unde am notat $P_r(t)=\prod\limits_{u=1}^{b_r}(1-\alpha_{r,u}t)$ (și am $P_0(t)=1-t$, $P_{2d}(t)=1-q^dt$).
 
-Vom deriva acum din punctul 2 o relație pe care o va satisface $Z_X(t)$. Aplicăm relația de permutare între enumerări și obținem:
+Vom deriva acum din punctul 2 o relație pe care o va satisface $Z_{X_0}(t)$. Aplicăm relația de permutare între enumerări și obținem:
 \begin{align*}
-P_{2d-j}(t)&=\prod_u(1-\alpha_{2d-j,u}t)=\prod_u(1-\frac{q^d}{a_{j,u}}t)\\
-&=(\prod_u \alpha_{j,u})^{-1} \prod_u(\alpha_{j,u}-q^dt)\\
-&=(\prod_u \alpha_{j,u})^{-1} (-1)^{b_j} (q^dt)^{b_j} \prod_u (1-\frac{\alpha_{j,u}}{q^dt})\\
-&=(\prod_u \alpha_{j,u})^{-1} (-1)^{b_j} (q^dt)^{b_j}P_j(\frac{1}{q^dt})
-\end{align*}
-
-Folosim acum atât simetria $b_j$-urilor cât și permutarea enumerărilor:
-\begin{align*}
-P_j(t)P_{2d-j}(t)&=(q^dt)^{2b_j} (q^d)^{-b_j} P_j(\frac{1}{q^dt}) P_{2d-j}(\frac{1}{q^dt})\\
-&=(q^d)^{\frac{b_j+b_{2d-j}}{2}} t^{b_j+b_{2d-j}}P_j(\frac{1}{q^dt}) P_{2d-j}(\frac{1}{q^dt})\\
+P_{2d-r}(t)&=\prod_u(1-\alpha_{2d-r,u}t)=\prod_u(1-\frac{q^d}{a_{r,u}}t)\\
+&=(\prod_u \alpha_{r,u})^{-1} \prod_u(\alpha_{r,u}-q^dt)\\
+&=(\prod_u \alpha_{r,u})^{-1} (-1)^{b_r} (q^dt)^{b_r} \prod_u (1-\frac{\alpha_{r,u}}{q^dt})\\
+&=(\prod_u \alpha_{r,u})^{-1} (-1)^{b_r} (q^dt)^{b_r}P_r(\frac{1}{q^dt})
 \end{align*}
 
-Însă $(\prod\limits_s \alpha_{d,u})^2=(q^d)^{b_d}$, deci $\prod\limits_s \alpha_{d,u}=\pm (q^d)^{\frac{b_d}{2}}$, și pot scoate relația (pentru indicele $d$):
+Folosim acum atât simetria $b_r$-urilor cât și permutarea enumerărilor:
+\begin{align*}
+P_r(t)P_{2d-r}(t)&=(q^dt)^{2b_r} (q^d)^{-b_r} P_r(\frac{1}{q^dt}) P_{2d-r}(\frac{1}{q^dt})\\
+&=(q^d)^{\frac{b_r+b_{2d-r}}{2}} t^{b_r+b_{2d-r}}P_r(\frac{1}{q^dt}) P_{2d-r}(\frac{1}{q^dt})\\
+\end{align*}
+
+Însă $(\prod\limits_u \alpha_{d,u})^2=(q^d)^{b_d}$, deci $\prod\limits_u \alpha_{d,u}=\pm (q^d)^{\frac{b_d}{2}}$, și pot scoate relația (pentru indicele $d$):
 $$P_d(t)=\pm (-1)^{b_d} (q^dt)^{b_d} (q^d)^{\frac{b_d}{2}} P_d(\frac{1}{q^dt})$$
 
-Și obțin astfel formula pentru funcția $Z_X$:
+Și obțin astfel formula pentru funcția $Z_{X_0}$:
 \begin{align*}
-Z_X(t)&=\prod_{j=0}^{2d} P_j(t)^{(-1)^{j+1}}\\
-&=\pm \prod_{j=0}^{2d} P_j(\frac{1}{q^dt})^{(-1)^{j+1}} (q^d)^{-\frac{\sum\limits_j (-1)^{j+1} b_j}{2}} t^{-\sum\limits_j (-1)^{j+1} b_j}\\
-&=\pm q^{\frac{d\chi}{2}} t^{\chi} Z_X(\frac{1}{q^dt})
+Z_{X_0}(t)&=\prod_{r=0}^{2d} P_r(t)^{(-1)^{r+1}}\\
+&=\pm \prod_{r=0}^{2d} P_r(\frac{1}{q^dt})^{(-1)^{r+1}} (q^d)^{-\frac{\sum\limits_r (-1)^{r+1} b_r}{2}} t^{-\sum\limits_r (-1)^{r+1} b_r}\\
+&=\pm q^{\frac{d\chi}{2}} t^{\chi} Z_{X_0}(\frac{1}{q^dt})
 \end{align*}
-numită {\bf ecuația funcțională} a lui $Z_X$.
+numită {\bf ecuația funcțională} a lui $Z_{X_0}$.
 
 O altă reformulare ne este dată de următoarea substituție:
-$$\zeta_X(s)=Z_X(q^{-s})$$
+$$\zeta_{X_0}(s)=Z_{X_0}(q^{-s})$$
 
-Notând pentru un punct închis $x \in X$ cu $\kappa(x)$ corpul rezidual al său, cu $deg(x)$ gradul extinderii $\kappa(x) : \mathbb{F}_q$ și cu
+Notând pentru un punct închis $x \in {X_0}$ cu $\kappa(x)$ corpul rezidual al său, cu $deg(x)$ gradul extinderii $\kappa(x) : \mathbb{F}_q$ și cu
 \begin{align*}
 N_m(x) = \left\{
      \begin{array}{lr}
@@ -644,33 +664,33 @@ N_m(x) = \left\{
    \right.
 \end{align*}
 avem din cele cunoscute de la teoria schemelor:
-$$N_m(X)=\sum\limits_x N_m(x)$$
+$$N_m(X_0)=\sum\limits_x N_m(x)$$
 
 Obținem rescrierile:
 \begin{align*}
-Z_X(t)&=exp(\sum_{m\geq 1} N_m(X) \frac{t^m}{m}) = exp(\sum_{m\geq 1} \sum\limits_x N_m(x) \frac{t^m}{m})\\
+Z_{X_0}(t)&=exp(\sum_{m\geq 1} N_m(X_0) \frac{t^m}{m}) = exp(\sum_{m\geq 1} \sum\limits_x N_m(x) \frac{t^m}{m})\\
 &=exp(\sum_x \sum_{m \geq 1 \atop deg(x) \mid  m} N_m(x) \frac{t^m}{m})\\
 &=exp(\sum_x \sum_{n \geq 1} deg(x) \frac{t^{n\cdot deg(x)}}{n \cdot deg(x)})\\
 &=exp(\sum_x \sum_{n\geq 1} \frac{(t^{deg(x)})^n}{n})=exp(\sum_x log \frac{1}{1-t^{deg(x)}})\\
 &=exp\ log \prod_x \frac{1}{1-t^{deg(x)}} = \prod_x \frac{1}{1-t^{deg(x)}}
 \end{align*}
 și deci
-$$\zeta_X(s)=\prod_x \frac{1}{1-(q^{deg(x)})^{-s}} = \prod_x \frac{1}{1-(\#\kappa(x))^{-s}}$$
-Ultima formulă are sens pentru o schemă oarecare, nu neapărat peste un corp finit. De pildă, înlocuind $X$ cu $\text{Spec }\mathbb{Z}$, apare:
+$$\zeta_{X_0}(s)=\prod_x \frac{1}{1-(q^{deg(x)})^{-s}} = \prod_x \frac{1}{1-(\#\kappa(x))^{-s}}$$
+Ultima formulă are sens pentru o schemă oarecare, nu neapărat peste un corp finit. De pildă, înlocuind $X_0$ cu $\text{Spec }\mathbb{Z}$ (nu mai avem $X$ acum!!), apare:
 $$\zeta_{\text{Spec }\mathbb{Z}}(s)=\prod_{\mathfrak{p} \in \text{Max }\mathbb{Z}} \frac{1}{1-(\#(\frac{\mathbb{Z}}{\mathfrak{p}}))^{-s}} = \prod_{p\text{ prim}} \frac{1}{1-p^{-s}}$$
 binecunoscuta funcție zeta a lui Riemann (punctele închise din $\text{Spec }\mathbb{Z}$ sunt precis idealele maximale ale lui $\mathbb{Z}$), ceea ce ne justifică notația.
 
-Atenție, însă: funcția $Z_X$ nu are sens decât pentru scheme definite peste un corp finit!
+Mare atenție acum, însă. Funcția $Z_{X_0}$ nu are sens decât pentru scheme definite peste un corp finit!
 
-Este clar că $s\in\mathbb{C}$ este zerou, respectiv pol, pentru $\zeta_X$ dacă și numai dacă $q^{-s}$ va avea aceeași calitate pentru $Z_X$ (și orice $t \in \mathbb{C}^*$ se poate scrie ca $q^{-s}$, e drept, într-o infinitate de moduri). Iau un astfel de $s$. Din exprimarea rațională a lui $Z_X$ rezultă că $q^{-s}=\frac{1}{\alpha_{j,u}}$ pentru anumite $j$ și $u$, iar ultima afirmație din conjecturi implică $\mid q^{-s}\mid =q^{-\frac{j}{2}}$. Scriu $s=a+bi$, cu $a,b\in\mathbb{R}$, și am $q^{-s}=e^{-s\ ln q} = e^{-a\ ln q- bi\ ln q}$. Deci $q^{-\frac{j}{2}}=\mid e^{-a\ ln q- bi\ ln q}\mid =q^{-a}$ și $\frac{j}{2}=a=\mathbb{R}e\ s$.
+Este clar că $s\in\mathbb{C}$ este zerou, respectiv pol, pentru $\zeta_{X_0}$ dacă și numai dacă $q^{-s}$ va avea aceeași calitate pentru $Z_{X_0}$ (și, „mai reciproc”, orice $t \in \mathbb{C}^*$ se poate scrie ca $q^{-s}$, e drept, într-o infinitate de moduri). Iau un astfel de $s$. Din exprimarea rațională a lui $Z_{X_0}$ rezultă că $q^{-s}=\frac{1}{\alpha_{r,u}}$ pentru anumite $r$ și $u$, iar ultima afirmație din conjecturi implică $\mid q^{-s}\mid =q^{-\frac{r}{2}}$. Scriu $s=a+bi$, cu $a,b\in\mathbb{R}$, și am $q^{-s}=e^{-s\ ln q} = e^{-a\ ln q- bi\ ln q}$. Deci $q^{-\frac{r}{2}}=\mid e^{-a\ ln q- bi\ ln q}\mid =q^{-a}$ și $\frac{r}{2}=a=\mathbb{R}e\ s$.
 
-Invers, acum, dacă fac presupunerea că orice $s$ zerou sau pol al lui $\zeta_X$ are proprietatea că $\mathbb{R}e\ s=\frac{j}{2}$ (cu $j\in\overline{0,2d}$), pot face următorul raționament. Iau $t \in \mathbb{C}^*$ zerou sau pol pentru $Z_X$ și fie $s$ cu $t=q^{-s}$. Atunci $s$ este zerou/pol pentru $\zeta_X$ și $\mathbb{R}e\ s=\frac{j}{2}$. Ca înainte, avem $\mid t\mid =\mid q^{-s}\mid =q^{-\mathbb{R}e\ s}=q^{-\frac{j}{2}}$. Deci zerourile și polii lui $Z_X$ au modulul $q^{-\frac{j}{2}}$.
+Invers, acum, dacă fac presupunerea că orice $s$ zerou sau pol al lui $\zeta_{X_0}$ are proprietatea că $\mathbb{R}e\ s=\frac{r}{2}$ (cu $r\in\overline{0,2d}$), pot face următorul raționament. Iau $t \in \mathbb{C}^*$ zerou sau pol pentru $Z_{X_0}$ și fie $s$ cu $t=q^{-s}$. Atunci $s$ este zerou/pol pentru $\zeta_{X_0}$ și $\mathbb{R}e\ s=\frac{r}{2}$. Ca înainte, avem $\mid t\mid =\mid q^{-s}\mid =q^{-\mathbb{R}e\ s}=q^{-\frac{r}{2}}$. Deci zerourile și polii lui $Z_{X_0}$ au modulul $q^{-\frac{r}{2}}$.
 
-Rezultă că acea condiție 3 este echivalentă cu faptul că funcția zeta a varietății are zerourile și polii pe liniile $\mathbb{R}e\ s=\frac{j}{2}$, ceea ce justifică numele dat condiției de {\bf ipoteză Riemann}.
+Rezultă că acea condiție 3 este echivalentă cu faptul că funcția zeta a varietății are zerourile și polii pe liniile $\mathbb{R}e\ s=\frac{r}{2}$, ceea ce justifică numele dat condiției de {\bf ipoteză Riemann}.
 
-Mai mult decât atât, această separare după modul a zerourilor și polilor lui $Z_X$ ne permitm să extragem $P_j$-urile din $Z_X$ și să obținem în mod reciproc din ecuația funcțională condiția 2 din conjecturile Weil.
+Mai mult decât atât, această separare după modul a zerourilor și polilor lui $Z_{X_0}$ ne permitm să extragem $P_r$-urile din $Z_{X_0}$ și să obținem în mod reciproc din ecuația funcțională condiția 2 din conjecturile Weil.
 
-Toate aceste manipulări de formule ne învață să apreciem modul cum coomologia $\ell$-adică conduce în mod natural măcar la exprimarea rațională și la ecuația funcțională a funcției $Z_X$.
+Toate aceste manipulări de formule ne învață să apreciem modul cum coomologia $\ell$-adică conduce în mod natural măcar la exprimarea rațională și la ecuația funcțională a funcției $Z_{X_0}$.
 
 Să vedem cum. Mai întâi, vom obține o altă descriere a lui $X(\mathbb{F}_{q^m})$ cu ajutorul aplicației Frobenius.
 
@@ -678,42 +698,38 @@ Orice $\mathbb{F}_q$-algebră $A$ admite endomorfismul Frobenius $a \mapsto a^q$
 
 Rezultă deci  $X(\mathbb{F}_{q^m})=Fix(F_X^m)$.
 
-\begin{lema}
-$\Gamma_{F^m} \cdot \Delta_X = \sum\limits_{P \in Fix(F_X^m)} P$ (în sensul că toate apar cu multiplicitate $1$).
-\end{lema}
-
-\begin{proof}
-E suficient să arătăm pentru $m=1$ ($F^m$ este Frobeniusul lui $\mathbb{F}_{q^m}$). Notez $F=F_X$.
+Vom vedea acum că are loc relația:
+$$\Gamma_{F^m} \cdot \Delta_X = \sum\limits_{P \in Fix(F_X^m)} P$$
+care vrea să însemne că multiplicitatea punctelor care apar în intersecție este $1$; e suficient să arătăm pentru $m=1$ ($F^m$ este Frobeniusul lui $\mathbb{F}_{q^m}$). Notez $F=F_X$.
 
 Fie $P\in Fix(F)$. Înlocuiesc $X$ cu o vecinătate afină a lui $P$, să zicem $U=\text{Spec }A$, cu $A=\mathbb{F}_q[t_1,...,t_n]=\frac{\mathbb{F}_q[T_1,...,T_n]}{\mathfrak{a}}$.
 
 Atunci pentru orice $i$ am $t_i \circ F = t_i^q$ și $(dt_i)_P \circ (dF)_P = (dt_i^q)_P = qt_i^{q-1}(dt_i)_P = 0$.
 
-Ca urmare diferențiala lui $F$ în $P$ este zero, ca urmare graficul lui Frobenius nu este tangent la diagonală în $(P,P)$, iar numărul de intersecție (multiplicitatea) este $1$. 
-\end{proof}
+Ca urmare diferențiala lui $F$ în $P$ este zero, iar graficul lui Frobenius nu este tangent la diagonală în $(P,P)$, iar numărul de intersecție (multiplicitatea) este $1$. S-a arătat relația.
 
 Aplicând formula de punct fix a lui Lefschetz, rezultă (pentru $(\ell,q)=1$):
-$$N_m(X) = \sum\limits_r (-1)^r Tr(F^m_{\mid  H^r(X,\Qell)})$$
+$$N_m(X_0) = \sum\limits_r (-1)^r Tr(F^m_{\mid  H^r(X,\Qell)})$$
 
-Putem folosi formula pentru a prelucra funcția $Z$ a lui $X$:
+Putem folosi formula pentru a prelucra funcția $Z$ a lui $X_0$:
 \begin{align*}
-Z_X(t)&=exp(\sum\limits_{m=1}^{\infty} N_m(X) \frac{t^m}{m})\\
+Z_{X_0}(t)&=exp(\sum\limits_{m=1}^{\infty} N_m(X_0) \frac{t^m}{m})\\
 &=exp(\sum\limits_{m=1}^{\infty} (\sum\limits_{r=0}^{2d} (-1)^r Tr(F^m_{\mid  H^r(X,\Qell)}) \frac{t^m}{m})\\
 &=\prod\limits_{r=0}^{2d}exp(\sum\limits_{m=1}^{\infty}Tr(F^m_{\mid  H^r(X,\Qell)})  \frac{t^m}{m}) ^ { (-1)^r }
 \end{align*}
 
-Scriem acum fiecare $F_{\mid  H^r(X,\Qell)}$ ca matrice pătratică superior triunghiulară (eventual peste o extindere a lui $\mathbb{F}_q$) cu numărul de linii egal cu $b_r=dim\ H^r(X,\Qell)$. Se observă atunci că dacă elementele de pe diagonală (valorile proprii) sunt $\alpha_{r,1},...,\alpha_{r,b_r}$, atunci $Tr(F^m_{\mid  H^r(X,\Qell)})$ va fi egal cu $\sum\limits_{i=1}^{b_r} \alpha_{r,i}^m$ și deci pot aplica exact același raționament ca mai devreme pentru a exprima rațional pe $Z_X$.
+Scriem acum fiecare $F_{\mid  H^r(X,\Qell)}$ ca matrice pătratică superior triunghiulară (eventual peste o extindere finită a lui $\mathbb{F}_q$) cu numărul de linii egal cu $b_r=dim\ H^r(X,\Qell)$. Se observă atunci că dacă elementele de pe diagonală (valorile proprii) sunt $\alpha_{r,1},...,\alpha_{r,b_r}$, atunci $Tr(F^m_{\mid  H^r(X,\Qell)})$ va fi egal cu $\sum\limits_{u=1}^{b_r} \alpha_{r,u}^m$ și deci pot aplica exact același raționament ca mai devreme pentru a exprima rațional pe $Z_{X_0}$.
 
-Vom avea $Z_X \in \Qell(t) \cap \mathbb{Q}[[t]] \subseteq \mathbb{Q}(t)$, însă aceasta nu ne garantează că fiecare $P_j$ este în $\mathbb{Q}[t]$ (altfel spus, că este „independent de $\ell$”) - aceasta se poate face doar presupunând ipoteza lui Riemann, care ne permite, după cum am spus și mai devreme, să separăm $P_j$-urile după modulul rădăcinilor.
+Vom avea $Z_{X_0} \in \Qell(t) \cap \mathbb{Q}[[t]] \subseteq \mathbb{Q}(t)$, însă aceasta nu ne garantează că fiecare $P_r$ este în $\mathbb{Q}[t]$ (altfel spus, că este „independent de $\ell$”) - aceasta se poate face doar presupunând ipoteza lui Riemann, care ne permite, după cum am spus și mai devreme, să separăm $P_r$-urile după modulul rădăcinilor.
 
-Altă consecință a raționamentului precedent a fost că am identificat $\alpha_{j,u}$-urile ca fiind valorile proprii ale operatorilor induși de Frobenius pe spațiile de coomologie.
+Altă consecință a raționamentului precedent a fost că am identificat $\alpha_{r,u}$-urile ca fiind valorile proprii ale operatorilor induși de Frobenius pe spațiile de coomologie.
 
 Aceasta ne arată în particular că $b_0=b_{2d}=1$.
 
 Trecem acum la demonstrarea simetriei între valorile proprii pe spațiile de ordin $r$ și $2d-r$, relație care după cum am observat ne implică o ecuație funcțională.
 
 Avem biliniara nedegenerată dată de dualitatea Poincaré:
-$$\langle,\rangle=\eta_X\ \circ \smile\ : H^{2d-r}(X,\Qell) \times H^{r}(X,\Qell) \rightarrow H^{2d}(X,\Qell) \simeq \Qell(-d)$$
+$$\langle,\rangle=\eta_X\ \circ \smile\ : H^{2d-r}(X,\Qell) \times H^{r}(X,\Qell) \rightarrow \Qell(-d)$$
 ce din start ne indică $b_r=b_{2d-r}$.
 
 Știm că $F^*_r=F_{\mid  H^r(X,\Qell)}$ are adjunct relativ la $\langle,\rangle$:
@@ -730,7 +746,7 @@ De aici rezultă că dacă $(\alpha_1,...,\alpha_v)$ sunt valorile proprii ale l
 Mai precis, ce avem de demonstrat este:
 
 \begin{teo}
-(Deligne, 1974) Fie $X$ o varietate proiectivă $d$-dimensională absolut nesingulară și absolut ireductibilă definită peste $\mathbb{F}_q$; $\alpha$ o valoare proprie a lui $F^*_r$; $\tau$ o scufundare a lui $\Qell$ în $\mathbb{C}$.
+(Deligne, 1974) Fie $X_0$ o varietate proiectivă $d$-dimensională absolut nesingulară și absolut ireductibilă definită peste $\mathbb{F}_q$ (și $X$ schimbarea de bază la închiderea algebrică); $\alpha$ o valoare proprie a lui $F^*_r$; $\tau$ o scufundare a lui $\Qell$ în $\mathbb{C}$.
 
 Atunci $\tau(\alpha)$ (mai departe simbolul $\tau$ va fi subînțeles) este algebric și de modul $q^{\frac{r}{2}}$.
 \end{teo}
@@ -767,7 +783,7 @@ Notăm cu $U$ mulțimea $d$-urilor din $\mathbb{P}^1$ pentru care fibra e neted�
 
 Ne vom folosit în continuare de șirul spectral Leray, ale cărui aplicații sunt compatibile cu operatorii Frobenius:
 $$E_2^{p,q}=H^p(\mathbb{P}^1,R^q f_* \Qell) \Rightarrow H^{p+q}(\widetilde{X},\Qell)$$
-Deci $H^d(\widetilde{X},\Qell)$ admite o filtrare cu spațiile cât $\{E_\infty^{p.q}\}_{p+q=d}$, care la rândul lor sunt subcâturi ale $E_2^{p,q}$-uri, ca urmare e suficient să arăt pentru spațiile din stânga. Dintr-o teoremă de anulare, acestea sunt nenule doar pentru $p$ între $0$ și $2$.
+Deci $H^d(\widetilde{X},\Qell)$ admite o filtrare cu spațiile cât $\{E_\infty^{p.q}\}_{p+q=d}$, care la rândul lor sunt subcâturi ale $E_2^{p,q}$-uri, ca urmare e suficient să arăt pentru acestea din urmă. Dintr-o teoremă de anulare, ele sunt nenule doar pentru $p$ între $0$ și $2$.
 
 Notez $d-1$ cu $n$ (număr impar). Astfel ne-am redus la a considera următoarele spații:
 $$H^2(\mathbb{P}^1,R^{n-1} f_* \Qell);\ H^0(\mathbb{P}^1,R^{n+1} f_* \Qell);\ H^1(\mathbb{P}^1,R^n f_* \Qell)$$
@@ -797,7 +813,7 @@ $$0 \rightarrow j_* \mathcal{E}^\perp \rightarrow R^n f_* \Qell \rightarrow j_*(
 $$0\rightarrow j_*\mathcal{E} \rightarrow R^n f_* \Qell \rightarrow j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}}) \rightarrow 0$$
 $$0 \rightarrow j_*(\mathcal{E} \cap \mathcal{E}^\perp)  \rightarrow j_*\mathcal{E}  \rightarrow j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})  \rightarrow 0$$
 \end{enumerate}
-\item Produsul cup pe coomologia lui $\widetilde{X}_u$ induce o biliniară simplectică
+\item Produsul {\it cup} pe coomologia lui $\widetilde{X}_u$ induce o biliniară simplectică
 $$\psi : \frac{E}{E \cap E^\perp} \times \frac{E}{E \cap E^\perp} \rightarrow \Qell(-n)$$
 care este echivariantă relativ la acțiunea lui $\pi_1(U,u)$, iar aplicația canonică rezultantă:
 $$\pi_1(U,u) \rightarrow Sp(\frac{E}{E \cap E^\perp},\psi)$$
@@ -878,12 +894,16 @@ Scoțând radical de ordin $2k$ și ducând pe $k$ la infinit rezultă concluzia
 Rămâne să arătăm condiția de raționalitate pe fibre. Ne folosim de următorul rezultat:
 
 \begin{lema}
-Fie $\mathcal{G}_0$ un fascicul pe $U_0$ astfel încât $\mathcal{G}$ e constant. Grupul Galois absolut al lui $\mathbb{F}_q$, $G_{\mathbb{F}_q}$, este cât al lui $\pi_1(U_0,u)$. Atunci aplicația canonică $\pi_1(U_0,u) \rightarrow GL(\mathcal{G}_u)$ factorizează prin $G_{\mathbb{F}_q}$ și deci există $\alpha_1,...,\alpha_k$ unități $\ell$-adice astfel încât pentru orice $x$, $det(1-tF_x, \mathcal{G}_u)=\prod_{i=1}^k (1-\alpha_i^{deg(x)}t)$.
+Fie $\mathcal{G}_0$ un fascicul pe $U_0$ astfel încât $\mathcal{G}$ e constant. Grupul Galois absolut al lui $\mathbb{F}_q$, $G_{\mathbb{F}_q}\simeq\hat{\mathbb{Z}}$, este cât al lui $\pi_1(U_0,u)$. Atunci aplicația canonică $\pi_1(U_0,u) \rightarrow GL(\mathcal{G}_u)$ factorizează prin $G_{\mathbb{F}_q}$ și deci există $\alpha_1,...,\alpha_k$ unități $\ell$-adice astfel încât pentru orice $x$, $det(1-tF_x, \mathcal{G}_u)=\prod_{i=1}^k (1-\alpha_i^{deg(x)}t)$.
 \end{lema}
 
 \begin{proof}
-Dat fiind că $\mathcal{G}$ e constant, $\pi_1(U,u)$ acționează trivial, și de aici rezultă factorizarea prin $G_{\mathbb{F}_q}$.
+Dat fiind că $\mathcal{G}$ e constant, $\pi_1(U,u)$ acționează trivial, iar din șirul exact de grupuri „omotopic” din capitolul 1, adaptat pentru situația de acum:
+$$1 \to \pi_1(U,u) \to \pi_1(U_0,u) \xrightarrow{v} \hat{\mathbb{Z}} \to 0$$
+rezultă factorizarea prin $G_{\mathbb{F}_q}\simeq\hat{\mathbb{Z}}$.
 \end{proof}
+
+Faptul că avem de-a face cu unități $\ell$-adice ne va permite să le ridicăm la puteri din $\hat{\mathbb{Z}}$ (nu numai din $\mathbb{Z}$), obținute prin funcția $v$.
 
 Avem $\zeta_{\widetilde{X}_x}(t)=\prod_i det(1-tF^{deg(x)}_{\mid H^i(\widetilde{X}_x,\Qell)})^{(-1)^{i+1}}=\prod_i det(1-tF^{deg(x)}_{\mid (R^i f_* \Qell)_x})^{(-1)^{i+1}}$. Și cum toate fasciculele $R^i$ sunt constante în afară de $R^n$, iar acesta din urmă se poate filtra în $\frac{R^n f_* \Qell}{\mathcal{E}}$, $\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}$ și $\mathcal{E} \cap \mathcal{E}^\perp$, unde primul și ultimul sunt constante. Deci putem scrie funcția ca:
 $$\zeta_{\widetilde{X}_x}(t)=\frac{(1-\alpha_1^{deg(x)}t)...(1-\alpha_r^{deg(x)}t)}{(1-\beta_1^{deg(x)}t)...(1-\beta_s^{deg(x)}t)}det((1-F_xt)_{\mid V})$$
@@ -912,17 +932,28 @@ Fie mulțimea:
 $$H=\{(\alpha,n)\in GSp(V,\psi) \times \hat{\mathbb{Z}} \mid \mu(\alpha)=q^n\}$$
 și aplicația naturală $\rho_1$ de la $\pi_1(U_0,u)$ la $H$.
 
-Pentru simplificarea demonstrației, vom presupune că $q$ este rest pătratic modulo $\ell$.
+Vom face demonstrația în cazul particular în care $q$ este rest pătratic modulo $\ell$, pentru ca aplicația de la $H$ la $H'=Sp(V) \times \hat{\mathbb{Z}}$ ce acționează via legea $(\alpha,n)\mapsto(q^{\frac{n}{2}}\alpha,n)$ să fie biunivocă, iar prin această identificare, să fie suficient să arătăm concluzia pentru mulțimea $Z'=\{(\alpha,n)\mid\lambda'\in Spec(\alpha)\}$ (unde am notat $\lambda'=q^{\frac{n}{2}}\lambda$).
 
-Pot identifica $H$ cu $H'=Sp(V) \times \hat{\mathbb{Z}}$ prin aplicația $(\alpha,n)\mapsto(q^{\frac{n}{2}}\alpha,n)$ și este suficient să arăt concluzia pentru mulțimea $Z'=\{(\alpha,n)\mid\lambda'\in Spec(\alpha)\}$ (unde am notat $\lambda'=q^{\frac{n}{2}}\lambda$).
-
-Clar este o mulțime închisă, fiind dată de ecuații determinantale.
+Clar $Z'$ este o mulțime închisă, fiind dată de ecuații determinantale.
 
 Fixând $n$, notez $P_n$ polinomul minimal al lui $\lambda'^n$ peste $\Qell$. Mulțimea $Z'_n=\{\alpha\in Sp(V,\psi)\mid \lambda'^n \in Spec(\alpha)\}$ este algebrică, deci de măsură Haar nulă. În final, putem zice:
 $$\mu(Z')=\int\limits_{n \in \hat{\mathbb{Z}}} \mu(Z'_n) = 0$$
 \end{proof}
 
-În sfârșit putem arăta existența punctului. Din teorema de densitate Cebotarev, rezultă că este suficient să arătăm că mulțimea acelor $\sigma$ ce satisfac acele proprietăți 1-3 de mai sus (cu $k=v(\sigma)$, în cazul în care este întreg, și cu $F_{x\mid V}$ înlocuit de $\sigma$) conține un deschis de măsură Haar nenulă.
+În sfârșit putem arăta existența punctului. Acum vom aplica o variantă a unui rezultat celebru, numit teorema de densitate Cebotarëv. Conceptul cheie va fi următorul:
+
+\begin{defi}
+Dacă $U_0$ este o curbă geometric ireductibilă peste $\mathbb{F}_q$ și $A \subseteq U_0$, definim {\bf densitatea Dirichlet} a lui $A$ ca fiind:
+$$\delta(A) = \lim_{t \to q^{-1}} \frac{\sum\limits_{x \in A} t^{deg(x)}}{\sum\limits_{x \in U_0} t^{deg(x)}}$$
+\end{defi}
+
+Este clar că dacă $\delta(A)>0$ atunci $A\neq\emptyset$. Astfel vom putea „găsi puncte”, fiindcă teorema ne va indica precis care este legătura dintre acest concept de densitate și măsura Haar cu care am tot lucrat.
+
+\begin{teo}
+(Teorema de densitate Cebotarëv) În condițiile definiției, fie $C \subseteq \pi_1(U_0,u)$ o mulțime deschisă care este reuniune de clase de conjugare, iar $A$ mulțimea acelor puncte de pe $U_0$ care au clasa Frobenius inclusă în $C$. Atunci $\delta(A)=\mu(C)$.
+\end{teo}
+
+Acum rezultă că este suficient să arătăm că mulțimea acelor $\sigma$ ce satisfac acele proprietăți 1-3 de mai sus (cu $k=v(\sigma)$, fiindcă $v(F_x)=deg(x)$, și cu $F_{x\mid V}$ înlocuit de $\sigma$) conține un deschis de măsură Haar nenulă.
 
 Însă propoziția anterioară arată că mulțimea elementelor ce satisfac (3) este deschisă de măsură Haar totală, iar mulțimea elementelor eliminate de condițiile (1) și (2) este clar neglijabilă.
 
