@@ -83,9 +83,9 @@ Conf. dr. Victor Vuletescu
 \setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
 \chapter{Introducere}
 
-Unul din motivele pentru care nu regretam acum cinci ani că încep să studiez (și) matematica era posibilitatea satisfacerii unei vechi dorințe - aceea de a vedea și înțelege cum anume s-au rezolvat și se rezolvă marile probleme, celebrele conjecturi care tot erau pomenite în felurite surse de informare și de popularizare a matematicii. Astfel că, în ultimul an, ajutat fiind de explicațiile oferite de profesorul coordonator și de câteva texte scrise pentru a elucida misterul (\cite{milne}, \cite{lovering}, \cite{dugger}), m-am apucat să înțeleg profund ideile de la baza uneia din realizările însemnate ale matematicii secolului XX: justificarea conjecturilor Weil.
+Unul din motivele pentru care nu regretam acum cinci ani că încep să studiez (și) matematica era posibilitatea satisfacerii unei vechi dorințe - aceea de a vedea și înțelege cum anume s-au rezolvat și se rezolvă marile probleme, celebrele conjecturi care tot erau pomenite în felurite surse de informare și de popularizare a matematicii. Astfel că, în ultimul an, ajutat fiind de câteva texte scrise pentru a elucida misterul (\cite{milne}, \cite{lovering}, \cite{dugger}), am purces la a înțelege profund ideile de la baza uneia din realizările însemnate ale matematicii secolului XX: justificarea conjecturilor Weil.
 
-Povestea e cunoscută. În 1949, André Weil, pe baza unor rezultate pe care le demonstrase pentru curbe și anumite clase de suprafețe, postulează o serie de conjecturi ce ar fi dat anumite legi asimptotice asupra numărului de soluții ale ecuațiilor peste corpuri finite, dintre care ultima putea fi gândită ca un analog al faimoasei ipoteze enunțate de Riemann cu aproape un secol în urmă. Mai târziu, tot Weil, într-o serie de articole, întrezărește un plan de soluționare a conjecturilor sale prin dezvoltarea unei teorii de coomologie pentru varietățile algebrice. În sfârșit, după multă muncă (și după ce B. Dwork rezolvase prima din conjecturi în 1960 prin metode de analiză $p$-adică), Alexander Grothendieck (împreună cu grupul său) va dezvolta coomologia etală, cu ajutorul căreia va da o soluție pentru primele două conjecturi în 1965. Iar mai apoi, în 1974 (\cite{deligne}), în timpul primei absențe a lui Grothendieck din lumea matematică, Pierre Deligne va exploata la maxim noua teorie pentru a demonstra și ipoteza lui Riemann pentru corpurile finite.
+Povestea e cunoscută. În 1949, André Weil, pe baza unor rezultate pe care le demonstrase pentru curbe și anumite clase de suprafețe (bănuite mai întâi de Emil Artin), postulează o serie de conjecturi ce ar fi dat anumite legi asimptotice asupra numărului de soluții ale ecuațiilor peste corpuri finite, dintre care ultima putea fi gândită ca un analog al faimoasei ipoteze enunțate de Riemann cu aproape un secol în urmă. Mai târziu, tot Weil, într-o serie de articole, întrezărește un plan de soluționare a conjecturilor sale prin dezvoltarea unei teorii de coomologie pentru varietățile algebrice. În sfârșit, după multă muncă (și după ce Bernard Dwork rezolvase prima din conjecturi în 1960 prin metode de analiză $p$-adică), Alexander Grothendieck (împreună cu Michael Artin) va dezvolta coomologia etală, cu ajutorul căreia va da o soluție pentru primele două conjecturi în 1965. Iar mai apoi, în 1974 (\cite{deligne}), în timpul primei absențe a lui Grothendieck din lumea matematică, Pierre Deligne va exploata la maxim noua teorie pentru a demonstra și ipoteza lui Riemann pentru corpurile finite.
 
 Cum anume vom înșira asemenea idei? 
 
@@ -93,11 +93,11 @@ Cum anume vom înșira asemenea idei?
 
 În al doilea capitol se face trecerea la „adevărata” coomologie, cea $\ell$-adică, pentru care se prezintă și proprietățile care-i dau valoare, anume cele care îi asigură un comportament asemănător coomologiei varietăților diferențiale sau complexe. Dat fiind că demonstrațiile sunt mult mai grele și mai complicate decât pentru teoria clasică, ne mărginim la a indica scurte justificări sau argumente euristice acolo unde e cazul.
 
-Al treilea capitol enunță propriu-zis conjecturile Weil, le reformulează pentru a se vedea analogia cu ipoteza lui Riemann, arată cum primele două sunt aproximativ o aplicație imediată a existenței teoriei coomologiei $\ell$-adice și indică ce anume mai este de arătat pentru a se desăvârși demonstrația.
+Al treilea capitol enunță propriu-zis conjecturile Weil, le reformulează pentru a se vedea analogia cu ipoteza lui Riemann, arată cum primele două sunt aproximativ o aplicație imediată a existenței teoriei coomologiei $\ell$-adice și indică ce anume mai este de efectuat pentru a se desăvârși demonstrația.
 
-Într-un final, ultimul capitol trece în revistă demonstrația lui Deligne a ultimei conjecturi - vedem cum anumite estimări fundamentale (care dau titlul întregii disertații) asigură modulul dorit pentru valorile proprii ale operatorului Frobenius.
+Într-un final, ultimul capitol trece în revistă demonstrația lui Deligne a ultimei conjecturi - vedem cum anumite estimări fundamentale (care dau titlul întregii disertații) asigură modulul dorit pem-am apucat să înțelegntru valorile proprii ale operatorului Frobenius.
 
-Doresc să îi mulțumesc coordonatorului lucrării, domnul Victor Vuletescu, pentru discuțiile pe care le-am purtat de-a lungul (și datorită) acestei poate prea scurte colaborări.
+Să urmărim, așadar, cum se prezintă construcția etală din jurul demonstrației conjecturilor Weil.
 
 \begin{flushright}
 {\em Andrei Sipoș\\14 iunie 2014}
@@ -118,7 +118,7 @@ Pe baza acestor idei, putem construi următoarea categorie: obiectele sunt perec
 
 Acest „punct de vedere local” sau „relativ”, cum l-a numit A. Grothendieck, va fi folosit exhaustiv în cele ce urmează, în sensul că, deși ne vom concentra atenția asupra unei scheme $S$, o vom face într-un mod extrinsec, considerând morfismele, ca mai sus, ce au pe $S$ drept destinație. Să vedem mai concret ce vrea să însemne asta.
 
-Se spune că geometria algebrică începe cu spectrul unui inel. De aceea, și ca să nu ne complicăm, vom ilustra conceptele în principal cu scheme afine. Cum ar fi Spec $\mathbb{C}$ - aceasta este o (Spec $\mathbb{R}$)-schemă (sau, mai simplu, o $\mathbb{R}$-schemă), cu morfismul structural dat de incluziunea $\mathbb{R}  \hookrightarrow \mathbb{C}$. Această schemă are doar un punct, deci este în mod trivial o {\bf schemă conexă}. Când facem schimbarea de bază la $\mathbb{C}$, obținem Spec $\mathbb{C} \otimes_{\mathbb{R}} \mathbb{C} =$ Spec $\mathbb{C} \times \mathbb{C} =$ Spec $\mathbb{C} \coprod$ Spec $\mathbb{C}$, care nu mai e conexă. Numim o schemă care își păstrează conexitatea la extinderi de corpuri schemă {\bf geometric conexă}. Noi, deseori, vom lucra cu scheme peste corpuri nealgebric închise (peste corpuri finite, de pildă), însă le vom număra punctele peste extinderi. Pentru aceasta, însă, e oarecum suficient să ne uităm la schema inițială - $\mathbb{C}$-ul inițial peste $\mathbb{R}$ reprezintă oarecum polinomul ireductibil $X^2+1$, ce odată cu extinderea scindează în două „puncte”: $X+i$ și $X-i$ - însă acest număr doi ne este deja dat de gradul extinderii corpului rezidual al punctului inițial peste corpul de bază: $[\mathbb{C}:\mathbb{R}]=2$. Această contabilizare a gradelor ne va permite să dăm formule de numărare a punctelor - acesta este și motivul pentru care preferăm să lucrăm cu scheme. Deseori se va nota schema inițială cu $X_0$, iar schimbarea ei de bază la închiderea algebrică cu $X$.
+Se spune că geometria algebrică începe cu spectrul unui inel. De aceea, și ca să nu ne complicăm, vom ilustra conceptele în principal cu scheme afine. Cum ar fi Spec $\mathbb{C}$: aceasta este o (Spec $\mathbb{R}$)-schemă (sau, mai simplu, o $\mathbb{R}$-schemă), cu morfismul structural dat de incluziunea $\mathbb{R}  \hookrightarrow \mathbb{C}$. Această schemă conține doar un punct, deci este în mod trivial o {\bf schemă conexă}. Când facem schimbarea de bază la $\mathbb{C}$, obținem Spec $\mathbb{C} \otimes_{\mathbb{R}} \mathbb{C} =$ Spec $\mathbb{C} \times \mathbb{C} =$ Spec $\mathbb{C} \coprod$ Spec $\mathbb{C}$, care nu mai e conexă. Numim o schemă care își păstrează conexitatea la extinderi de corpuri {\bf geometric conexă}. Noi, deseori, vom lucra cu scheme peste corpuri nealgebric închise (peste corpuri finite, de pildă), însă le vom număra punctele peste extinderi. Pentru aceasta, însă, e oarecum suficient să ne uităm la schema inițială - $\mathbb{C}$-ul inițial peste $\mathbb{R}$ reprezintă oarecum polinomul ireductibil $X^2+1$, ce odată cu extinderea scindează în două „puncte”: $X+i$ și $X-i$ - însă acest număr doi ne este deja dat de gradul extinderii corpului rezidual al punctului inițial peste corpul de bază: $[\mathbb{C}:\mathbb{R}]=2$. Această contabilizare a gradelor ne va permite să dăm formule de numărare a punctelor - acesta este și motivul pentru care preferăm să lucrăm cu scheme. Deseori se va nota schema inițială cu $X_0$, iar schimbarea ei de bază la închiderea algebrică cu $X$.
 
 O aplicație între scheme $\pi: X \to Y$ e numită {\bf imersie deschisă} dacă factorizează ca $X \to U \hookrightarrow Y$, unde $U$ este un deschis al lui $Y$ considerat cu fasciculul restricționat, $X \to U$ este izomorfism, iar $U \hookrightarrow Y$ este incluziunea.
 
@@ -128,7 +128,7 @@ O aplicație este {\bf afină} atunci când preimaginea oricărui deschis afin e
 
 Platitudinea este definită la nivel local: un morfism de scheme este {\bf plat } dacă morfismele induse între inelele locale sunt plate în sensul algebric (induc functori exacți la nivelul categoriilor de module). Să luăm cazul unei imersii deschise, anume deschisul unde un anume polinom $f$ nu se anulează în planul afin. Algebric este vorba de un morfism $A \to S^{-1}A$, unde $S$ este generat de $f$. Iar localizarea știm că este un morfism plat de inele, ca urmare este și la nivelul inelelor locale.
 
-Ca un morfism să fie {\bf neramificat}, el trebuie să fie {\bf de tip finit} (adică luând preimaginea oricărui deschis afin, ea admite o acoperire finită cu deschiși afini astfel încât morfismele de inele induse de deschișii acoperirii sunt toate de tip finit) și să satisfacă următoarea proprietate definită tot la nivel local: morfismele induse între inelele locale $\mathcal{O}_x \rightarrow \mathcal{O}_{f(x)}$ fac să se inducă extinderi de corpuri $\frac{\mathcal{O}_x}{\mathfrak{m}_{\mathcal{O}_x}} \hookrightarrow \frac{\mathcal{O}_{f(x)}}{f(\mathfrak{m}_{\mathcal{O}_x})\mathcal{O}_{f(x)}}$ finite și separabile. (Pentru un morfism neramificat $X \rightarrow Y$, aplicația canonică $X \rightarrow X\times_Y X$ are imaginea deschisă, a se compara cu definiția morfismului separat). Dacă luăm endomorfismul dreptei afine complexe $z \mapsto z^2$, acesta va induce un morfism ce nu va fi nici măcar de corpuri deoarece unul din inelele locale în origine va fi factorizat la idealul generat de $Z^2$, ce nu mai e maximal. Avem de-a face cu un fenomen de ramificare.
+Ca un morfism să fie {\bf neramificat}, el trebuie să fie {\bf de tip finit} (adică luând preimaginea oricărui deschis afin, ea admite o acoperire finită cu deschiși afini astfel încât morfismele de inele induse de deschișii acoperirii sunt toate de tip finit) și să satisfacă următoarea proprietate definită tot la nivel local: morfismele induse între inelele locale $\mathcal{O}_x \rightarrow \mathcal{O}_{f(x)}$ fac să se inducă extinderi de corpuri $\frac{\mathcal{O}_x}{\mathfrak{m}_{\mathcal{O}_x}} \hookrightarrow \frac{\mathcal{O}_{f(x)}}{f(\mathfrak{m}_{\mathcal{O}_x})\mathcal{O}_{f(x)}}$ finite și separabile. (Pentru un morfism neramificat $X \rightarrow Y$, aplicația canonică $X \rightarrow X\times_Y X$ are imaginea deschisă, cf. definiția morfismului separat). Dacă luăm endomorfismul dreptei afine complexe $z \mapsto z^2$, acesta va induce un morfism ce nu va fi nici măcar de corpuri deoarece unul din inelele locale în origine va fi factorizat la idealul generat de $Z^2$, ce nu mai e maximal. Avem de-a face cu un fenomen de ramificare.
 
 Iar un morfism etal între două scheme este un morfism plat și neramificat, ceea ce ne conduce la o oarecare idee de „acoperire”.
 
@@ -180,7 +180,7 @@ adică grupul Galois absolut al corpului $k$.
 Prin urmare, grupurile $\pi_1(S,\bar{x})$ sunt profinite și acționează continuu pe $Fib_{\bar{x}}(X)$ pentru orice $X \rightarrow S$ finită etală, iar orbitele acțiunilor sunt componentele conexe ale fibrelor. Functorul $Fib_{\bar{x}}$ poate fi deci privit ca fiind definit pe $FEt(S)$ și luând valori în categoria $\pi_1(S,\bar{x})$-mulțimilor la stânga, finite și continue. Am ajuns acum să putem reexprima în acest cadru corespondența de mai devreme:
 
 \begin{teo}
-Functorul $Fib_{\bar{x}}$, redefinit ca mai înainte, reprezintă o echivalență de categorii.
+Functorul $Fib_{\bar{x}}$, așa cum tocmai a fost redefinit, reprezintă o echivalență de categorii.
 \end{teo}
 
 \begin{proof}
@@ -267,7 +267,7 @@ De pildă, fasciculul constant de fibră $\Sigma$ peste $S$ poate fi gândit în
 
 Toate construcțiile cunoscute de la fasciculele pe spații topologice au un corespondent peste situl etal. La fel, subcategoria de fascicule este reflectivă și avem adjunctul de fasciculizare. Imaginea inversă a unui fascicul este construită tot luând limita inductivă și fasciculizând - de pildă, când morfismul pe care tragem fasciculul înapoi este un punct geometric, caz în care imaginea inversă o numim fibră. Analog, fasciculizarea păstrează fibrele.
 
-Revenind la problema clasificării fasciculelor, manifestate adineauri printr-o echivalență de categorii, ne vom uita la propoziția anterioară și o vom exploata într-o oarecare măsură. Avem schema noastră de bază $S$ și $X \rightarrow S$ o acoperire etală a sa. Ea este în particular o $S$-schemă, deci ne dă un fascicul. Ne întrebăm ce fascicule se obțin în felul acesta. Găsim o clasă nouă de fascicule, denumite {\bf fascicule constructibile}, adică cele pentru care orice punct geometric $\bar{x} \rightarrow S$ admite o vecinătate etală astfel încât fasciculul restricționat la acea vecinătate este fascicul constant de fibră finită.
+Revenind la problema clasificării fasciculelor, manifestată adineauri printr-o echivalență de categorii, ne vom uita la propoziția anterioară și o vom exploata într-o oarecare măsură. Avem schema noastră de bază $S$ și $X \rightarrow S$ o acoperire etală a sa. Ea este în particular o $S$-schemă, deci ne dă un fascicul. Ne întrebăm ce fascicule se obțin în felul acesta. Găsim o clasă nouă de fascicule, denumite {\bf fascicule constructibile}, adică cele pentru care orice punct geometric $\bar{x} \rightarrow S$ admite o vecinătate etală astfel încât fasciculul restricționat la acea vecinătate este fascicul constant de fibră finită.
 
 \begin{teo}
 Acest functor reprezintă o echivalență de categorii între acoperirile finite etale ale lui $S$ și fasciculele constructibile pe $S$.
@@ -610,9 +610,9 @@ Mai mult, $b_0=b_{2d}=1, \alpha_{0,1}=1, \alpha_{2d,1}=q^d$. Numărul $\sum\limi
 \end{enumerate}
 \end{teo}
 
-Se observă că dacă $X_0$ este curbă eliptică se reconstituie relația de mai devreme, cu $b_1=2=dim\ H^1(\mathbb{C}/\Lambda, \mathbb{Q})$ (pentru $\Lambda$ o latice în planul complex).
+Se observă că dacă $X_0$ este curbă eliptică se reconstituie relația de mai devreme, cu $b_1=2=dim\ H^1(\mathbb{C}/\Lambda, \mathbb{Q})$ (pentru $\Lambda$ o latice în planul complex). Iată motivația intuitivă pentru legătura dintre numărul de puncte și coomologie.
 
-Un mod mai pragmatic de a exprima conjecturile Weil este reprezentat de instrumentul funcțiilor generatoare.
+Pentru a pune pe baze solide corespondența, vom reexprima conjecturile Weil folosind instrumentul funcțiilor generatoare.
 
 Ne bazăm pe identitatea formală:
 $$log(\frac{1}{1-x})=\sum\limits_{m=1}^{\infty} \frac{x^m}{m}$$
@@ -784,9 +784,9 @@ Toată această construcție depinde de alegerea scufundării și a $L$-ului. Î
 
 Notăm cu $U$ mulțimea $d$-urilor din $\mathbb{P}^1$ pentru care fibra e netedă, cu $S$ complementara lui $U$ și cu $j$ aplicația de incluziune a lui $U$ în $\mathbb{P}^1$.
 
-Ne vom folosit în continuare de șirul spectral Leray, ale cărui aplicații sunt compatibile cu operatorii Frobenius:
+Ne vom folosi în continuare de șirul spectral Leray, ale cărui aplicații sunt compatibile cu operatorii Frobenius:
 $$E_2^{p,q}=H^p(\mathbb{P}^1,R^q f_* \Qell) \Rightarrow H^{p+q}(\widetilde{X},\Qell)$$
-Deci $H^d(\widetilde{X},\Qell)$ admite o filtrare cu spațiile cât $\{E_\infty^{p.q}\}_{p+q=d}$, care la rândul lor sunt subcâturi ale $E_2^{p,q}$-uri, ca urmare e suficient să arăt pentru acestea din urmă. Dintr-o teoremă de anulare, ele sunt nenule doar pentru $p$ între $0$ și $2$.
+Deci $H^d(\widetilde{X},\Qell)$ admite o filtrare cu spațiile cât $\{E_\infty^{p.q}\}_{p+q=d}$, care la rândul lor sunt subcâturi ale $E_2^{p,q}$-uri, ca urmare e suficient să arătăm pentru acestea din urmă. Dintr-o teoremă de anulare, ele sunt nenule doar pentru $p$ între $0$ și $2$.
 
 Notez $d-1$ cu $n$ (număr impar). Astfel ne-am redus la a considera următoarele spații:
 $$H^2(\mathbb{P}^1,R^{n-1} f_* \Qell);\ H^0(\mathbb{P}^1,R^{n+1} f_* \Qell);\ H^1(\mathbb{P}^1,R^n f_* \Qell)$$
@@ -825,30 +825,30 @@ are imaginea deschisă și densă.
 \end{enumerate}
 \end{teo}
 
-Mai departe, pot presupune că există $u_0$ punct al lui $U$ definit peste $\mathbb{F}_q$ astfel încât $\widetilde{X}_{u_0}$ admite o secțiune hiperplană netedă $Z_0$, la rândul ei definită peste $\mathbb{F}_q$ (făcând eventual extinderi), de dimensiune, firește, $d-2$ (fiind tot pară, voi putea aplica un raționament prin inducție mai jos).
+Mai departe, putem presupune că există $u_0$ punct al lui $U$ definit peste $\mathbb{F}_q$ astfel încât $\widetilde{X}_{u_0}$ admite o secțiune hiperplană netedă $Z_0$, la rândul ei definită peste $\mathbb{F}_q$ (făcând eventual extinderi), de dimensiune, firește, $d-2$ (fiind tot pară, voi putea aplica un raționament prin inducție mai jos).
 
 Demonstrăm mai întâi aserțiunea despre spațiile $H^2(\mathbb{P}^1,R^{n-1} f_* \Qell)$ și $H^0(\mathbb{P}^1,R^{n+1} f_* \Qell)$.
 
-Dat fiind că fasciculul $R^{n-1} f_* \Qell$ este constant în ambele cazuri, el are fibra $H^{n-1}(\widetilde{X}_u,\Qell)$, din teorema de schimbare proprie a bazei. Deci $H^2(\mathbb{P}^1,R^{n-1} f_* \Qell) = H^2(\mathbb{P}^1,\underline{H^{n-1}(\widetilde{X}_u,\Qell)}) = H^2(\mathbb{P}^1,\Qell) \otimes H^{n-1}(\widetilde{X}_u,\Qell) = \Qell(-1)\otimes H^{n-1}(\widetilde{X}_u,\Qell) = H^{n-1}(\widetilde{X}_u,\Qell)(-1)$. Pentru ultimul modul putem aplica ipoteza de inducție, deoarece se scufundă (din teorema Lefschetz slabă) în $H^{n-1}(Z,\Qell)(-1)$, pentru care aplic ipoteza de inducție.
+Dat fiind că fasciculul $R^{n-1} f_* \Qell$ este constant în ambele cazuri, el are fibra $H^{n-1}(\widetilde{X}_u,\Qell)$, din teorema de schimbare proprie a bazei. Deci $H^2(\mathbb{P}^1,R^{n-1} f_* \Qell) = H^2(\mathbb{P}^1,\underline{H^{n-1}(\widetilde{X}_u,\Qell)}) = H^2(\mathbb{P}^1,\Qell) \otimes H^{n-1}(\widetilde{X}_u,\Qell) = \Qell(-1)\otimes H^{n-1}(\widetilde{X}_u,\Qell) = H^{n-1}(\widetilde{X}_u,\Qell)(-1)$. Pentru ultimul modul lucrurile sunt mai simple, deoarece se scufundă (din teorema Lefschetz slabă) în $H^{n-1}(Z,\Qell)(-1)$, pentru care aplicăm ipoteza de inducție.
 
-Pentru $H^0(\mathbb{P}^1,R^{n+1} f_* \Qell)$, în cazul în care $E$ e nenul, argumentul funcționează asemănător cu cel precedent, cu deosebirea că aplicăm surjectivitatea morfismului Gysin, care schimbă și rangul coomologiei de la $n+1$ la $n-1$ pentru $Z$ pentru a putea funcționa inducția. Când $E$ este nul, nu fac decât să trec de la șirul exact scurt din teoremă la șirul exact lung în coomologie și să aplic acolo inducția.
+Pentru $H^0(\mathbb{P}^1,R^{n+1} f_* \Qell)$, în cazul în care $E$ e nenul, argumentul funcționează asemănător cu cel precedent, cu deosebirea că aplicăm surjectivitatea morfismului Gysin, care schimbă și rangul coomologiei de la $n+1$ la $n-1$ pentru $Z$ pentru a putea funcționa inducția. Când $E$ este nul, nu facem decât să trec de la șirul exact scurt din teoremă la șirul exact lung în coomologie și să aplicăm acolo inducția.
 
-Ne-a rămas $H^1(\mathbb{P}^1,R^n f_* \Qell)$. Când $E$ este nul, $R^{n} f_* \Qell$ este constant și cum $H^1(\mathbb{P}^1,\Qell)=0$, am și $H^1(\mathbb{P}^1,R^n f_* \Qell)=0$ și deci nu am nimic de demonstrat.
+Ne-a rămas $H^1(\mathbb{P}^1,R^n f_* \Qell)$. Când $E$ este nul, $R^{n} f_* \Qell$ este constant și cum $H^1(\mathbb{P}^1,\Qell)=0$, am și $H^1(\mathbb{P}^1,R^n f_* \Qell)=0$ și deci nu avem nimic de demonstrat.
 
-Când $E$ este nenul, trec prin $j_*$ incluziunea de fascicule de pe $U$ într-una pe $\mathbb{P}^1$:
+Când $E$ este nenul, trecem prin $j_*$ incluziunea de fascicule de pe $U$ într-una pe $\mathbb{P}^1$:
 $$0 \subseteq j_*(\mathcal{E} \cap \mathcal{E}^\perp) \subseteq j_*\mathcal{E} \subseteq R^n f_* \Qell$$
 (la ultimul am aplicat punctul 2 din cazul II al teoremei).
 
 Subcazul simplu este $E \subseteq E^\perp$. Notând cu $\mathcal{F}$ conucleul morfismului $j_* \mathcal{E}^\perp \rightarrow R^n f_* \Qell$, ce este izomorf cu nucleul morfismului $j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\Qell(-\frac{n+1}{2}))_s$, putem sparge șirul exact din teoremă în două șiruri exacte scurte:
 $$0 \rightarrow j_* \mathcal{E}^\perp \rightarrow R^n f_* \Qell \rightarrow \mathcal{F} \rightarrow 0$$
 $$0 \rightarrow \mathcal{F} \rightarrow j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}^\perp}) \rightarrow \bigoplus\limits_{s\in S} (\Qell(-\frac{n+1}{2}))_s \rightarrow 0$$
-Cum $ j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}^\perp})$ e constant, are $H^1$ nul (suntem pe $\mathbb{P}^1$), și rezultă că în al doilea șir exact lung corespunzător, morfismul conectant de la $H^0$ la $H^1$ e surjectiv, și rezultă ce trebuie pentru $H^1(\mathbb{P}^1,\mathcal{F})$. La fel, $ j_* \mathcal{E}^\perp$ e constant și deci modulul nostru, $H^1(\mathbb{P}^1,R^n f_* \Qell)$ se scufundă în $H^1(\mathbb{P}^1,\mathcal{F})$ (considerând primul șir exact lung corespunzător). De aici rezultă concluzia.
+Cum $ j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}^\perp})$ e constant, are $H^1$ nul (suntem pe $\mathbb{P}^1$), și rezultă că în al doilea șir exact lung corespunzător, morfismul conectant de la $H^0$ la $H^1$ e surjectiv, și rezultă ceea ce trebuie pentru $H^1(\mathbb{P}^1,\mathcal{F})$. La fel, $ j_* \mathcal{E}^\perp$ e constant și deci modulul nostru, $H^1(\mathbb{P}^1,R^n f_* \Qell)$, se scufundă în $H^1(\mathbb{P}^1,\mathcal{F})$ (considerând primul șir exact lung corespunzător). De aici rezultă concluzia.
 
-Trecem la subcazul ce prezintă probleme, $E \nsubseteq E^\perp$. Din cele două șiruri exacte lungi corespunzătoare șirurilor exacte scurte din teoremă, obțin că este suficient să arăt aserțiunea pentru modulul $H^1(\mathbb{P}^1,j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}))$ (am folosit că $j_*(\mathcal{E} \cap \mathcal{E}^\perp)$ și $j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}})$ sunt constante).
+Trecem la subcazul ce prezintă probleme, $E \nsubseteq E^\perp$. Din cele două șiruri exacte lungi corespunzătoare șirurilor exacte scurte din teoremă, obținem că este suficient să arătăm aserțiunea pentru modulul $H^1(\mathbb{P}^1,j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}))$ (am folosit că $j_*(\mathcal{E} \cap \mathcal{E}^\perp)$ și $j_*(\frac{j^* R^n f_* \Qell}{\mathcal{E}})$ sunt constante).
 
-În primul rând, pot arăta doar $|\alpha|\leq q^{\frac{d+1}{2}}$ (utilizând dualitatea și forma simplectică).
+În primul rând, putem arăta doar $|\alpha|\leq q^{\frac{d+1}{2}}$ (utilizând dualitatea și forma simplectică).
 
-În al doilea rând, dat fiind că $supp\ coker(j_!(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}) \rightarrow j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})) = S$ (zero-dimensional și finit), am că $H^1(\mathbb{P}^1,coker)=0$, și ca urmare morfismul indus pe $H^1$ este surjectiv. Am redus la a studia problema pe $H^1(\mathbb{P}^1,j_!(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})) = H^1_c (U, \frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})$. Vom refolosi notația $\mathcal{F}$ pentru a denota fasciculul $\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}$ pe $U$, iar $\mathcal{F}_0$ va fi fasciculul corespunzător pe $U(\mathbb{F}_q)$. Notăm cu $V$ $\pi_1(U_0,u)$-reprezentarea corespunzătoare. Reamintim că avem biliniara simplectică $\pi_1(U,u)$-echivariantă:
+În al doilea rând, dat fiind că $supp\ coker(j_!(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}) \rightarrow j_*(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})) = S$ (zero-dimensional și finit), am că $H^1(\mathbb{P}^1,coker)=0$, și ca urmare morfismul indus pe $H^1$ este surjectiv. Am redus la a studia problema pe $H^1(\mathbb{P}^1,j_!(\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})) = H^1_c (U, \frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp})$. Vom refolosi notația $\mathcal{F}$ pentru a denota fasciculul $\frac{\mathcal{E}}{\mathcal{E} \cap \mathcal{E}^\perp}$ pe $U$, iar $\mathcal{F}_0$ va fi fasciculul corespunzător pe $U_0$. Notăm cu $V$ $\pi_1(U_0,u)$-reprezentarea corespunzătoare. Reamintim că avem biliniara simplectică $\pi_1(U,u)$-echivariantă:
 $$\psi : V \times V \rightarrow \Qell(-n)$$
 iar aplicația canonică rezultantă $\pi_1(U,u) \rightarrow Sp(\frac{E}{E \cap E^\perp},\psi)$ are imaginea deschisă și densă.
 
@@ -961,25 +961,6 @@ Acum rezultă că este suficient să arătăm că mulțimea acelor $\sigma$ ce s
 Însă propoziția anterioară arată că mulțimea elementelor ce satisfac (3) este deschisă de măsură Haar totală, iar mulțimea elementelor eliminate de condițiile (1) și (2) este clar neglijabilă.
 
 S-a demonstrat deci ipoteza lui Riemann.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \bibliographystyle{plain}
 \bibliography{etale}
