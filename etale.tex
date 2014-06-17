@@ -267,17 +267,19 @@ De pildă, fasciculul constant de fibră $\Sigma$ peste $S$ poate fi gândit în
 
 Toate construcțiile cunoscute de la fasciculele pe spații topologice au un corespondent peste situl etal. La fel, subcategoria de fascicule este reflectivă și avem adjunctul de fasciculizare. Imaginea inversă a unui fascicul este construită tot luând limita inductivă și fasciculizând - de pildă, când morfismul pe care tragem fasciculul înapoi este un punct geometric, caz în care imaginea inversă o numim fibră. Analog, fasciculizarea păstrează fibrele.
 
-Revenind la problema clasificării fasciculelor, manifestată adineauri printr-o echivalență de categorii, ne vom uita la propoziția anterioară și o vom exploata într-o oarecare măsură. Avem schema noastră de bază $S$ și $X \rightarrow S$ o acoperire etală a sa. Ea este în particular o $S$-schemă, deci ne dă un fascicul. Ne întrebăm ce fascicule se obțin în felul acesta. Găsim o clasă nouă de fascicule, denumite {\bf fascicule constructibile}. Ele sunt definite astfel: întâi numim fascicule {\bf local constante} cele pentru care orice punct geometric $\bar{x} \rightarrow S$ admite o vecinătate etală astfel încât fasciculul restricționat la acea vecinătate este fascicul constant de fibră finită. Un fascicul constructibil pe o schemă $X$ este un fascicul $\mathcal{F}$ cu proprietatea că pentru orice subschemă ireductibilă $\iota: Z \to X$ există un deschis $U \subseteq Z$ astfel încât $(\iota^*\mathcal{F})_{\mid U}$ este local constant. (Intuitiv, se face o „descompunere în celule” astfel încât pe fiecare componentă, ce nu mai e acum neapărat deschisă, fasciculul e constant.)
+Revenind la problema clasificării fasciculelor, manifestată adineauri printr-o echivalență de categorii, ne vom uita la propoziția anterioară și o vom exploata într-o oarecare măsură. Avem schema noastră de bază $S$ și $X \rightarrow S$ o acoperire etală a sa. Ea este în particular o $S$-schemă, deci ne dă un fascicul. Ne întrebăm ce fascicule se obțin în felul acesta. Găsim o clasă nouă de fascicule, denumite {\bf fascicule local constante}, adică cele pentru care orice punct geometric $\bar{x} \rightarrow S$ admite o vecinătate etală astfel încât fasciculul restricționat la acea vecinătate este fascicul constant de fibră finită.
 
 \begin{teo}
-Acest functor reprezintă o echivalență de categorii între acoperirile finite etale ale lui $S$ și fasciculele constructibile pe $S$.
+Acest functor reprezintă o echivalență de categorii între acoperirile finite etale ale lui $S$ și fasciculele local constante pe $S$.
 \end{teo}
 
 (Demonstrația se folosește de tehnici de {\it teoria descentului}.)
 
 \begin{cor}
-Avem o echivalență de categorii între fasciculele constructibile pe $S$ și $\pi_1(S,\bar{x})$-mulțimile finite continue, dată chiar de functorul de luare a fibrei în $\bar{x}$.
+Avem o echivalență de categorii între fasciculele local constante pe $S$ și $\pi_1(S,\bar{x})$-mulțimile finite continue, dată chiar de functorul de luare a fibrei în $\bar{x}$.
 \end{cor}
+
+O noțiune ceva mai largă este cea de {\bf fascicul constructibil} pe o schemă $X$, care este un fascicul $\mathcal{F}$ cu proprietatea că pentru orice subschemă ireductibilă $\iota: Z \to X$ există un deschis $U \subseteq Z$ astfel încât $(\iota^*\mathcal{F})_{\mid U}$ este local constant. (Intuitiv, se face o „descompunere în celule” astfel încât pe fiecare componentă, ce nu mai e acum neapărat deschisă, fasciculul e constant.)
 
 Pentru a defini, la fel cum o facem când lucrăm cu fascicule pe spații topologice, fascicule de grupuri abeliene, nu avem altceva de făcut decât să înlocuim peste tot mulțimile cu grupuri. Echivalent, putem spune că un fascicul de grupuri abeliene pe un sit etal este un obiect de tip grup abelian în categoria fasciculelor de mulțimi de pe acel sit, obținând astfel o categorie echivalentă cu cea definită anterior („comutativitatea abstracțiunii”!).
 
